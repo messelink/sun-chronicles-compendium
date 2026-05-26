@@ -12,32 +12,32 @@
     {
       "id": "chaonia",
       "name": "Republic of Chaonia",
-      "color": "#E8B923"
+      "color": "#6cd6ff"
     },
     {
       "id": "phene",
       "name": "Phene Empire",
-      "color": "#C0392B"
+      "color": "#ff7080"
     },
     {
       "id": "yele_league",
       "name": "Yele League",
-      "color": "#27AE60"
+      "color": "#ffc35a"
     },
     {
       "id": "trinity",
       "name": "Trinity Coalition",
-      "color": "#8E44AD"
+      "color": "#c089ff"
     },
     {
       "id": "mishirru",
       "name": "Mishirru Province (Phene-administered)",
-      "color": "#16A085"
+      "color": "#82dca0"
     },
     {
       "id": "contested",
       "name": "Contested / frontier",
-      "color": "#7F8C8D"
+      "color": "#f4f0e2"
     },
     {
       "id": "unknown",

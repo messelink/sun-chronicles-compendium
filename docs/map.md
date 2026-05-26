@@ -2,9 +2,9 @@
 
 The beacon network as a force-directed graph — links typed beacon / knnu / route, nodes coloured by polity. Unnamed intermediate hops appear as small hollow placeholder nodes.
 
-<iframe src="map.html" style="width:100%;height:82vh;border:0;" title="Sun Chronicles topology map"></iframe>
+<iframe src="../map.html" style="width:100%;height:82vh;border:0;" title="Sun Chronicles topology map"></iframe>
 
-[Open the map full-screen](map.html)
+[Open the map full-screen](../map.html)
 
 ---
 
