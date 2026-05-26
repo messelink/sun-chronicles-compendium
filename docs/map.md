@@ -4,7 +4,7 @@ The beacon network as a force-directed graph — links typed beacon / knnu / rou
 
 <iframe src="../map.html" style="width:100%;height:82vh;border:0;" title="Sun Chronicles topology map"></iframe>
 
-[Open the map full-screen](../map.html){target="_blank" rel="noopener"}
+[Open the map full-screen](map.html){target="_blank" rel="noopener"}
 
 ---
 
