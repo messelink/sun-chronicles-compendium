@@ -1,0 +1,13 @@
+# NEVER publish the source books.
+*.epub
+
+# Build output (if a static-site generator is added later)
+/site/
+/_site/
+/build/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*~
+.*.swp

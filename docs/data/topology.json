@@ -1,0 +1,1216 @@
+{
+  "meta": {
+    "title": "Sun Chronicles beacon-network topology",
+    "provenance": "GENERATED from the ```topology blocks in compendium/*.md by scripts/build-topology.py. Do not hand-edit. The compendium is the source of truth.",
+    "counts": {
+      "systems": 57,
+      "edges": 62,
+      "convergences": 2
+    }
+  },
+  "polities": [
+    {
+      "id": "chaonia",
+      "name": "Republic of Chaonia",
+      "color": "#E8B923"
+    },
+    {
+      "id": "phene",
+      "name": "Phene Empire",
+      "color": "#C0392B"
+    },
+    {
+      "id": "yele_league",
+      "name": "Yele League",
+      "color": "#27AE60"
+    },
+    {
+      "id": "trinity",
+      "name": "Trinity Coalition",
+      "color": "#8E44AD"
+    },
+    {
+      "id": "mishirru",
+      "name": "Mishirru Province (Phene-administered)",
+      "color": "#16A085"
+    },
+    {
+      "id": "contested",
+      "name": "Contested / frontier",
+      "color": "#7F8C8D"
+    },
+    {
+      "id": "unknown",
+      "name": "Unknown / unaligned",
+      "color": "#BDC3C7"
+    }
+  ],
+  "systems": [
+    {
+      "id": "agate",
+      "name": "Agate",
+      "class": "unknown",
+      "polity": "phene",
+      "note": "Sena prong",
+      "detail": "between Jorsha and Old Spiral",
+      "control": "Phene"
+    },
+    {
+      "id": "aila",
+      "name": "Aila",
+      "class": "unknown",
+      "polity": "mishirru",
+      "role": "1 of 2 Mishirru→Phene crossings; mouth of the Aila→Anchor prong",
+      "note": "2nd Mishirru/Phene crossing",
+      "facilities": [
+        "Port Shivakiar"
+      ],
+      "connects_toward": [
+        "hunger",
+        "anchor"
+      ],
+      "control": "Mishirru Province (Phene) → Chaonian staging system (FH)"
+    },
+    {
+      "id": "alabaster",
+      "name": "Alabaster",
+      "class": "unknown",
+      "polity": "mishirru",
+      "note": "core line (not the Alabaster Argosy)",
+      "detail": "between Scepter and Destiny; NOT the Alabaster Argosy"
+    },
+    {
+      "id": "alternity",
+      "name": "Alternity",
+      "class": "unknown",
+      "polity": "phene",
+      "note": "border; Mishirru-side partner unknown",
+      "detail": "Phene border system facing Mishirru; Mishirru-side partner UNNAMED (FH ch.83)",
+      "control": "Phene",
+      "layout_near": [
+        "jorsha",
+        "sena",
+        "aila"
+      ]
+    },
+    {
+      "id": "anchor",
+      "name": "Anchor",
+      "class": "eleven-beacon",
+      "polity": "phene",
+      "role": "one of only 2 surviving 11-beacon systems (other = Yele); seat of the Rider Council",
+      "note": "imperial capital (Triple A)",
+      "beacons_total": 11,
+      "beacons_functional": 8,
+      "beacons_dead": 3,
+      "named_beacons": [],
+      "control": "Phene Empire (imperial capital; one of the Triple A — Anchor/Auger/Axiom)"
+    },
+    {
+      "id": "arafel",
+      "name": "Arafel",
+      "class": "unknown",
+      "polity": "mishirru",
+      "note": "core line",
+      "detail": "between Landfall and Cataract"
+    },
+    {
+      "id": "aspera",
+      "name": "Aspera",
+      "class": "unknown",
+      "polity": "chaonia",
+      "note": "contested forward base",
+      "connects": [
+        "troia",
+        "karnos"
+      ],
+      "control": "Republic of Chaonia (contested forward base; foothold seized ~5 yrs pre-US)"
+    },
+    {
+      "id": "auger",
+      "name": "Auger",
+      "class": "hydra",
+      "polity": "phene",
+      "note": "Triple A capital",
+      "beacons_total": 7,
+      "control": "Phene Empire (Triple A capital; one of the three Unity Hall / Rider Council seats)"
+    },
+    {
+      "id": "axiom",
+      "name": "Axiom",
+      "class": "hydra",
+      "polity": "phene",
+      "note": "Triple A capital",
+      "beacons_total": 7,
+      "control": "Phene Empire (Triple A capital; one of the three Unity Hall / Rider Council seats)",
+      "triple_a_note": "Auger↔Axiom direct edge NOT stated; a full Triple-A triad is inference only"
+    },
+    {
+      "id": "belt_of_jewels",
+      "name": "Belt of Jewels",
+      "class": "terminus",
+      "polity": "mishirru",
+      "note": "super-distant terminus"
+    },
+    {
+      "id": "cataract",
+      "name": "Cataract",
+      "class": "janus",
+      "polity": "mishirru",
+      "note": "core line; red dwarf; brown-dwarf \"cataract\" route to Oasis",
+      "beacons_total": 2,
+      "star": "red dwarf",
+      "named_beacons": [
+        {
+          "to": "oasis",
+          "name": "Cataract–Oasis Beacon"
+        },
+        {
+          "anchor_planet": "marginally habitable planet"
+        }
+      ],
+      "control": "Mishirru religious establishment"
+    },
+    {
+      "id": "chaonia",
+      "name": "Chaonia",
+      "class": "scylla",
+      "polity": "chaonia",
+      "note": "republic capital (Argos)",
+      "beacons_total": 5
+    },
+    {
+      "id": "cut_stone",
+      "name": "Cut Stone",
+      "class": "unknown",
+      "polity": "phene",
+      "note": "one drop from Anchor"
+    },
+    {
+      "id": "destiny",
+      "name": "Destiny",
+      "class": "hydra",
+      "polity": "mishirru",
+      "role": "capital end of the Mishirru core line; \"crucial intersection\"",
+      "note": "provincial capital; core-line end",
+      "beacons_total": 7,
+      "control": "Phene Empire (provincial seat) — liberated by Chaonia in FH",
+      "phene_core_note": "NOT linked by a direct beacon to the Triple A — Mishirru reaches the Phene core via Sena/Aila (below)"
+    },
+    {
+      "id": "eel_gulf",
+      "name": "Eel Gulf",
+      "class": "unknown",
+      "polity": "contested",
+      "role": "former Phene/Hesjan→Yele trade route; severed by Chaonia's capture of Kanesh",
+      "note": "severed knnu route to Yele",
+      "caravan_status": "superseded by the Trinity Coalition back door"
+    },
+    {
+      "id": "gardens",
+      "name": "Gardens",
+      "class": "unknown",
+      "polity": "phene",
+      "note": "Aila prong",
+      "detail": "last hop before Anchor",
+      "control": "Phene"
+    },
+    {
+      "id": "gyre",
+      "name": "The Gyre",
+      "class": "off-grid",
+      "polity": "mishirru",
+      "note": "Archives; knnu-only, position unmapped"
+    },
+    {
+      "id": "harahuvati",
+      "name": "Harahuvati",
+      "class": "unknown",
+      "polity": "mishirru",
+      "note": "annexed; Trinity<->Mishirru knnu hinge",
+      "status": "annexed (outside the core eight); part of Mishirru Province",
+      "knnu_from": "kumbala",
+      "control": "Phene Empire → Chaonia (FH)"
+    },
+    {
+      "id": "hatti",
+      "name": "Hatti",
+      "class": "unknown",
+      "polity": "contested",
+      "note": "eponymous system of the resource-rich Hatti territories; the hinge linking the Karnos front (Na Iri / Tarsa) inward to Kanesh and outward to the Hesjan/Skuda caravan (FH ch.58)"
+    },
+    {
+      "id": "haymarket",
+      "name": "Haymarket",
+      "class": "cerberus",
+      "polity": "phene",
+      "role": "valuable crossroads on the Karnos↔Anchor corridor",
+      "note": "corridor crossroads",
+      "beacons_total": 3,
+      "beacons_functional": 3,
+      "control": "Phene Empire",
+      "named_beacons": [
+        {
+          "to": "refuge"
+        },
+        {
+          "to": "sandbank"
+        },
+        {
+          "to": "cut_stone"
+        }
+      ]
+    },
+    {
+      "id": "hellion",
+      "name": "Hellion",
+      "class": "terminus",
+      "polity": "contested",
+      "role": "smuggler haven; Karnos-side mouth of the Phene↔Yele back door",
+      "note": "was janus; smuggler back-door mouth",
+      "beacons_total": 1,
+      "class_former": "janus",
+      "connects": [
+        "karnos"
+      ]
+    },
+    {
+      "id": "hunger",
+      "name": "Hunger",
+      "class": "unknown",
+      "polity": "phene",
+      "note": "Aila prong",
+      "detail": "first hop past Aila",
+      "control": "Phene"
+    },
+    {
+      "id": "jorsha",
+      "name": "Jorsha",
+      "class": "unknown",
+      "polity": "phene",
+      "note": "border, faces Sena",
+      "detail": "Phene border system; Sena↔Jorsha; first Sena-prong hop → Agate",
+      "control": "Phene"
+    },
+    {
+      "id": "kanesh",
+      "name": "Kanesh",
+      "class": "unknown",
+      "polity": "chaonia",
+      "note": "formerly Phene",
+      "capital_planet": "Kanesh Prime",
+      "connects_toward": [
+        "Hatti territories",
+        "karnos"
+      ],
+      "control": "Republic of Chaonia (formerly Phene)"
+    },
+    {
+      "id": "karnos",
+      "name": "Karnos",
+      "class": "hydra",
+      "polity": "contested",
+      "note": "buffer frontier; 7th beacon dead, pair unknown",
+      "beacons_total": 7,
+      "beacons_functional": 6,
+      "beacons_dead": 1,
+      "beacons_into_phene_core": [
+        "sleepless",
+        "windworn"
+      ],
+      "connects_toward": [
+        "Hatti region",
+        "Phene Empire core"
+      ],
+      "control": "contested buffer frontier (formerly independent dynastic territory)"
+    },
+    {
+      "id": "kaska",
+      "name": "Kaska",
+      "class": "unknown",
+      "polity": "contested",
+      "note": "Karnos region / caravan route"
+    },
+    {
+      "id": "kumbala",
+      "name": "Kumbala",
+      "class": "unknown",
+      "polity": "trinity",
+      "note": "Magava seat; faces Mishirru",
+      "capital_planet": "Kumbala Prime",
+      "seat_of": "Magava (the Magava's Grove)",
+      "control": "Trinity Coalition → Republic of Chaonia (post-FH)"
+    },
+    {
+      "id": "landfall",
+      "name": "Landfall",
+      "class": "terminus",
+      "polity": "mishirru",
+      "note": "core-line terminus end; first Argosy haven",
+      "beacons_total": 1,
+      "on_route": "Mishirru capital → (janus line) → Landfall",
+      "control": "ancient Mishirru region",
+      "detail": "predates the beacon network; settled by the first Argosy haven"
+    },
+    {
+      "id": "larissa",
+      "name": "Larissa",
+      "class": "unknown",
+      "polity": "chaonia",
+      "note": "culturally Yele; assimilated",
+      "on_route": "Chaonia ↔ Yele",
+      "culture": "Yele (Larissan Yele dialect; Larissan Centaur Division)",
+      "control": "Republic of Chaonia",
+      "route_note": "only NAMED system on the Chaonia–Yele axis; not confirmed to be one of the 3 hops",
+      "layout_near": [
+        "chaonia",
+        "yele"
+      ]
+    },
+    {
+      "id": "maras_shantiya",
+      "name": "Maras Shantiya",
+      "class": "unknown",
+      "polity": "chaonia",
+      "note": "Hatti-front garrison"
+    },
+    {
+      "id": "meli",
+      "name": "Meli",
+      "class": "unknown",
+      "polity": "trinity",
+      "note": "Matrone seat; faces Yele",
+      "capital_planet": "Meli Prime",
+      "seat_of": "Matrone (the Matrone's Hive; Trinity treasury)",
+      "control": "Trinity Coalition → Republic of Chaonia (post-FH)"
+    },
+    {
+      "id": "molossia",
+      "name": "Molossia",
+      "class": "scylla",
+      "polity": "chaonia",
+      "note": "main staging ground",
+      "beacons_total": 5,
+      "planets": 6,
+      "beacon_anchor_to_troia": "Yǎnshī (2nd planet)",
+      "control": "Republic of Chaonia"
+    },
+    {
+      "id": "na_iri",
+      "name": "Na Iri",
+      "class": "unknown",
+      "polity": "chaonia",
+      "note": "binary system; site of the battle of Na Iri (Sun's first major victory); taken from the Phene. 3rd planet Na Iri Terce hosts Orbital Habitat Matoas and anchors the Kaska Beacon.",
+      "star": "twin stars (binary)"
+    },
+    {
+      "id": "nalanda",
+      "name": "Nalanda",
+      "class": "unknown",
+      "polity": "yele_league",
+      "control": "Yele League (member system)"
+    },
+    {
+      "id": "oasis",
+      "name": "Oasis",
+      "class": "unknown",
+      "polity": "mishirru",
+      "note": "core line; K-class, no settled planet",
+      "star": "K-class",
+      "detail": "appears to lack a settled planet"
+    },
+    {
+      "id": "old_spiral",
+      "name": "Old Spiral",
+      "class": "unknown",
+      "polity": "phene",
+      "note": "Sena prong",
+      "detail": "between Agate and Refuge",
+      "control": "Phene"
+    },
+    {
+      "id": "oracle",
+      "name": "Oracle",
+      "class": "waypoint",
+      "polity": "mishirru",
+      "note": "brown-dwarf waypoint (Cataract route); last dwarf before the Gyre"
+    },
+    {
+      "id": "pool",
+      "name": "Pool",
+      "class": "waypoint",
+      "polity": "mishirru",
+      "note": "brown-dwarf waypoint (Cataract route)"
+    },
+    {
+      "id": "rake",
+      "name": "Rake",
+      "class": "unknown",
+      "polity": "phene",
+      "note": "Aila prong",
+      "detail": "between Hunger and Gardens (floated as a Phene battle site, FH ch.83)",
+      "control": "Phene"
+    },
+    {
+      "id": "refuge",
+      "name": "Refuge",
+      "class": "unknown",
+      "polity": "phene",
+      "detail": "between Old Spiral and Haymarket (Haymarket's \"Refuge Beacon\")",
+      "control": "Phene"
+    },
+    {
+      "id": "sandbank",
+      "name": "Sandbank",
+      "class": "unknown",
+      "polity": "phene"
+    },
+    {
+      "id": "sankore",
+      "name": "Sankore",
+      "class": "unknown",
+      "polity": "yele_league",
+      "control": "Yele League (member system)"
+    },
+    {
+      "id": "scepter",
+      "name": "Scepter",
+      "class": "unknown",
+      "polity": "mishirru",
+      "note": "core line",
+      "detail": "between Oasis and Alabaster"
+    },
+    {
+      "id": "sena",
+      "name": "Sena",
+      "class": "unknown",
+      "polity": "mishirru",
+      "role": "\"official\" Mishirru/Phene boundary; 1 of 2 Mishirru→Phene crossings",
+      "note": "official Mishirru/Phene boundary",
+      "named_beacons": [
+        {
+          "to": "jorsha",
+          "name": "Jorsha Beacon"
+        }
+      ],
+      "facilities": [
+        "Port Khayzuran"
+      ],
+      "control": "Mishirru Province (Phene) → Chaonian invasion staging system (FH)",
+      "layout_near": [
+        "aila",
+        "destiny"
+      ]
+    },
+    {
+      "id": "sleepless",
+      "name": "Sleepless",
+      "class": "janus",
+      "polity": "phene",
+      "role": "leading edge of the old Phene imperial frontier",
+      "note": "old imperial frontier",
+      "beacons_total": 2,
+      "control": "Phene Empire",
+      "toward_anchor_via": [
+        "sandbank",
+        "haymarket",
+        "cut_stone"
+      ]
+    },
+    {
+      "id": "sogdia_limit",
+      "name": "Sogdia Limit",
+      "class": "unknown",
+      "polity": "phene",
+      "note": "far rim, beyond Tranquility",
+      "landmark": "the horned lighthouse",
+      "location": "rim, beyond Tranquility (FH ch.77)",
+      "control": "Phene"
+    },
+    {
+      "id": "spring",
+      "name": "Spring",
+      "class": "waypoint",
+      "polity": "mishirru",
+      "note": "brown-dwarf waypoint (Cataract route)"
+    },
+    {
+      "id": "t_harbor",
+      "name": "Tranquility Harbor",
+      "class": "station",
+      "polity": "phene",
+      "role": "rim crossroads / \"gateway in three directions\" (→Anchor / →Tranquility+Sogdia / →Hatti+Chaonia)",
+      "note": "station in Harbor System; rim crossroads",
+      "in_system": "Harbor System",
+      "control": "Phene Empire"
+    },
+    {
+      "id": "tarsa",
+      "name": "Tarsa",
+      "class": "unknown",
+      "polity": "contested",
+      "note": "Karnos beacon; route into the Hatti territories"
+    },
+    {
+      "id": "temple",
+      "name": "Temple",
+      "class": "waypoint",
+      "polity": "mishirru",
+      "note": "brown-dwarf waypoint (Cataract route)"
+    },
+    {
+      "id": "thesprotis",
+      "name": "Thesprotis",
+      "class": "scylla",
+      "polity": "chaonia",
+      "beacons_total": 5,
+      "control": "Republic of Chaonia (founding core system)"
+    },
+    {
+      "id": "tomb",
+      "name": "Tomb",
+      "class": "waypoint",
+      "polity": "mishirru",
+      "note": "brown-dwarf waypoint (Cataract route)"
+    },
+    {
+      "id": "tranquility",
+      "name": "Tranquility",
+      "class": "unknown",
+      "polity": "phene",
+      "note": "4th-most-populous; two Destiny-class planets",
+      "harbor_system_detail": {
+        "star": "big red star",
+        "hosts": "t_harbor",
+        "beacon_to": "tranquility",
+        "reachable_by": [
+          "beacon",
+          "knnu"
+        ],
+        "control": "Phene"
+      },
+      "population_rank": "4th in empire",
+      "destiny_class_planets": 2,
+      "reached_via": "t_harbor",
+      "control": "Phene (inferred)"
+    },
+    {
+      "id": "troia",
+      "name": "Troia",
+      "class": "cerberus",
+      "polity": "chaonia",
+      "role": "bottleneck gateway to the Chaonian core",
+      "note": "gateway bottleneck",
+      "beacons_total": 3,
+      "control": "Republic of Chaonia"
+    },
+    {
+      "id": "tsurru",
+      "name": "Tsurru",
+      "class": "cerberus?",
+      "polity": "trinity",
+      "note": "charted cerberus, hidden >=4; Karsh capital",
+      "beacons_total": 3,
+      "class_charted": "cerberus",
+      "class_actual": ">= scylla",
+      "beacons_charted": 3,
+      "beacons_actual": ">=4; must be 5 (prime rule)",
+      "named_beacons": [
+        {
+          "to": "meli"
+        },
+        {
+          "to": "kumbala"
+        },
+        {
+          "anchor_planet": "Tsurru Prime",
+          "status": "dead"
+        },
+        {
+          "status": "dead, undocumented"
+        }
+      ],
+      "hidden_note": "maps can omit beacons; prime rule forces a 5th, destinations unknown"
+    },
+    {
+      "id": "windworn",
+      "name": "Windworn",
+      "class": "unknown",
+      "polity": "phene",
+      "note": "one of Karnos's two beacons into the Phene heartland (twin of Sleepless; both anchored at Karnos Deci/Sept, close to each other, FH ch.34). Leads toward the Triple A but the route is unmapped (Persephone's guess, FH ch.69). Heavily mined; its mined beacon opened by Capt. Angharad Black in the FH climax (ch.96).",
+      "layout_near": [
+        "sleepless"
+      ]
+    },
+    {
+      "id": "yele",
+      "name": "Yele",
+      "class": "eleven-beacon",
+      "polity": "yele_league",
+      "role": "one of only 2 surviving 11-beacon systems (other = Anchor, Phene); League traffic must transit Yele",
+      "note": "League capital",
+      "beacons_total": 11,
+      "beacons_functional": 8,
+      "beacons_dead": 3,
+      "control": "Yele League (capital)",
+      "hub_note": "hub monopoly is the basis of League power"
+    }
+  ],
+  "edges": [
+    {
+      "from": "karnos",
+      "to": "tarsa",
+      "type": "beacon",
+      "anchor_planet": "Karnos Quince"
+    },
+    {
+      "from": "karnos",
+      "to": "na_iri",
+      "type": "beacon",
+      "anchor_planet": "Karnos Terce"
+    },
+    {
+      "from": "karnos",
+      "to": "aspera",
+      "type": "beacon",
+      "anchor_planet": "Karnos Sext"
+    },
+    {
+      "from": "karnos",
+      "to": "windworn",
+      "type": "beacon"
+    },
+    {
+      "from": "karnos",
+      "to": "sleepless",
+      "type": "beacon"
+    },
+    {
+      "from": "karnos",
+      "to": "hellion",
+      "type": "beacon"
+    },
+    {
+      "from": "tarsa",
+      "to": "hatti",
+      "type": "beacon",
+      "status": "inferred",
+      "note": "Tarsa route leads into the Hatti territories (FH ch.58); pairing inferred"
+    },
+    {
+      "from": "sleepless",
+      "to": "sandbank",
+      "type": "beacon"
+    },
+    {
+      "from": "molossia",
+      "to": "chaonia",
+      "type": "beacon"
+    },
+    {
+      "from": "molossia",
+      "to": "thesprotis",
+      "type": "beacon"
+    },
+    {
+      "from": "molossia",
+      "to": "troia",
+      "type": "beacon"
+    },
+    {
+      "from": "thesprotis",
+      "to": "chaonia",
+      "type": "beacon"
+    },
+    {
+      "from": "troia",
+      "to": "aspera",
+      "type": "beacon"
+    },
+    {
+      "from": "troia",
+      "to": "kanesh",
+      "type": "beacon"
+    },
+    {
+      "from": "maras_shantiya",
+      "to": "hatti",
+      "type": "beacon",
+      "status": "inferred",
+      "note": "Hatti-front garrison supplied via Kanesh (US ch.4); pairing inferred"
+    },
+    {
+      "from": "hatti",
+      "to": "kanesh",
+      "type": "beacon",
+      "status": "inferred",
+      "note": "Hatti territories link inward to Kanesh (FH ch.58); pairing inferred"
+    },
+    {
+      "from": "yele",
+      "to": "nalanda",
+      "type": "route",
+      "hops": 3,
+      "status": "working"
+    },
+    {
+      "from": "yele",
+      "to": "sankore",
+      "type": "route",
+      "hops": 3,
+      "status": "working"
+    },
+    {
+      "from": "yele",
+      "to": "chaonia",
+      "type": "route",
+      "hops": 3
+    },
+    {
+      "from": "nalanda",
+      "to": "meli",
+      "type": "knnu",
+      "operator": "Ousoos Argosy",
+      "gap": "50–70 days"
+    },
+    {
+      "from": "sankore",
+      "to": "meli",
+      "type": "knnu",
+      "operator": "Ousoos Argosy",
+      "gap": "50–70 days"
+    },
+    {
+      "from": "anchor",
+      "to": "axiom",
+      "type": "beacon"
+    },
+    {
+      "from": "anchor",
+      "to": "auger",
+      "type": "beacon"
+    },
+    {
+      "from": "haymarket",
+      "to": "sandbank",
+      "type": "beacon"
+    },
+    {
+      "from": "meli",
+      "to": "tsurru",
+      "type": "beacon"
+    },
+    {
+      "from": "meli",
+      "to": "kumbala",
+      "type": "beacon",
+      "status": "inferred",
+      "note": "TEC 'island' implies it; not independently witnessed"
+    },
+    {
+      "from": "kumbala",
+      "to": "tsurru",
+      "type": "beacon"
+    },
+    {
+      "from": "kumbala",
+      "to": "harahuvati",
+      "type": "knnu",
+      "note": "Jewel Road; Ousoos Argosy"
+    },
+    {
+      "from": "hellion",
+      "to": "tsurru",
+      "type": "knnu",
+      "note": "6 light-years"
+    },
+    {
+      "from": "landfall",
+      "to": "arafel",
+      "type": "beacon",
+      "route": "Mishirru core line"
+    },
+    {
+      "from": "arafel",
+      "to": "cataract",
+      "type": "beacon",
+      "route": "Mishirru core line"
+    },
+    {
+      "from": "cataract",
+      "to": "oasis",
+      "type": "beacon",
+      "route": "Mishirru core line"
+    },
+    {
+      "from": "oasis",
+      "to": "scepter",
+      "type": "beacon",
+      "route": "Mishirru core line"
+    },
+    {
+      "from": "scepter",
+      "to": "alabaster",
+      "type": "beacon",
+      "route": "Mishirru core line"
+    },
+    {
+      "from": "alabaster",
+      "to": "destiny",
+      "type": "beacon",
+      "route": "Mishirru core line"
+    },
+    {
+      "from": "destiny",
+      "to": "aila",
+      "type": "route",
+      "status": "inferred",
+      "note": "Aila route reached 'via Destiny' (FH ch.89); hops unknown"
+    },
+    {
+      "from": "cataract",
+      "to": "tomb",
+      "type": "knnu",
+      "route": "Cataract brown-dwarf chain",
+      "status": "superseded",
+      "note": "pre-beacon brown-dwarf stepping-stones; Crow-class ships only; superseded by the Cataract–Oasis Beacon"
+    },
+    {
+      "from": "tomb",
+      "to": "spring",
+      "type": "knnu",
+      "route": "Cataract brown-dwarf chain",
+      "status": "superseded",
+      "note": "pre-beacon brown-dwarf stepping-stones; Crow-class ships only; superseded by the Cataract–Oasis Beacon"
+    },
+    {
+      "from": "spring",
+      "to": "pool",
+      "type": "knnu",
+      "route": "Cataract brown-dwarf chain",
+      "status": "superseded",
+      "note": "pre-beacon brown-dwarf stepping-stones; Crow-class ships only; superseded by the Cataract–Oasis Beacon"
+    },
+    {
+      "from": "pool",
+      "to": "temple",
+      "type": "knnu",
+      "route": "Cataract brown-dwarf chain",
+      "status": "superseded",
+      "note": "pre-beacon brown-dwarf stepping-stones; Crow-class ships only; superseded by the Cataract–Oasis Beacon"
+    },
+    {
+      "from": "temple",
+      "to": "oracle",
+      "type": "knnu",
+      "route": "Cataract brown-dwarf chain",
+      "status": "superseded",
+      "note": "pre-beacon brown-dwarf stepping-stones; Crow-class ships only; superseded by the Cataract–Oasis Beacon"
+    },
+    {
+      "from": "oracle",
+      "to": "oasis",
+      "type": "knnu",
+      "route": "Cataract brown-dwarf chain",
+      "status": "superseded",
+      "note": "pre-beacon brown-dwarf stepping-stones; Crow-class ships only; superseded by the Cataract–Oasis Beacon"
+    },
+    {
+      "from": "oracle",
+      "to": "gyre",
+      "type": "knnu",
+      "status": "inferred",
+      "note": "the Gyre lies beyond Oracle; position unmapped"
+    },
+    {
+      "from": "harahuvati",
+      "to": "destiny",
+      "type": "route",
+      "hops": 3,
+      "note": "intermediates unnamed (Scepter/Alabaster only an unconfirmed guess)"
+    },
+    {
+      "from": "harahuvati",
+      "to": "belt_of_jewels",
+      "type": "route",
+      "note": "super-distant"
+    },
+    {
+      "from": "sena",
+      "to": "jorsha",
+      "type": "beacon",
+      "route": "Mishirru → Phene heartland (Sena prong)"
+    },
+    {
+      "from": "jorsha",
+      "to": "agate",
+      "type": "beacon",
+      "route": "Mishirru → Phene heartland (Sena prong)"
+    },
+    {
+      "from": "agate",
+      "to": "old_spiral",
+      "type": "beacon",
+      "route": "Mishirru → Phene heartland (Sena prong)"
+    },
+    {
+      "from": "old_spiral",
+      "to": "refuge",
+      "type": "beacon",
+      "route": "Mishirru → Phene heartland (Sena prong)"
+    },
+    {
+      "from": "refuge",
+      "to": "haymarket",
+      "type": "beacon",
+      "route": "Mishirru → Phene heartland (Sena prong)"
+    },
+    {
+      "from": "haymarket",
+      "to": "cut_stone",
+      "type": "beacon",
+      "route": "Mishirru → Phene heartland (Sena prong)"
+    },
+    {
+      "from": "cut_stone",
+      "to": "anchor",
+      "type": "beacon",
+      "route": "Mishirru → Phene heartland (Sena prong)"
+    },
+    {
+      "from": "aila",
+      "to": "hunger",
+      "type": "beacon",
+      "route": "Mishirru → Phene heartland (Aila prong)"
+    },
+    {
+      "from": "hunger",
+      "to": "rake",
+      "type": "beacon",
+      "route": "Mishirru → Phene heartland (Aila prong)"
+    },
+    {
+      "from": "rake",
+      "to": "gardens",
+      "type": "beacon",
+      "route": "Mishirru → Phene heartland (Aila prong)"
+    },
+    {
+      "from": "gardens",
+      "to": "anchor",
+      "type": "beacon",
+      "route": "Mishirru → Phene heartland (Aila prong)"
+    },
+    {
+      "from": "t_harbor",
+      "to": "tranquility",
+      "type": "beacon",
+      "note": "beacon at Harbor System's gas-giant L-4"
+    },
+    {
+      "from": "tranquility",
+      "to": "sogdia_limit",
+      "type": "route",
+      "note": "'more distant', via T-Harbor"
+    },
+    {
+      "from": "na_iri",
+      "to": "kaska",
+      "type": "beacon",
+      "name": "Kaska Beacon"
+    },
+    {
+      "from": "na_iri",
+      "to": "hatti",
+      "type": "beacon",
+      "status": "inferred",
+      "note": "Na Iri route leads into the Hatti territories (FH ch.58); pairing inferred"
+    },
+    {
+      "from": "kaska",
+      "to": "t_harbor",
+      "type": "knnu",
+      "note": "outer-rim caravan route; 3-5 gaps incl. the Proxima haul; intermediates unordered"
+    },
+    {
+      "from": "eel_gulf",
+      "to": "yele",
+      "type": "knnu",
+      "status": "severed",
+      "note": "cut when Chaonia took Kanesh"
+    }
+  ],
+  "convergences": [
+    {
+      "convergence": "Tinker-Evers-Chance (Chaonian core)",
+      "status": "active",
+      "shape": "mutually-connected triad",
+      "members": [
+        "chaonia",
+        "molossia",
+        "thesprotis"
+      ],
+      "member_class": "scylla",
+      "internal_edges": [
+        [
+          "chaonia",
+          "molossia"
+        ],
+        [
+          "molossia",
+          "thesprotis"
+        ],
+        [
+          "chaonia",
+          "thesprotis"
+        ]
+      ],
+      "polity": "chaonia"
+    },
+    {
+      "convergence": "Tinker-Evers-Chance (Trinity Coalition)",
+      "status": "active",
+      "shape": "mutually-connected triad",
+      "members": [
+        "tsurru",
+        "meli",
+        "kumbala"
+      ],
+      "internal_edges": [
+        [
+          "tsurru",
+          "meli"
+        ],
+        [
+          "tsurru",
+          "kumbala"
+        ],
+        [
+          "meli",
+          "kumbala"
+        ]
+      ],
+      "polity": "trinity",
+      "note": "second confirmed TEC convergence; survived the collapse as an isolated \"island\"",
+      "external_knnu_routes": [
+        {
+          "system": "meli",
+          "knnu_to": [
+            "nalanda",
+            "sankore"
+          ],
+          "thence": "3 beacons → Yele Prime"
+        },
+        {
+          "system": "kumbala",
+          "knnu_to": "harahuvati",
+          "thence": "3 beacon drops → Destiny"
+        },
+        {
+          "system": "tsurru",
+          "knnu_to": "hellion",
+          "gap": "6 light-years"
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "route": "Mishirru core line",
+      "link_type": "beacon",
+      "ordered": [
+        "landfall",
+        "arafel",
+        "cataract",
+        "oasis",
+        "scepter",
+        "alabaster",
+        "destiny"
+      ],
+      "endpoints": {
+        "terminus": "landfall",
+        "capital": "destiny"
+      },
+      "named_members": 7,
+      "core_members_stated": 8,
+      "province_members": 14
+    },
+    {
+      "route": "Cataract brown-dwarf chain",
+      "ordered": [
+        "cataract",
+        "tomb",
+        "spring",
+        "pool",
+        "temple",
+        "oracle",
+        "oasis"
+      ],
+      "link_type": "knnu",
+      "status": "superseded",
+      "note": "pre-beacon brown-dwarf stepping-stones; Crow-class ships only; superseded by the Cataract–Oasis Beacon"
+    },
+    {
+      "route": "Mishirru → Phene heartland (Sena prong)",
+      "link_type": "beacon",
+      "crossings": {
+        "mishirru_side": [
+          "sena",
+          "aila"
+        ],
+        "phene_side": [
+          "jorsha",
+          "alternity"
+        ]
+      },
+      "ordered": [
+        "sena",
+        "jorsha",
+        "agate",
+        "old_spiral",
+        "refuge",
+        "haymarket",
+        "cut_stone",
+        "anchor"
+      ]
+    },
+    {
+      "route": "Mishirru → Phene heartland (Aila prong)",
+      "link_type": "beacon",
+      "ordered": [
+        "aila",
+        "hunger",
+        "rake",
+        "gardens",
+        "anchor"
+      ]
+    },
+    {
+      "route": "Outer-rim caravan route (Karnos ↔ Tranquility)",
+      "link_type": "knnu",
+      "ordered": [],
+      "mode": "heterogeneous (beacon legs + knnu Argosy gaps over dead-beacon breaks)",
+      "ordered_anchors": [
+        "karnos",
+        "na_iri",
+        "kaska",
+        "Hatti region",
+        "Hesjan regions",
+        "Skuda Reach",
+        "(broken stretch: Rosetta/Nusrat Quince/Orfeo/Segovia, order unknown)",
+        "T-Harbor (Harbor System)",
+        "tranquility",
+        "sogdia_limit"
+      ],
+      "knnu_gaps": "3–5; named leg = the Proxima haul (4th, sometimes-uncounted)",
+      "round_trip": "~2 years",
+      "operators": "per-stage (Oreella Syndicate concession Na Iri→T-Harbor; a different Argosy per gap)",
+      "hazards": [
+        "Skuda raiders",
+        "Gatoi brigands",
+        "Hesjan corsairs"
+      ],
+      "function": "back door between the Phene core and Chaonian/Hatti space — NOT to the Yele League"
+    }
+  ]
+}

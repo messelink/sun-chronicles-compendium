@@ -1,0 +1,49 @@
+site_name: The Sun Chronicles Compendium
+site_description: A fan-made, verified worldbuilding reference for Kate Elliott's Sun Chronicles.
+docs_dir: docs
+
+theme:
+  name: material
+  palette:
+    - scheme: slate
+      primary: amber
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+    - scheme: default
+      primary: amber
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+  features:
+    - navigation.top
+    - navigation.tracking
+    - navigation.instant
+    - search.suggest
+    - search.highlight
+    - toc.follow
+    - content.tabs.link
+
+nav:
+  - Home: index.md
+  - Topology map: map.md
+  - Systems: systems.md
+  - Polities: polities.md
+  - Characters: characters.md
+  - Travel & beacon tech: travel-tech.md
+  - History: history.md
+  - Open questions: open-questions.md
+
+markdown_extensions:
+  - tables
+  - attr_list
+  - md_in_html
+  - admonition
+  - toc:
+      permalink: true
+
+copyright: >
+  Unofficial fan project — not approved, endorsed by, or affiliated with Kate Elliott
+  or her publishers. Copyright in the Sun Chronicles belongs to Kate Elliott.
