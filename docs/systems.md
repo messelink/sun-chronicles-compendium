@@ -485,9 +485,11 @@ the **Skuda Reach** → (broken beacon lines bridged by knnu gaps) → T-Harbor 
 Gap count is given loosely (3, "4 incl. the **Proxima haul**," "four knnu hops," "4–5") — the
 Proxima haul is the fourth, sometimes-uncounted leg. A ~**2-year round trip**, operator
 changing at every stage (a regional Argosy per gap + corsair escort), through territory
-raided by Skuda raiders, Gatoi brigands, and Hesjan corsairs. Mid-route systems named but
-not fully ordered: Rosetta, Nusrat Quince, Orfeo, Segovia. Inner legs confirmed: Karnos →
-**Na Iri** (Na Iri Beacon) → **Kaska** (Kaska Beacon, anchored at Na Iri Terce).
+raided by Skuda raiders, Gatoi brigands, and Hesjan corsairs. **Order now largely recovered**
+(FH ch. 53, ch. 57): Karnos → Na Iri → Kaska → Hatti → **Samuha** (last Chaonian-held system)
+→ **Rosetta** (where cartel/Hesjan space begins) → Nusrat Quince → [first of ~4 knnu hops] →
+Orfeo → … → Segovia → T-Harbor → Tranquility. Inner legs are confirmed beacons: Karnos →
+**Na Iri** (Na Iri Beacon @ Karnos Terce) → **Kaska** (Kaska Beacon @ Na Iri Terce, FH ch. 52).
 
 ## Chaonia–Yele frontier
 
@@ -508,17 +510,21 @@ Dialectic"*). Whether Larissa is one of the three beacon-hops of
 the Yele→Chaonia route or sits beside it is **not stated** (see [`open-questions.md`](open-questions.md)).
 No beacon count or class is ever given — *silent in text*, not merely un-mined.
 
-### Eel Gulf — a knnu route to Yele, severed when Chaonia took Kanesh
+### Eel Gulf — the knnu waypoint between the Kanesh/Hatti frontier and Yele
 
 **Tier:** canon
 
 *— FH ch. 18*
 
-Reached by a **short knnu hop**; historically the Phene/Hesjan side's best trade-and-diplomacy
-route to Yele. Chaonia's capture of **Kanesh** (~20 yrs pre-FH) cut it, forcing Phene traffic
-onto the Trinity back door — a key reason the Trinity became FH's prize. Also the site of the
-historic **Battle of Eel Gulf**, where the Yele defeated a Phene fleet (see
-[`polities.md`](polities.md) → Yele relations).
+A **short knnu hop** to Yele; historically the Phene/Hesjan side's best trade-and-diplomacy
+route to the Yele League. The route ran from the Phene/Hesjan side **through Kanesh's sphere**
+to the Eel Gulf hop and on to Yele — so Eel Gulf sits topologically *between* the Hatti/Kanesh
+frontier and Yele. Chaonia's capture of **Kanesh** (~20 yrs pre-FH) **cut off the Phene's
+access** (it holds the chokepoint), forcing Phene traffic onto the Trinity back door — a key
+reason the Trinity became FH's prize. Note: the Phene lost *access*; the knnu link itself
+isn't depicted as physically destroyed (Chaonia, the Yele's ally, now controls the
+chokepoint). Also the site of the war-deciding **Battle of Eel Gulf** (see
+[`history.md`](history.md)).
 
 ---
 

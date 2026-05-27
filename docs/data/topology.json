@@ -4,7 +4,7 @@
     "provenance": "GENERATED from the ```topology blocks in compendium/*.md by scripts/build-topology.py. Do not hand-edit. The compendium is the source of truth.",
     "counts": {
       "systems": 57,
-      "edges": 62,
+      "edges": 63,
       "convergences": 2
     }
   },
@@ -202,9 +202,9 @@
       "name": "Eel Gulf",
       "class": "unknown",
       "polity": "contested",
-      "role": "former Phene/Hesjan→Yele trade route; severed by Chaonia's capture of Kanesh",
-      "note": "severed knnu route to Yele",
-      "caravan_status": "superseded by the Trinity Coalition back door"
+      "role": "the short-knnu hop on the old Phene/Hesjan→Yele route; site of the Battle of Eel Gulf (~50+ yrs pre-FH)",
+      "note": "knnu waypoint between the Kanesh/Hatti frontier and Yele; the Phene/Hesjan route to Yele was cut off here when Chaonia took the Kanesh chokepoint — access denied, link not destroyed",
+      "phene_access": "cut by Chaonia's capture of Kanesh; Phene now routes via the Trinity back door"
     },
     {
       "id": "gardens",
@@ -1044,14 +1044,20 @@
       "from": "kaska",
       "to": "t_harbor",
       "type": "knnu",
-      "note": "outer-rim caravan route; 3-5 gaps incl. the Proxima haul; intermediates unordered"
+      "note": "ABSTRACTS the whole multi-gap caravan corridor (Kaska→Hatti→Samuha→Rosetta→…→T-Harbor), not a single knnu hop — the one graph edge that links the Tranquility exclave to the network. Kaska's actual outbound is a beacon drop into the caravan (FH ch.53)."
     },
     {
       "from": "eel_gulf",
       "to": "yele",
       "type": "knnu",
-      "status": "severed",
-      "note": "cut when Chaonia took Kanesh"
+      "note": "the 'short knnu hop' to Yele (FH ch.18)"
+    },
+    {
+      "from": "eel_gulf",
+      "to": "kanesh",
+      "type": "knnu",
+      "status": "inferred",
+      "note": "Phene/Hesjan-side access ran through Kanesh's sphere — taking Kanesh cut the route (FH ch.18); the Eel Gulf↔Kanesh pairing and hop count are not stated"
     }
   ],
   "convergences": [
@@ -1208,15 +1214,20 @@
         "karnos",
         "na_iri",
         "kaska",
-        "Hatti region",
-        "Hesjan regions",
-        "Skuda Reach",
-        "(broken stretch: Rosetta/Nusrat Quince/Orfeo/Segovia, order unknown)",
+        "hatti",
+        "samuha",
+        "Rosetta (cartel boundary)",
+        "Nusrat Quince",
+        "(first of ~4 knnu hops)",
+        "Orfeo",
+        "(beacon → unpronounceable system)",
+        "Segovia",
         "T-Harbor (Harbor System)",
         "tranquility",
         "sogdia_limit"
       ],
-      "knnu_gaps": "3–5; named leg = the Proxima haul (4th, sometimes-uncounted)",
+      "cartel_boundary": "Rosetta",
+      "knnu_gaps": "3–5; first knnu hop begins past Nusrat (FH ch.57); named leg = the Proxima haul (4th, sometimes-uncounted)",
       "round_trip": "~2 years",
       "operators": "per-stage (Oreella Syndicate concession Na Iri→T-Harbor; a different Argosy per gap)",
       "hazards": [

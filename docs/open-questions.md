@@ -183,6 +183,25 @@ rim of beacon space"). So we model it as plain `phene`, not a separate region. O
 a province/march name exists and which syndicate(s) actually govern Tranquility System.
 (Resolved the "is Tranquility a separate Mishirru-style province?" hypothesis: **no**.)
 
+### Hatti-region unknowns
+
+**Tier:** open
+
+From the Hatti deep dive, several gaps remain: (1) **Maras Shantiya's wiring** — it appears
+only in conquest roll-calls; no beacon, count, anchor, or neighbour is ever stated, so its
+position in the cluster is unknown (we dropped the earlier guessed Hatti edge). (2) **Samuha
+System** (FH ch. 53, "Chaonia also controls Hatti and Samuha Systems") — a real Chaonian
+caravan system between Hatti and Rosetta, otherwise undescribed (beacons, exact links);
+recorded in route metadata, not yet a graph node. (3) Whether **"Hatti" is a formal Phene
+administrative province name** or only a Chaonian/ethnographic label. (4) The **internal hop
+structure** of the Na Iri/Tarsa → Hatti → Kanesh corridor (FH ch. 58 gives it as routes
+"linking inward to Kanesh," not confirmed single beacons). (5) **Eel Gulf↔Kanesh** pairing
+and hop count (inferred from the severance, not stated). (6) **Kanesh's two dead beacons** —
+which of the original five, and where the three live ones point (only Troia confirmed). (7)
+**"Lukka Prime" vs "Kanesh Prime"** — US ch. 42 sites a Fourth-Kanesh-campaign Esplanade
+attack on *Lukka Prime*; FH ch. 11/16 site *the* Esplanade on *Kanesh Prime*. Two worlds, or
+an inconsistency? Unresolved.
+
 ## Resolved
 
 ### ~~What are the names of all seven Karnos beacons, and which is non-functional?~~

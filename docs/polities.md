@@ -171,6 +171,41 @@ boundaries of beacon space," home to raiders and subgroups like the **Skew-Neck 
 **Flood Terminus**. Neither is a beacon-network polity; their region is the broken-beacon,
 knnu-bridged middle of the rim route, raided also by **Gatoi brigands**.
 
+## The Hatti region
+
+### The Hatti region — a former independent confederation, then a Phene province, now Chaonian-held
+
+**Tier:** canon
+
+*— FH ch. 48*
+
+*— FH ch. 69*
+
+A frontier of multiple star systems (**Hatti, Maras Shantiya, Kaska, Tarsa, Na Iri**, plus
+the inner gateway **Kanesh** and the newly-surfaced **Samuha**) — not a single polity. It
+was an **independent confederation** of city-states akin to neighbouring **Karnos**, absorbed
+as a **Phene province** in the same expansion era, and **conquered piecemeal by Chaonia**
+under Eirene (Kanesh ~20 yrs pre-FH; Na Iri last, at the close of *Unconquerable Sun*). On the
+Phene war-map it shows as **"contested"** — Chaonian-controlled, Phene-claimed. The model tags
+the controlled systems `chaonia` (control); the contested/claimed status lives in their notes.
+
+### The Hatti-folk — a distinct two-armed people, kin to Karnos, never imperial Phene
+
+**Tier:** canon
+
+*— FH ch. 50*
+
+A named ethnocultural group — **two-armed** (vs. the four-armed gene-engineered imperial
+Phene), Common-Yele-speaking, sharing temples and ancestor-veneration with Karnos and
+Chaonia. The Phene were "disliked outsiders" there (FH ch. 82), which Chaonia exploits to
+frame its conquest as liberation of kin — though Persephone notes "we're about to be
+occupiers, too" (FH ch. 48). Governance is Chaonian **military** administration under Tiger
+Marshal **Tomyris Vata**, who holds oversight of "Kanesh and the Hatti territories with their
+crucial resource and transport concerns" (FH ch. 58). The pro-Phene **Evergreen** is an
+"interdicted Kanesh faction calling for return to Phene rule" (FH ch. 11) — evidence the
+conquest is contested on the ground. (Kanesh's indigenous parliament: see
+[`systems.md`](systems.md).)
+
 ---
 
 *This is an unofficial fan project. It is **not approved, endorsed by, or affiliated with** Kate Elliott or her publishers. All facts are drawn from and cited to the published novels; no substantial text is reproduced. Copyright in the* Sun Chronicles *belongs to Kate Elliott.*

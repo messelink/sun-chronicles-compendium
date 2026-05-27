@@ -180,6 +180,42 @@ movement — the destination is "the Triple A" generally, reached via the Sena/A
 not a single Destiny→Axiom hop. (Distinct from the FH ch. 47 individual exile run, which
 diverts onto the outer-rim caravan route to Tranquility Harbor instead.)
 
+## The Hatti front
+
+### Eirene took the Hatti region to protect Chaonia — buffer and springboard
+
+**Tier:** canon
+
+*— FH ch. 58*
+
+Eirene seized the Phene-held Hatti frontier **piecemeal** over years — the supply axis ran
+**Molossia → Troia → Kanesh** and out "to the garrisons and task forces in Maras Shantiya,
+Kaska, Tarsa, Hatti, and now Na Iri too" (US ch. 4), "encircling Karnos one system and one
+beacon route at a time" (US ch. 4). Two complementary rationales: a **defensive buffer**
+(Troia is the bottleneck guarding Chaonia) and an **offensive springboard** toward Karnos,
+the Phene forward capital. The Chaonian victory roll-call names the front: "Kanesh, Maras
+Shantiya, Kaska, Tarsa, Na Iri" (FH ch. 31). By FH the holdings are over-extended footholds,
+not a settled border (Marshal Qìngzhī argues to fall back to a "static frontier at Troia").
+
+### The Kanesh wars and the Battle of Eel Gulf
+
+**Tier:** canon
+
+*— US ch. 4*
+
+*— US ch. 4*
+
+Kanesh was the defining grind of the prior generation: Eirene's brother **Queen-Marshal
+Nézhā** died there (a Hesjan ambush at the sixth battle of Kanesh, US ch. 12), and she
+succeeded him; "everyone my age and older fought at Kanesh." The numbered battles run to an
+**Eighth Battle of Kanesh** by FH. Deeper back, the **Battle of Eel Gulf** (~50+ yrs pre-FH:
+a lancer was "salvaged after fifty years drifting," FH ch. 94) was the **Yele victory that
+broke the Phene's decades-long invasion** of the Yele League — the defeat "instigated a
+rumored bloodbath within the Rider Council" and forced the imperial retreat (US ch. 41),
+leaving the Yele regional hegemon until Eirene reversed it. During Sun's FH visit to Kanesh's
+Esplanade, "a seer of Iros tried to murder me" (FH ch. 58) — a disguised militiaman tied to
+the pro-Phene **Evergreen** faction.
+
 ---
 
 *This is an unofficial fan project. It is **not approved, endorsed by, or affiliated with** Kate Elliott or her publishers. All facts are drawn from and cited to the published novels; no substantial text is reproduced. Copyright in the* Sun Chronicles *belongs to Kate Elliott.*
