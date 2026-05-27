@@ -33,6 +33,16 @@ the leading edge of the old imperial frontier. Cross-ref: from Karnos's side, Sl
 is one of the two beacons leading "directly into imperial space" — the two accounts
 agree.
 
+By *Furious Heaven* the Phene had heavily mined the Karnos-facing Sleepless beacon, and
+the minefield held off the Chaonian advance: an attack through the "extensively mined
+beacon" destroyed the *Vermilion* (FH ch. 84). In the climax Sun broke through it herself
+so the reserve fleets waiting in Karnos could enter imperial space —
+
+*— FH ch. 86*
+
+This is the Sleepless counterpart to Windworn (whose mined beacon Capt. Angharad Black
+forces open): by the end of FH both Karnos→imperial gateways are broken through.
+
 ### Aspera System — the Chaonian foothold one hop from Karnos
 
 **Tier:** canon
