@@ -29,15 +29,17 @@ System to Chaonia" (FH ch. 58). The intermediate systems are never named. **Lari
 "on the route between Chaonia and Yele" (FH ch. 27) but is not equated with one of the three
 hops — so whether Larissa is one of them or sits beside the route is also open.
 
-### Where does the outer-rim caravan route's broken stretch run, and what is the "Proxima haul"?
+### Where exactly do the outer-rim caravan route's knnu gaps fall, and what is the unnamed mid-route system?
 
 **Tier:** open
 
-The route's endpoints and inner legs are known (Karnos → Na Iri → Kaska → Hatti → Hesjan →
-Skuda Reach → … → T-Harbor → Tranquility), but the mid-route systems (Rosetta, Nusrat
-Quince, Orfeo, Segovia) are not ordered end-to-end, and the **Proxima haul** (the 4th,
-sometimes-uncounted knnu gap) is unplaced. Tranquility's own control is inferred (Phene), not
-stated.
+The route order is now largely recovered (FH ch. 53, 57; see [`systems.md`](systems.md)):
+Karnos → Na Iri → Kaska → Hatti → Samuha → Rosetta → Nusrat Quince → [≈4 knnu gaps incl. the
+**Proxima haul**] → Orfeo → [a named-but-withheld "unpronounceable" system] → Segovia →
+T-Harbor → Tranquility → Sogdia Limit. What stays open: the exact count/placement of the
+knnu gaps (given loosely as 3, "4 incl. the Proxima haul," "four or five") and the identity
+of the unnamed system between Orfeo and Segovia. (Tranquility's Phene control is now
+confirmed canon — FH ch. 17/20/77 — no longer inferred.)
 
 ### Where do Yele System's other beacons lead, and what are the Yele League's member systems?
 
@@ -58,14 +60,16 @@ status "in the wake of the collapse" (FH ch. 15) and that the League was the reg
 hegemon for generations (after Eel Gulf; US ch. 4). Whether the Yele descend from
 Mishirru/Argosy stock like the Phene is not stated.
 
-### Beacon counts/classes are unknown for several mapped systems
+### Beacon counts / classes still unstated for many mapped systems
 
 **Tier:** open
 
-Confirmed to exist and sit on named routes, but with no stated beacon count/class: **Meli,
-Kumbala** (Trinity members — only their internal TEC links and external knnu gaps are
-given) and **Nalanda, Sankore** (Yele frontier — only "three working beacons to Yele" as a
-*route* hop-count). Recorded as `class: unknown` in their topology blocks.
+Confirmed to exist and sit on named routes, but with no stated beacon count/class:
+**Meli, Kumbala** (Trinity), **Nalanda, Sankore** (Yele frontier), **Harahuvati** ("three
+drops to Destiny" is a route hop-count), and the Mishirru↔Phene corridor systems **Sena,
+Aila, Jorsha, Alternity, Agate, Old Spiral, Refuge, Hunger, Rake, Gardens**. **Auger** and
+**Axiom** are each stated as seven-beacon (FH ch. 86) but without Anchor's functional/dead
+split. All recorded `class: unknown` (or total-only) in their topology blocks.
 
 ### Which internal links in the Trinity / Yele-frontier triads are direct beacon edges?
 
@@ -98,14 +102,6 @@ or coordinates. One deduction: both line-endpoints are named (Landfall = terminu
 capital), so the 8th is **not a line-endpoint** — if it sits on the line it's an interior
 system; otherwise off-line. The book withholds this deliberately: Persephone dodges giving
 the model coordinates and is "hiding something" (FH ch. 76).
-
-### Beacon counts unknown: Harahuvati, Auger/Axiom functional split
-
-**Tier:** open
-
-**Harahuvati**'s own beacon count/class is unstated ("three beacon drops to Destiny" is a
-route hop-count). **Auger** and **Axiom** are each stated to have seven beacons (FH ch. 86)
-but — unlike Anchor (8/3, counted on-page) — with no functional/dead breakdown.
 
 ### Is there a direct Auger↔Axiom beacon (a full Triple-A triad)?
 
@@ -145,15 +141,14 @@ but no destination beacon or direction is named. Anchor's only named outbound li
 Auger and Axiom Beacons (which the Phene had stripped of defenders), so escape *toward Auger
 and/or Axiom* is the natural inference — not stated.
 
-### Topology unknowns along the Mishirru↔Anchor corridor
+### Mishirru↔Phene corridor: Alternity's partner and Axiom's position
 
 **Tier:** open
 
-Beacon counts/classes are unstated for all ten corridor systems (Sena, Aila, Jorsha,
-Alternity, Agate, Old Spiral, Refuge, Hunger, Rake, Gardens). Also: **Alternity**'s
-Mishirru-side beacon partner is unnamed, and **Axiom**'s position relative to the Mishirru
-front is not given (only **Auger** is canon-confirmed as the Aila-facing reinforcement
-source for Anchor, FH ch. 89).
+**Alternity**'s Mishirru-side beacon partner is unnamed — it sits on neither named invasion
+prong (Sena→Jorsha or Aila→Hunger). And **Axiom**'s position relative to the Mishirru front
+isn't given; only **Auger** is canon-confirmed as the Aila-facing reinforcement source for
+Anchor (FH ch. 89). (The corridor systems' beacon counts are covered above.)
 
 ### Which Mishirru systems lie between Destiny and Sena, and was Sena an original route?
 
@@ -192,8 +187,9 @@ only in conquest roll-calls; no beacon, count, anchor, or neighbour is ever stat
 position in the cluster is unknown (we dropped the earlier guessed Hatti edge). (2) **Samuha
 System** (FH ch. 53, "Chaonia also controls Hatti and Samuha Systems") — a real Chaonian
 caravan system between Hatti and Rosetta, otherwise undescribed (beacons, exact links);
-recorded in route metadata, not yet a graph node. (3) Whether **"Hatti" is a formal Phene
-administrative province name** or only a Chaonian/ethnographic label. (4) The **internal hop
+recorded in route metadata, not yet a graph node. (3) Whether **"Hatti" has a formal Phene
+administrative province title** — we now model it as its own region (control = Chaonia), but
+the books give only "the Hatti region/territories," no formal Phene name. (4) The **internal hop
 structure** of the Na Iri/Tarsa → Hatti → Kanesh corridor (FH ch. 58 gives it as routes
 "linking inward to Kanesh," not confirmed single beacons). (5) **Eel Gulf↔Kanesh** pairing
 and hop count (inferred from the severance, not stated). (6) **Kanesh's two dead beacons** —
