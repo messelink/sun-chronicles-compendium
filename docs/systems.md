@@ -115,11 +115,14 @@ Hatti region.
 
 *— FH ch. 11*
 
-Taken by Chaonia ~20 years before FH in a long battle; it opens a beacon route into the
-Hatti territories and onward toward Karnos (the Troia → Kanesh → Hatti axis). Capital
-**Kanesh Prime** (the Iridescent Sea; the war-scarred Esplanade). Formerly under Phene
-rule, now under Chaonian military governance with a re-formed Kanesh parliament overseen
-by Tiger Marshal Tomyris Vata. Beacon count not yet stated.
+Taken by Chaonia ~20 years before FH in a grueling weeks-long battle (FH ch. 11); it opens
+a beacon route into the Hatti territories and onward toward Karnos (the Troia → Kanesh →
+Hatti axis). Capital **Kanesh Prime** (the Iridescent Sea; the war-scarred Esplanade).
+Formerly under Phene rule, now under Chaonian military governance overseen by Tiger Marshal
+Tomyris Vata. Its parliament is **indigenous** — Kanesh's own body, shut by the Phene
+~100 years ago and **reopened by Eirene** (FH ch. 11); like the Larissan Senate it sends
+"comity" envoys to Chaonia. **Five beacons** were charted before the collapse, only
+**three functional** now (FH ch. 11) — a scylla degraded to three live beacons.
 
 ## Mishirru / deep-interior systems
 

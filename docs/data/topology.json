@@ -4,7 +4,7 @@
     "provenance": "GENERATED from the ```topology blocks in compendium/*.md by scripts/build-topology.py. Do not hand-edit. The compendium is the source of truth.",
     "counts": {
       "systems": 57,
-      "edges": 63,
+      "edges": 62,
       "convergences": 2
     }
   },
@@ -236,8 +236,9 @@
       "id": "hatti",
       "name": "Hatti",
       "class": "unknown",
-      "polity": "contested",
-      "note": "eponymous system of the resource-rich Hatti territories; the hinge linking the Karnos front (Na Iri / Tarsa) inward to Kanesh and outward to the Hesjan/Skuda caravan (FH ch.58)"
+      "polity": "chaonia",
+      "note": "eponymous system of the resource-rich Hatti territories (a former independent confederation, then Phene province, now Chaonian-held but Phene-claimed); trade crossroads; Battle of Hatti Reach (FH ch.13); hinge linking the Karnos front (Na Iri/Tarsa) inward to Kanesh and out to the Hesjan/Skuda caravan (FH ch.58)",
+      "capital_planet": "Hatti Prime"
     },
     {
       "id": "haymarket",
@@ -295,9 +296,11 @@
     {
       "id": "kanesh",
       "name": "Kanesh",
-      "class": "unknown",
+      "class": "scylla",
       "polity": "chaonia",
-      "note": "formerly Phene",
+      "note": "formerly Phene, taken ~20 yrs pre-FH; scylla degraded to 3 live beacons by the collapse (2 dead, endpoints unknown); indigenous parliament reopened by Eirene",
+      "beacons_total": 5,
+      "beacons_functional": 3,
       "capital_planet": "Kanesh Prime",
       "connects_toward": [
         "Hatti territories",
@@ -372,7 +375,11 @@
       "name": "Maras Shantiya",
       "class": "unknown",
       "polity": "chaonia",
-      "note": "Hatti-front garrison"
+      "note": "Hatti-front garrison taken from the Phene; appears only in conquest roll-calls — no beacon, count, anchor or neighbour is ever stated, so its wiring is an open question (the earlier inferred Hatti edge was unsupported, dropped).",
+      "layout_near": [
+        "kanesh",
+        "hatti"
+      ]
     },
     {
       "id": "meli",
@@ -735,13 +742,6 @@
       "from": "troia",
       "to": "kanesh",
       "type": "beacon"
-    },
-    {
-      "from": "maras_shantiya",
-      "to": "hatti",
-      "type": "beacon",
-      "status": "inferred",
-      "note": "Hatti-front garrison supplied via Kanesh (US ch.4); pairing inferred"
     },
     {
       "from": "hatti",
