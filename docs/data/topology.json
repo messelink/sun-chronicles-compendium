@@ -4,7 +4,7 @@
     "provenance": "GENERATED from the ```topology blocks in compendium/*.md by scripts/build-topology.py. Do not hand-edit. The compendium is the source of truth.",
     "counts": {
       "systems": 57,
-      "edges": 62,
+      "edges": 63,
       "convergences": 2
     }
   },
@@ -696,6 +696,13 @@
       "type": "beacon",
       "status": "inferred",
       "note": "Tarsa route leads into the Hatti territories (FH ch.58); pairing inferred"
+    },
+    {
+      "from": "windworn",
+      "to": "anchor",
+      "type": "route",
+      "status": "inferred",
+      "note": "leads toward the Triple A; route unmapped, Persephone's guess (FH ch.69); hops unknown"
     },
     {
       "from": "sleepless",
