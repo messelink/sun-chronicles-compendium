@@ -367,8 +367,9 @@ Scepter and Alabaster sit between Oasis and Destiny. No beacon counts given indi
 Not on the core line — annexed "outside the core eight," now part of Mishirru Province.
 It is the **knnu hinge between the Trinity Coalition and Mishirru** (the "Jewel Road"): a
 short knnu gap from **Kumbala** (Ousoos Argosy), then **three beacon drops to Destiny**
-(FH ch. 60). It also sits on a beacon route to the super-distant terminus **Belt of
-Jewels**. A knnu-in / beacon-out transit node — extends the existing Kumbala entry.
+(FH ch. 60). It also sits on the **Belt of Jewels Road** — the beacon route out to the
+super-distant terminus **Belt of Jewels**, and the approach Sun's fleet took to enter
+Mishirru (FH ch. 70). A knnu-in / beacon-out transit node — extends the existing Kumbala entry.
 
 ### Mishirru ↔ Phene heartland — two beacon paths, via Sena and Aila (refutes "Destiny→Axiom")
 

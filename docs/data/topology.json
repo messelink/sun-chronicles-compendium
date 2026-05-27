@@ -150,7 +150,7 @@
       "name": "Belt of Jewels",
       "class": "terminus",
       "polity": "mishirru",
-      "note": "super-distant terminus"
+      "note": "super-distant terminus; remote frontier of the local belt; perhaps not originally linked to Destiny (FH ch.76)"
     },
     {
       "id": "cataract",
@@ -946,7 +946,8 @@
       "from": "harahuvati",
       "to": "belt_of_jewels",
       "type": "route",
-      "note": "super-distant"
+      "render_pad": 4,
+      "note": "the 'Belt of Jewels Road' (FH ch.70) out to the super-distant terminus; Sun's approach into Mishirru; hops unknown — render_pad is a length cue, not a count"
     },
     {
       "from": "sena",
