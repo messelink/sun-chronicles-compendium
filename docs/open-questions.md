@@ -171,6 +171,18 @@ it "was on one of the original routes and, if so, which one? Or was it a later a
 route that leads straight to Karnos" (FH ch. 82) — unreliable narration, noted but not
 mapped.
 
+### Does the Phene outer rim (Tranquility region) have a named administrative unit?
+
+**Tier:** open
+
+The Tranquility / Sogdia Limit outer-rim cluster is confirmed **Phene proper** (FH ch. 17,
+20, 77, 83) — the empire's far *periphery*, distinct from the **Triple A heartland** (Anchor
+/ Auger / Axiom). But unlike **Mishirru Province**, which the books name, the Phene outer rim
+is given **no administrative name** (only relative/geographic descriptors like "the outer
+rim of beacon space"). So we model it as plain `phene`, not a separate region. Open whether
+a province/march name exists and which syndicate(s) actually govern Tranquility System.
+(Resolved the "is Tranquility a separate Mishirru-style province?" hypothesis: **no**.)
+
 ## Resolved
 
 ### ~~What are the names of all seven Karnos beacons, and which is non-functional?~~

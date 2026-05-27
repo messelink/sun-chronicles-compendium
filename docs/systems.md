@@ -460,6 +460,17 @@ the only known system with **two Destiny-class planets** ("Destiny-class" = the 
 habitability/population tier). Reached only through T-Harbor; beyond it lies **Sogdia
 Limit**.
 
+**This is Phene proper — but the empire's far *periphery*, not its heartland.** A deep dive
+(FH ch. 17, 20, 77, 83) confirms sovereignty: Tranquility-born Apama places it inside the
+empire ("the Tranquility Harbors of the empire", FH ch. 17), her mother describes Phene
+Rider service-pod postings there ("Tranquility has strategic significance for the empire",
+FH ch. 20), and the Phene high command treats T-Harbor as one of *their* outer systems
+(FH ch. 83). The imperial **core** is the Triple A (Anchor / Auger / Axiom); the Tranquility
+arm is its far rim. It is **not** a separately-named province like Mishirru — the books give
+the Phene outer rim no administrative name (see [`open-questions.md`](open-questions.md)).
+So the `phene` tag is correct; the far-rim "arm" is a real core-vs-periphery shape, not a
+missing region.
+
 ### The caravan route — heterogeneous beacon + knnu corridor
 
 **Tier:** canon
