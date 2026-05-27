@@ -221,10 +221,10 @@ footer .ct{color:#b9b6a6;letter-spacing:.18em;text-transform:uppercase;margin-bo
 <p><strong style="color:#e8e5d6">TEC</strong> — Tinker-Evers-Chance Convergence, a rare three-way mutual beacon link. Two exist: the Chaonian core and the Trinity Coalition.</p>
 <p><strong style="color:#e8e5d6">Karnos</strong> is the load-bearing junction — the one hub wiring Chaonia, Phene, the Trinity back door, and the outer rim together.</p></div>
 </section><footer><div class="ct">Provenance &amp; caveats</div>
-<div>· Every node and edge traces to the verified compendium; this map is generated from <code>data/topology.json</code> (still a hand-curated v0 — a blocks→JSON generator is the planned follow-up).</div>
-<div>· Many <strong>route</strong> edges have unnamed intermediates (Yele→Chaonia 3 hops, Harahuvati→Destiny 3 drops); drawn as long-dash, not asserted as direct links.</div>
-<div>· The unnamed 8th Mishirru core system, Karnos's dead 7th-beacon pair, and the destinations of most Yele/Anchor beacons are open questions — absent here by design.</div>
-<div>· The Apsaras homeworld ("She Who Bore Them All") is the lost collapsed hub — off the grid, not graphed.</div>
+<div>· Every node and edge traces to the verified, source-cited compendium; the map is generated from <code>data/topology.json</code>, which <code>build-topology.py</code> derives automatically from the compendium's topology blocks.</div>
+<div>· Many <strong>route</strong> edges have unnamed intermediates (Yele→Chaonia 3 hops, Harahuvati→Destiny 3 drops); these are drawn as small hollow placeholder nodes strung along the route, not asserted as named systems.</div>
+<div>· The unnamed 8th Mishirru core system, Karnos's dead 7th-beacon pair, and the destinations of most Yele/Anchor beacons remain open questions — absent here by design.</div>
+<div>· The Gyre lies off the beacon grid (shown as an off-grid node); the Apsaras homeworld ("She Who Bore Them All"), the collapsed hub, is lost and not graphed at all.</div>
 <div style="margin-top:8px;color:#3a3c52">Sourced only from <em>Unconquerable Sun</em> (2020) and <em>Furious Heaven</em> (2023). <em>Lady Chaos</em> (forthcoming) may revise sections.</div></footer></div><div id="tip"></div><script>
 const frame=document.querySelector('.map-frame'), svg=document.querySelector('svg.map');
 const VB={x:316,y:-60,w:1778,h:1640}; function apply(){svg.setAttribute('viewBox',`${VB.x} ${VB.y} ${VB.w} ${VB.h}`);}
