@@ -129,8 +129,9 @@ So the Scepter join holds only under the unsupported assumption that the route f
 the core line via Alabaster. The text never names Harahuvati's beacon endpoints beyond
 Kumbala (knnu in) and Destiny / Belt of Jewels (out), nor links Scepter to it. Multiple
 candidates; none confirmed. Do not assert. (Sun's Gyre expedition doesn't constrain this:
-she reached the Gyre *from* Destiny by knnu, and the Gyre is off the beacon grid — see the
-Gyre entry in [`history.md`](history.md).)
+she reached the Gyre not directly from Destiny but down the **core line** to the
+Cataract↔Oasis stretch and then by Crow-ship/knnu along its brown-dwarf chain — and the
+Gyre's position is off the beacon grid anyway. See the Gyre entry in [`history.md`](history.md).)
 
 ### Where did the half of the Phene fleets that escaped Anchor flee to?
 
