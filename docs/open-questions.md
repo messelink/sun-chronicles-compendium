@@ -127,8 +127,14 @@ Destiny` (= 3 drops) — but it is **not the only solution**, for two reasons:
 
 So the Scepter join holds only under the unsupported assumption that the route follows
 the core line via Alabaster. The text never names Harahuvati's beacon endpoints beyond
-Kumbala (knnu in) and Destiny / Belt of Jewels (out), nor links Scepter to it. Multiple
-candidates; none confirmed. Do not assert. (Sun's Gyre expedition doesn't constrain this:
+Kumbala (knnu in), **Destiny** (3 drops, core-ward) and **Belt of Jewels** (the rim
+terminus), nor links Scepter to it. Note: Destiny and Belt of Jewels are *separate*
+outbound directions — Harahuvati is the **junction** between them, and Belt of Jewels
+connects to Destiny only *through* Harahuvati ("Belt of Jewels didn't used to be connected
+to Destiny at all, not originally", FH ch. 76 — a later-added link), **not** by passing
+through Destiny. The model reflects this (two routes out of Harahuvati). Multiple
+candidates for the 3-drop intermediates; none confirmed. Do not assert. (Sun's Gyre
+expedition doesn't constrain this:
 she reached the Gyre not directly from Destiny but down the **core line** to the
 Cataract↔Oasis stretch and then by Crow-ship/knnu along its brown-dwarf chain — and the
 Gyre's position is off the beacon grid anyway. See the Gyre entry in [`history.md`](history.md).)
