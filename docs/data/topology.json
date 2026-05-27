@@ -496,11 +496,7 @@
       "facilities": [
         "Port Khayzuran"
       ],
-      "control": "Mishirru Province (Phene) → Chaonian invasion staging system (FH)",
-      "layout_near": [
-        "aila",
-        "destiny"
-      ]
+      "control": "Mishirru Province (Phene) → Chaonian invasion staging system (FH)"
     },
     {
       "id": "sleepless",
@@ -638,6 +634,14 @@
       "class": "unknown",
       "polity": "phene",
       "note": "one of Karnos's two beacons into the Phene heartland (twin of Sleepless; both anchored at Karnos Deci/Sept, close to each other, FH ch.34). Leads toward the Triple A but the route is unmapped (Persephone's guess, FH ch.69). Heavily mined; its mined beacon opened by Capt. Angharad Black in the FH climax (ch.96).",
+      "stubs": [
+        {
+          "toward": "Triple A / imperial core",
+          "region": "phene",
+          "status": "inferred",
+          "note": "leads toward the Triple A but the route is unmapped — Persephone's guess (FH ch.69); specific destination system unnamed"
+        }
+      ],
       "layout_near": [
         "sleepless"
       ]
@@ -696,13 +700,6 @@
       "type": "beacon",
       "status": "inferred",
       "note": "Tarsa route leads into the Hatti territories (FH ch.58); pairing inferred"
-    },
-    {
-      "from": "windworn",
-      "to": "anchor",
-      "type": "route",
-      "status": "inferred",
-      "note": "leads toward the Triple A; route unmapped, Persephone's guess (FH ch.69); hops unknown"
     },
     {
       "from": "sleepless",
@@ -872,7 +869,16 @@
       "to": "aila",
       "type": "route",
       "status": "inferred",
-      "note": "Aila route reached 'via Destiny' (FH ch.89); hops unknown"
+      "render_pad": 2,
+      "note": "Aila route reached 'via Destiny' (FH ch.89); hops unknown (render_pad is a presentation-only length cue, not a hop count)"
+    },
+    {
+      "from": "destiny",
+      "to": "sena",
+      "type": "route",
+      "status": "inferred",
+      "render_pad": 2,
+      "note": "Sun's Eighth Fleet 'attacked from Sena' and both prongs were staged from Destiny (FH ch.83); Mishirru-side intermediates unnamed. render_pad is a presentation-only length cue, not a hop count"
     },
     {
       "from": "cataract",
