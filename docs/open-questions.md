@@ -133,11 +133,7 @@ outbound directions — Harahuvati is the **junction** between them, and Belt of
 connects to Destiny only *through* Harahuvati ("Belt of Jewels didn't used to be connected
 to Destiny at all, not originally", FH ch. 76 — a later-added link), **not** by passing
 through Destiny. The model reflects this (two routes out of Harahuvati). Multiple
-candidates for the 3-drop intermediates; none confirmed. Do not assert. (Sun's Gyre
-expedition doesn't constrain this:
-she reached the Gyre not directly from Destiny but down the **core line** to the
-Cataract↔Oasis stretch and then by Crow-ship/knnu along its brown-dwarf chain — and the
-Gyre's position is off the beacon grid anyway. See the Gyre entry in [`history.md`](history.md).)
+candidates for the 3-drop intermediates; none confirmed. Do not assert.
 
 ### Where did the half of the Phene fleets that escaped Anchor flee to?
 
