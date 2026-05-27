@@ -155,6 +155,22 @@ Mishirru-side beacon partner is unnamed, and **Axiom**'s position relative to th
 front is not given (only **Auger** is canon-confirmed as the Aila-facing reinforcement
 source for Anchor, FH ch. 89).
 
+### How does Sena connect back into Mishirru, and was it an original route?
+
+**Tier:** open
+
+Sena's one canon beacon links to **Jorsha** on the Phene side (the Sena prong; see
+[`systems.md`](systems.md)), but how Sena connects *back into* Mishirru is never stated —
+so on the map it reaches only into Phene. The books withhold this deliberately: Sena is
+"marked as the 'official' boundary between Mishirru space and Phene space," and Persephone
+wonders whether it "was on one of the original routes and, if so, which one? Or was it a
+later addition" (FH ch. 76). Contrast **Aila**, reached "via Destiny" (FH ch. 89) and
+recorded as the inferred `Destiny→Aila` route — Sena is given no Mishirru-core neighbour.
+A beacon-vision passage has ships moving "from Sena System along a beacon route that leads
+straight to Karnos" (FH ch. 82), but that narration is explicitly unreliable and points
+away from the core anyway. **Do not infer a Sena→Destiny link** — the source withholds
+Sena's Mishirru-side connection on purpose.
+
 ## Resolved
 
 ### ~~What are the names of all seven Karnos beacons, and which is non-functional?~~
