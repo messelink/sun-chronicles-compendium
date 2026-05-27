@@ -704,9 +704,9 @@
     {
       "from": "tarsa",
       "to": "hatti",
-      "type": "beacon",
+      "type": "route",
       "status": "inferred",
-      "note": "Tarsa route leads into the Hatti territories (FH ch.58); pairing inferred"
+      "note": "Tarsa route 'links into the Hatti territories' (FH ch.58) — a corridor, hop count unstated (not a confirmed single beacon)"
     },
     {
       "from": "sleepless",
@@ -746,9 +746,9 @@
     {
       "from": "hatti",
       "to": "kanesh",
-      "type": "beacon",
+      "type": "route",
       "status": "inferred",
-      "note": "Hatti territories link inward to Kanesh (FH ch.58); pairing inferred"
+      "note": "Hatti territories 'link inward to Kanesh' (FH ch.58) — a corridor, hop count unstated (not a confirmed single beacon)"
     },
     {
       "from": "yele",
@@ -1036,9 +1036,9 @@
     {
       "from": "na_iri",
       "to": "hatti",
-      "type": "beacon",
+      "type": "route",
       "status": "inferred",
-      "note": "Na Iri route leads into the Hatti territories (FH ch.58); pairing inferred"
+      "note": "Na Iri route 'links into the Hatti territories' (FH ch.58) — a corridor, hop count unstated (not a confirmed single beacon)"
     },
     {
       "from": "kaska",
