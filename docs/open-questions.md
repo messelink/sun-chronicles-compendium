@@ -22,12 +22,15 @@ passages found so far.
 
 ### Are the three beacon-hops of the Yele→Chaonia route ever named?
 
-**Tier:** open
+**Tier:** open (sharpened — 1 of 3 now identified)
 
-The route is only ever given as a hop-count — "a short and easy three-beacons hop from Yele
-System to Chaonia" (FH ch. 58). The intermediate systems are never named. **Larissa** lies
-"on the route between Chaonia and Yele" (FH ch. 27) but is not equated with one of the three
-hops — so whether Larissa is one of them or sits beside the route is also open.
+The route is given only as a hop-count — "a short and easy three-beacons hop from Yele
+System to Chaonia" (FH ch. 58). **Larissa** is canonically *on* the route (FH ch. 27,
+"on the route between Chaonia and Yele") — so 1 of the 3 hops is identified. We **model
+Larissa as the Yele-adjacent slot** (see Larissa entry in [`systems.md`](systems.md)),
+which leaves 1 unnamed intermediate between Larissa and Chaonia. Two things remain open:
+(a) Larissa's actual slot on the chain (Yele-adjacent / middle / Chaonia-adjacent — the
+text doesn't pin it); (b) the name of the remaining intermediate.
 
 ### Where exactly do the outer-rim caravan route's knnu gaps fall, and what is the unnamed mid-route system?
 
@@ -43,22 +46,63 @@ confirmed canon — FH ch. 17/20/77 — no longer inferred.)
 
 ### Where do Yele System's other beacons lead, and what are the Yele League's member systems?
 
-**Tier:** open
+**Tier:** open (sharpened — 3 of 8 working now routed; 5 unmapped)
 
-Confirmed: League-internal traffic hubs through Yele (FH ch. 15); three named partners
-(Nalanda, Sankore, Chaonia). Nalanda and Sankore are League systems reached *via* Yele;
-their own beacon counts are unstated. The full League membership and the destinations of
-Yele's remaining beacons are not enumerated.
+Yele has **11 beacons: 3 dead, 8 working** (FH ch. 90). Of the 8 working, **3 are routed**:
+to Nalanda (3-hop chain, FH ch. 60), to Sankore (3-hop chain, FH ch. 60), and to Chaonia
+(3-hop chain via Larissa, FH ch. 27 + 58). The remaining **5 working beacons have unmapped
+destinations**.
+
+**Named League members:** Yele, Nalanda, Sankore, **Takshashila, Al-Quaraouiyine,
+Gondishapur, Padua** (US ch. 48), plus **Larissa** (Yele-origin, Chaonia-assimilated).
+That's 8 named systems; the four new ones (Takshashila etc.) are surfaced only via
+merchant-freighter registries and have **no asserted beacon link to Yele** — they are
+candidates for some of the 5 unmapped destinations. Full membership of the League is
+still not enumerated.
+
+A related open: the **6 unnamed intermediate beacons** along the 3 chains (2 between
+Yele and Nalanda; 2 between Yele and Sankore; 1 between Larissa and Chaonia).
 
 ### What is the Yele League's origin / founding?
 
-**Tier:** open
+**Tier:** open (sharpened — minimum age now anchored)
 
 The books give the Phene and Mishirru detailed origin stories but **no founding account
-for the Yele League**. We have only that Yele System inherited its eleven-beacon hub
-status "in the wake of the collapse" (FH ch. 15) and that the League was the regional
-hegemon for generations (after Eel Gulf; US ch. 4). Whether the Yele descend from
-Mishirru/Argosy stock like the Phene is not stated.
+for the Yele League**. What's now anchored: Yele Prime / Congress Moon has been
+continuously inhabited **at least ~1,800 years** — a heritage temple on Congress Moon is
+explicitly dated "eighteen hundred years ago" (FH ch. 15). Yele also inherited its
+eleven-beacon hub status "in the wake of the collapse" (FH ch. 15) and was the regional
+hegemon for generations after Eel Gulf (US ch. 4). Still open: the *political* founding
+of the League (event, date, charter); whether the Yele descend from Mishirru/Argosy stock
+like the Phene; and who held Yele's regional pre-eminence pre-collapse, if anyone.
+
+### Eel Gulf timing — canonical tension between two passages
+
+**Tier:** open
+
+Two anchors don't reconcile cleanly:
+- **~50 years pre-FH:** a lancer was *"salvaged after fifty years drifting,"* damaged at
+  Eel Gulf (FH ch. 95).
+- **~120–145 years pre-FH:** Manu's aside about Eel Gulf — *"thirty years after that my
+  illustrious forebears beat the socks off your magnificent fleet"* — referring to
+  Demon Walls *"six generations ago"* (US ch. 36); six generations at ~25 yrs ≈ 150 yrs
+  to Demon Walls + 30 = ~120 yrs pre-US.
+
+Plausible resolutions: (a) Manu's "thirty years after" refers to a different
+earlier Phene–Yele engagement, not Eel Gulf; (b) "fifty years drifting" doesn't equate
+"fifty years since the battle" (a ghost ship can drift a fraction of total elapsed time
+before salvage); (c) authorial drift. Record as a flagged tension, don't silently pick
+one.
+
+### Who is the "famous admiral" who mentored Eirene during her hostage years in Yele?
+
+**Tier:** open
+
+Eirene "spent two years in the Yele League, essentially as a hostage… a famous admiral
+took an interest in her and took her under her wing" (FH ch. 52). The admiral is **never
+named**. Plausibly significant given Eirene later became elected Yele strategos — would
+illuminate the factional politics that admitted a Chaonian queen-marshal to a Yele
+military office.
 
 ### Beacon counts / classes still unstated for many mapped systems
 
@@ -71,15 +115,13 @@ Aila, Jorsha, Alternity, Agate, Old Spiral, Refuge, Hunger, Rake, Gardens**. **A
 **Axiom** are each stated as seven-beacon (FH ch. 86) but without Anchor's functional/dead
 split. All recorded `class: unknown` (or total-only) in their topology blocks.
 
-### Which internal links in the Trinity / Yele-frontier triads are direct beacon edges?
+### Which internal Trinity links are direct beacon edges?
 
-**Tier:** open
+**Tier:** open (narrowed — Nalanda↔Sankore is now resolved, see Resolved section)
 
 The Trinity "island" (FH ch. 60) implies all three of Meli/Kumbala/Tsurru are mutually
 linked, but only **Tsurru↔Meli** and **Tsurru↔Kumbala** are independently witnessed —
 **Meli↔Kumbala** as a direct beacon is inferred from the "island" language, not shown.
-Separately, whether **Nalanda↔Sankore** are linked to each other (vs. each only to Yele) is
-not stated.
 
 ### How many beacons did the Apsaras homeworld have, and where is it?
 
@@ -259,6 +301,19 @@ in the Phene core. See the Mishirru↔Phene route in [`systems.md`](systems.md).
 inside Yele System, and explicitly "the same number of dead beacons" as Anchor (also 3 of
 11). This confirms the figure the notes carried; the Yele System topology now records
 `beacons_functional: 8`.
+
+### ~~Are Nalanda and Sankore directly linked to each other (vs. only via Yele)?~~
+
+**Tier:** resolved
+
+**Resolved — no (inference, strong; FH ch. 15, 60, 65).** Three converging passages
+establish that each is reached only via Yele Prime: (1) Zàofù's fleet **split at Yele**
+to send the Sixth to Nalanda and the Ninth to Sankore (FH ch. 65 — a direct link would
+make the split-at-Yele unnecessary); (2) Meli's knnu reaches "either of two Yele League
+systems" (FH ch. 65, plural construction, not a chain); (3) the general "members must
+travel through Yele to get to the other League systems" (FH ch. 15). See the Nalanda &
+Sankore entry in [`systems.md`](systems.md). The Trinity Meli↔Kumbala equivalent
+(unwitnessed direct beacon) remains open above.
 
 ---
 

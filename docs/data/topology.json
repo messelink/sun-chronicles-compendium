@@ -4,7 +4,7 @@
     "provenance": "GENERATED from the ```topology blocks in compendium/*.md by scripts/build-topology.py. Do not hand-edit. The compendium is the source of truth.",
     "counts": {
       "systems": 57,
-      "edges": 63,
+      "edges": 64,
       "convergences": 2
     }
   },
@@ -364,16 +364,11 @@
       "id": "larissa",
       "name": "Larissa",
       "class": "unknown",
-      "polity": "chaonia",
-      "note": "culturally Yele; assimilated",
-      "on_route": "Chaonia ↔ Yele",
-      "culture": "Yele (Larissan Yele dialect; Larissan Centaur Division)",
-      "control": "Republic of Chaonia",
-      "route_note": "only NAMED system on the Chaonia–Yele axis; not confirmed to be one of the 3 hops",
-      "layout_near": [
-        "chaonia",
-        "yele"
-      ]
+      "polity": "yele_league",
+      "note": "Yele-origin; retains Larissan Senate (FH ch.31), Larissan Yele dialect (FH ch.84), Larissan Centaur Division as 'allied Yele League ships' (FH ch.4); Larissa Institute of Technology and Dialectic (FH ch.10)",
+      "control": "chaonia",
+      "on_route": "Yele ↔ Chaonia",
+      "chain_slot": "Yele-adjacent (modelling choice; one unnamed intermediate remains)"
     },
     {
       "id": "maras_shantiya",
@@ -771,9 +766,8 @@
     },
     {
       "from": "yele",
-      "to": "chaonia",
-      "type": "route",
-      "hops": 3
+      "to": "larissa",
+      "type": "beacon"
     },
     {
       "from": "nalanda",
@@ -1050,6 +1044,13 @@
       "to": "t_harbor",
       "type": "knnu",
       "note": "ABSTRACTS the whole multi-gap caravan corridor (Kaska→Hatti→Samuha→Rosetta→…→T-Harbor), not a single knnu hop — the one graph edge that links the Tranquility exclave to the network. Kaska's actual outbound is a beacon drop into the caravan (FH ch.53)."
+    },
+    {
+      "from": "larissa",
+      "to": "chaonia",
+      "type": "route",
+      "hops": 2,
+      "note": "one unnamed intermediate beacon"
     },
     {
       "from": "eel_gulf",

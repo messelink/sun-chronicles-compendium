@@ -167,11 +167,14 @@ Yele System is the eleven-beacon capital of the Yele League — the unnamed 11-b
 class (see [`travel-tech.md`](travel-tech.md), US ch. 42). After the collapse it is one
 of only **two** surviving eleven-beacon systems, the other being **Anchor** in the Phene
 Empire. That hub status is the *source* of League power: member systems must route
-*through* Yele to reach one another, controlling trade and movement. Confirmed links:
-**Nalanda** and **Sankore** each reach Yele Prime via a three-working-beacon run
-(FH ch. 60), and Yele → Chaonia is "a short and easy three-beacons hop" (FH ch. 58).
-These are route hop-counts, **not** identified Yele beacons (see the schema notes). The
-functional count of Yele's eleven beacons is unstated — see [`open-questions.md`](open-questions.md).
+*through* Yele to reach one another, controlling trade and movement. **Of the eleven,
+three are dead and eight working** (FH ch. 90). Of the eight working, **three routes are
+identified**: to Nalanda and Sankore (each a three-beacon run, FH ch. 60) and to
+Chaonia (a three-beacon run, FH ch. 58 — whose Yele-adjacent first hop is the named
+**Larissa**; see the Chaonia–Yele frontier section below). The remaining **five working
+beacons have unmapped destinations**; four named League members
+(**Takshashila, Al-Quaraouiyine, Gondishapur, Padua** — US ch. 48) are candidates
+without asserted beacon links (see entry after Nalanda & Sankore).
 
 ### Yele Prime — capital planet; the Glorious City and the Celestial Shrine
 
@@ -197,6 +200,34 @@ corridors **Meli →(knnu)→ Nalanda / Sankore →(3 beacons)→ Yele Prime** t
 Phene/Trinity traffic reach the League bypassing Chaonia. In a Chaonian show of force the
 fleet split at Yele — Sixth Fleet to Nalanda, Ninth to Sankore (FH ch. 65; see
 [`history.md`](history.md)). No planets or native detail given for either.
+
+**Nalanda ↔ Sankore are not directly linked** (inference, strong) — three converging
+passages: Zàofù's fleet **split at Yele** to send the Sixth to Nalanda and the Ninth to
+Sankore (FH ch. 65 — if a direct Nalanda↔Sankore link existed, the split wouldn't need
+Yele as the pivot); Meli's knnu reaches "either of two Yele League systems" (FH ch. 65 —
+two destinations, not a chain); and the general "members must travel through Yele to get
+to the other League systems" (FH ch. 15). Each is reached only via Yele Prime.
+
+### Takshashila, Al-Quaraouiyine, Gondishapur, Padua — four further named Yele League member systems
+
+**Tier:** canon
+
+*— US ch. 48*
+
+Four named League member systems, surfaced via merchant-freighter registries. Their
+**beacon-link status to Yele Prime is not asserted** in the text — they are explicit
+members but no route is specified. They are candidates for some of Yele's **5 unmapped
+working beacons** (see Yele System entry above). All four (with Nalanda and Sankore)
+echo real-world historical centres of learning — onomastic flavour, not lore.
+
+**Not rendered on the map.** Each is recorded here as a canon List entry, but with no
+asserted beacon link and no other geometric anchor, any rendered position would be
+arbitrary (the map's force-directed layout has no signal to place them, and a `layout_near`
+pin to Yele would either overlap all four at a single point or scatter them across the
+map depending on configuration). They will be added to the topology block — and rendered —
+once a beacon link to them is established in canon. They are also listed in
+[`polities.md`](polities.md#member-systems-of-the-yele-league-named-in-canon) under
+Yele-League membership.
 
 ## Phene core
 
@@ -255,13 +286,18 @@ not stated (see [`open-questions.md`](open-questions.md)).
 
 *— FH ch. 60*
 
-**Meli, Kumbala, and Tsurru** are mutually beacon-linked — a **second** Tinker-Evers-Chance
-convergence, distinct from the Chaonian core (above). The three are physically distant
-but each sits one short knnu gap (50–70 days) from a *different* external trade node,
-giving the Coalition three Argosy routes facing three powers: **Meli → Nalanda/Sankore →
-Yele**, **Kumbala → Harahuvati → Destiny (Mishirru/Phene)**, **Tsurru → Hellion (→
-Karnos)**. (Builds on the existing Tsurru entry, whose beacons to Meli and Kumbala are
-already recorded.)
+**Meli, Kumbala, and Tsurru** are mutually beacon-linked — a **second confirmed**
+Tinker-Evers-Chance convergence, distinct from the Chaonian core (above). The text
+calls TECs "rare" but **never asserts only two exist**; the Anchor / Auger / Axiom
+triangle (the Phene's "Triple A" capital cluster) has confirmed Anchor↔Auger and
+Anchor↔Axiom beacon links (FH ch. 94, "we can get to Auger or Axiom Beacons" from
+Anchor) but Auger↔Axiom is never explicitly asserted — so a third TEC is **not
+ruled out** (see [`open-questions.md`](open-questions.md)). The three Trinity members
+are physically distant but each sits one short knnu gap (50–70 days) from a *different*
+external trade node, giving the Coalition three Argosy routes facing three powers:
+**Meli → Nalanda/Sankore → Yele**, **Kumbala → Harahuvati → Destiny (Mishirru/Phene)**,
+**Tsurru → Hellion (→ Karnos)**. (Builds on the existing Tsurru entry, whose beacons
+to Meli and Kumbala are already recorded.)
 
 ### Meli System — Trinity member facing the Yele League; seat of the Matrone
 
@@ -493,22 +529,32 @@ Orfeo → … → Segovia → T-Harbor → Tranquility. Inner legs are confirmed
 
 ## Chaonia–Yele frontier
 
-### Larissa System — the named waypoint on the Chaonia↔Yele route; a Yele world Eirene assimilated
+### Larissa System — Yele-origin world on the Chaonia↔Yele chain; modeled as the Yele-adjacent hop
 
 **Tier:** canon
 
 *— FH ch. 27*
 
-The **only system the text names on the Chaonia↔Yele axis**. Culturally Yele (the "Larissan
-Yele" dialect; the Larissan Centaur Division counts among "League and allied forces") but
-**assimilated by Chaonia** early in Eirene's reign as a strategic asset. Capital **Larissa
-Prime**; its **Larissan Senate** sends comity envoys to Chaonia — the Yele-facing analogue of
-Kanesh's parliament on the Hatti front. Larissa Prime is also an academic centre — the
-**Larissa Institute of Technology and Dialectic** is named as a prestigious faculty posting
-(FH ch. 10, *"You had a faculty position at the Larissa Institute of Technology and
-Dialectic"*). Whether Larissa is one of the three beacon-hops of
-the Yele→Chaonia route or sits beside it is **not stated** (see [`open-questions.md`](open-questions.md)).
-No beacon count or class is ever given — *silent in text*, not merely un-mined.
+The **only system the text names on the Chaonia↔Yele axis**. Culturally Yele (the
+"Larissan Yele" dialect, FH ch. 84; the **Larissan Centaur Division** counts among
+"allied Yele League ships", FH ch. 4) but **assimilated by Chaonia** early in Eirene's
+reign as a strategic asset (FH ch. 27). Its **Larissan Senate** sends comity envoys to
+Chaonia — the Yele-facing analogue of Kanesh's parliament on the Hatti front (FH ch. 31).
+Larissa Prime is also an academic centre — the **Larissa Institute of Technology and
+Dialectic** is named as a prestigious faculty posting (FH ch. 10). No beacon count or
+class is ever given — *silent in text*, not merely un-mined.
+
+**Polity / control model:** following the [Hatti precedent](#kanesh-system--chaonian-held-gateway-into-the-hatti-territories),
+Larissa carries `polity: yele_league` (regional/cultural identity) and `control: chaonia`
+(current holder). Per `CONVENTIONS.md`: *"polity = region/identity; current CONTROL (if
+different) goes in `control:`"*.
+
+**Position on the 3-hop chain — modelling choice, not canon.** The books place Larissa
+"on the route" but never pin its slot. We model it as the **Yele-adjacent** hop — direct
+beacon `yele ↔ larissa`, then route `larissa → chaonia` with `hops: 2` (one unnamed
+intermediate remains). Reason: Larissa is culturally Yele, so placing it nearer Yele in
+the layout preserves spatial intuition. The middle-slot and Chaonia-adjacent
+alternatives are not ruled out by the text (see [`open-questions.md`](open-questions.md)).
 
 ### Eel Gulf — the knnu waypoint between the Kanesh/Hatti frontier and Yele
 

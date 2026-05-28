@@ -44,8 +44,13 @@ for e in _edges:
             chain.append(pid)
         chain.append(e["to"])
         segs = list(zip(chain, chain[1:]))
+        # parent-route id = the original endpoint pair; lets _counts_x penalise crossings
+        # between segments of DIFFERENT parent routes (e.g. Yele→Nalanda chain shouldn't
+        # weave through the Yele→Sankore chain even though both are same-region soft).
+        rid = f"{e['from']}→{e['to']}"
         for k, (a, b) in enumerate(segs):
-            seg = {"from": a, "to": b, "type": "route_seg", "region": rpol, "inferred": inferred}
+            seg = {"from": a, "to": b, "type": "route_seg", "region": rpol,
+                   "inferred": inferred, "route_id": rid}
             if inferred and k == len(segs) // 2:   # one "route" label per inferred chain, like a stub
                 seg["route_label"] = True
             edges.append(seg)
@@ -214,6 +219,12 @@ def _eregion(a, b):                        # only REAL regions (statuses like 'c
 def _has_ghost(a, b):                      # does this link run through an unnamed placeholder?
     return sid[a].get("class") == "placeholder" or sid[b].get("class") == "placeholder"
 
+# Parent-route lookup for route-segments. Two segments of DIFFERENT routes shouldn't
+# cross even within the same region — prevents the "arms crossing" pathology when two
+# chains fan out from a shared hub (e.g. Yele→Nalanda and Yele→Sankore weaving).
+ROUTE_OF = {frozenset((e["from"], e["to"])): e["route_id"]
+            for e in edges if e.get("type") == "route_seg" and e.get("route_id")}
+
 def _counts_x(a, b, c, d):
     # A crossing is penalised if:
     #  • both links are confirmed (hard×hard) — always avoid; or
@@ -227,6 +238,10 @@ def _counts_x(a, b, c, d):
     if _hard(a, b) and _hard(c, d):
         return True
     if _eregion(a, b).isdisjoint(_eregion(c, d)):   # statuses ('contested'/'unknown') don't count as shared
+        return True
+    # Route-segments of DIFFERENT parent routes shouldn't cross even within the same region.
+    ra = ROUTE_OF.get(frozenset((a, b))); rc = ROUTE_OF.get(frozenset((c, d)))
+    if ra and rc and ra != rc:
         return True
     if (_hard(a, b) and _has_ghost(c, d)) or (_hard(c, d) and _has_ghost(a, b)):
         return True
@@ -760,7 +775,7 @@ LEGEND = f'''<section class="legend">
 </ul></div>
 <div><h3>Reading the Chart</h3>
 <p><strong style="color:#e8e5d6">Topology, not geography.</strong> Position implies relational role (hub, periphery, frontier), not distance.</p>
-<p><strong style="color:#e8e5d6">TEC</strong> — Tinker-Evers-Chance Convergence, a rare three-way mutual beacon link. Two exist: the Chaonian core and the Trinity Coalition.</p>
+<p><strong style="color:#e8e5d6">TEC</strong> — Tinker-Evers-Chance Convergence, a rare three-way mutual beacon link. <strong>Two confirmed</strong> (Chaonian core and Trinity Coalition); the books call TECs &ldquo;rare&rdquo;, not &ldquo;only two&rdquo;.</p>
 <p><strong style="color:#e8e5d6">Karnos</strong> is the load-bearing junction — the one hub wiring Chaonia, Phene, the Trinity back door, and the outer rim together.</p></div>
 </section>'''
 

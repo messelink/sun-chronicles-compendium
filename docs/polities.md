@@ -108,9 +108,62 @@ The Yele are coded as a high-prestige scholarly culture — keepers of "the forg
 languages of the Celestial Empire," philosophers, and seers; the Yele accent is the
 prestige standard every Chaonian imitates. From the Chaonian side they read as arrogant
 and long-winded (US ch. 35). Titles seen: **Baron** (Voy), the honorific **"Honorable,"**
-and **"Prime"/"Eminence"** for the seers. **Note:** the four-armed genengineered
+and **"Prime"/"Eminence"** for the seers. Language registers: **Common Yele** (lingua
+franca of scholars and traders, US ch. 42), **High Yele** (prestige register, FH ch. 64),
+and regional dialects including **Larissan Yele** (FH ch. 84). Greeting: **palms pressed
+together** (FH ch. 15). Physical type: **gracile and taller** than Chaonians (FH ch. 64).
+Military dress: **slate-gray fleet** and **forest-green army** (FH ch. 7); rank "marshal"
+rather than the Phene "admiral" (FH ch. 95). **Note:** the four-armed genengineered
 physiology belongs to the **Phene**, not the Yele — Baron Voy is explicitly remarked on
 as having "only two arms" (FH ch. 7). Don't conflate the two.
+
+### The League Congress — deliberative body on Congress Moon
+
+**Tier:** canon
+
+*— FH ch. 58*
+
+The League's deliberative body, seated on Yele Prime's governmental **Congress Moon**.
+Treaty status with Chaonia is a recurring Congress vote — through FH the pro-Chaonia
+majority held even under Phene+Voy+Iros pressure (Baron Voy's resolution for neutrality
+failed, FH ch. 19, *"Voy's resolution failed. Too many in Congress fear Eirene's
+displeasure."*). The elected **strategos / military leader** is the visible alliance
+office (currently Chaonia's queen-marshal); separate civil offices are not enumerated.
+
+### Member systems of the Yele League (named in canon)
+
+**Tier:** canon
+
+Confirmed by direct attribution in the books:
+
+- **Yele** (capital, 11-beacon hub)
+- **Nalanda**, **Sankore** — each a 3-beacon chain from Yele Prime (FH ch. 60)
+- **Takshashila**, **Al-Quaraouiyine**, **Gondishapur**, **Padua** — surfaced via
+  merchant-freighter registries (US ch. 48, *"in-system merchant freighters bearing the
+  various external markers of member systems of the Yele League"*); beacon connectivity
+  to Yele not asserted
+- **Larissa** — Yele-origin, Chaonia-assimilated; retains its own **Larissan Senate**
+  (FH ch. 31), the **Larissan Yele** dialect (FH ch. 84), and fields the **Larissan
+  Centaur Division** as part of "allied Yele League ships" (FH ch. 4); see Larissa entry
+  in [`systems.md`](systems.md)
+
+Eight named member systems; full membership is **not enumerated**. The four named via
+merchant registries are candidates for some of Yele's 5 unmapped working beacons (see
+Yele System entry in [`systems.md`](systems.md), and [`open-questions.md`](open-questions.md)).
+
+### Yele continuity is at least ~1,800 years
+
+**Tier:** canon
+
+*— FH ch. 15*
+
+A heritage temple on Congress Moon is explicitly **1,800 years old** — pushing Yele
+continuous habitation of Yele Prime / Congress Moon well past the Apsaras collapse
+(~800 yrs ago). Reinforced by Yele's thousand-year-old badge tradition tied to "the
+height of the power of the Apsaras Convergence" (FH ch. 15). Yele self-identifies as
+direct cultural heir of the Apsaras-era civilization; whether the Yele people descend
+from Mishirru/Argosy stock like the Phene is **not stated** (see
+[`open-questions.md`](open-questions.md)).
 
 ## The Trinity Coalition
 
