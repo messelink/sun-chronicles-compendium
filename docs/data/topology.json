@@ -706,7 +706,8 @@
       "to": "hatti",
       "type": "route",
       "status": "inferred",
-      "note": "Tarsa route 'links into the Hatti territories' (FH ch.58) — a corridor, hop count unstated (not a confirmed single beacon)"
+      "render_pad": 1,
+      "note": "Tarsa route 'links into the Hatti territories' (FH ch.58) — a corridor, hop count unstated (not a confirmed single beacon); render_pad:1 marks it as inferred-length, not a direct hop"
     },
     {
       "from": "sleepless",
@@ -748,7 +749,8 @@
       "to": "kanesh",
       "type": "route",
       "status": "inferred",
-      "note": "Hatti territories 'link inward to Kanesh' (FH ch.58) — a corridor, hop count unstated (not a confirmed single beacon)"
+      "render_pad": 2,
+      "note": "Hatti territories 'link inward to Kanesh' (FH ch.58) — a corridor, hop count unstated (not a confirmed single beacon); render_pad:2 reflects Kanesh being the deepest Hatti system (formerly Phene)"
     },
     {
       "from": "yele",
@@ -1037,7 +1039,8 @@
       "to": "hatti",
       "type": "route",
       "status": "inferred",
-      "note": "Na Iri route 'links into the Hatti territories' (FH ch.58) — a corridor, hop count unstated (not a confirmed single beacon)"
+      "render_pad": 1,
+      "note": "Na Iri route 'links into the Hatti territories' (FH ch.58) — a corridor, hop count unstated (not a confirmed single beacon); render_pad:1 marks it as inferred-length, not a direct hop"
     },
     {
       "from": "kaska",

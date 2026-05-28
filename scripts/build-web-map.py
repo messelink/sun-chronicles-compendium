@@ -143,8 +143,10 @@ def force_layout(seed):
             fr, to = e["from"], e["to"]
             dx, dy = p[fr][0] - p[to][0], p[fr][1] - p[to][1]
             d = math.hypot(dx, dy) or 0.01
-            # spring by type: knnu shortest (close neighbours), route longest, beacon mid
-            w = {"knnu": 3.0, "beacon": 1.0, "route": 1.0}.get(e.get("type"), 1.0)   # knnu = short hops
+            # spring by type: knnu shortest (close neighbours), route longest, beacon mid.
+            # knnu = physical short-haul gaps (50–70 days, ≤ a few light-years), so they
+            # should render visibly tighter than beacon edges (instantaneous wormholes).
+            w = {"knnu": 9.0, "beacon": 1.0, "route": 1.0}.get(e.get("type"), 1.0)   # knnu = short hops
             f = d * d / k * w * 1.5; ux, uy = dx / d, dy / d
             disp[fr][0] -= ux * f; disp[fr][1] -= uy * f
             disp[to][0] += ux * f; disp[to][1] += uy * f
