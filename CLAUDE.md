@@ -19,8 +19,12 @@ The **public** half of the *Sun Chronicles* worldbuilding project (parent: `~/pr
 - `docs/` — the trimmed, fair-use compendium for GitHub Pages (MkDocs Material source).
   Includes `docs/data/topology.json` (served, downloadable) and the self-contained
   interactive `docs/map.html` (wrapped by `docs/map.md`).
+- `scripts/` — a **read-only mirror** of the four interesting tools from the private
+  repo (the renderers + the publish step), MIT-licensed, with a generated `README.md`
+  and `LICENSE`. Also overwritten by `publish.py`; never hand-edit here.
 - `mkdocs.yml` — site config (theme, nav). `.github/workflows/deploy.yml` — build + deploy.
-- `README.md` — project intro for visitors.
+- `README.md` — project intro for visitors (hand-authored, not regenerated).
 
-Everything under `docs/` is **generated** by `../compendium-private/scripts/publish.py`;
-edit the private source and re-publish, never hand-edit here.
+Everything under `docs/` and `scripts/` is **generated** by
+`../compendium-private/scripts/publish.py`; edit the private source and re-publish,
+never hand-edit here.
