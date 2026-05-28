@@ -697,35 +697,73 @@ footer .ct{color:#b9b6a6;letter-spacing:.18em;text-transform:uppercase;margin-bo
 
 JS = """
 const frame=document.querySelector('.map-frame'), svg=document.querySelector('svg.map');
-const VB={x:%d,y:%d,w:%d,h:%d}; function apply(){svg.setAttribute('viewBox',`${VB.x} ${VB.y} ${VB.w} ${VB.h}`);}
-// zoom
-frame.addEventListener('wheel',e=>{e.preventDefault();const r=svg.getBoundingClientRect();
- const mx=VB.x+(e.clientX-r.left)/r.width*VB.w, my=VB.y+(e.clientY-r.top)/r.height*VB.h;
- const f=e.deltaY<0?0.88:1.14; const nw=Math.min(Math.max(VB.w*f,260),%d);const s=nw/VB.w;
- VB.w=nw;VB.h*=s; VB.x=mx-(mx-VB.x)*s; VB.y=my-(my-VB.y)*s; apply();},{passive:false});
-// pan
-let pan=null;
-frame.addEventListener('mousedown',e=>{if(e.target.closest('.node'))return;pan={x:e.clientX,y:e.clientY};frame.classList.add('grabbing');});
-window.addEventListener('mousemove',e=>{if(!pan)return;const r=svg.getBoundingClientRect();
- VB.x-=(e.clientX-pan.x)/r.width*VB.w; VB.y-=(e.clientY-pan.y)/r.height*VB.h; pan={x:e.clientX,y:e.clientY};apply();});
-window.addEventListener('mouseup',()=>{pan=null;frame.classList.remove('grabbing');});
-// node drag
+const VB={x:%d,y:%d,w:%d,h:%d}; const MAX_W=%d;
+function apply(){svg.setAttribute('viewBox',`${VB.x} ${VB.y} ${VB.w} ${VB.h}`);}
+function zoomAt(cx,cy,f){
+ const r=svg.getBoundingClientRect();
+ const mx=VB.x+(cx-r.left)/r.width*VB.w, my=VB.y+(cy-r.top)/r.height*VB.h;
+ const nw=Math.min(Math.max(VB.w*f,260),MAX_W); const s=nw/VB.w;
+ VB.w=nw; VB.h*=s; VB.x=mx-(mx-VB.x)*s; VB.y=my-(my-VB.y)*s; apply();
+}
+// wheel zoom (mouse / trackpad)
+frame.addEventListener('wheel',e=>{e.preventDefault(); zoomAt(e.clientX,e.clientY, e.deltaY<0?0.88:1.14);},{passive:false});
+
+// node helpers (used by drag + the highlight tooltip)
 function nodeXY(g){const t=g.getAttribute('transform');const m=/translate\\(([-\\d.]+),([-\\d.]+)\\)/.exec(t);return[+m[1],+m[2]];}
 function moveNode(g,x,y){g.setAttribute('transform',`translate(${x},${y})`);const id=g.dataset.id;
  document.querySelectorAll('.edge').forEach(L=>{if(L.dataset.from===id){L.setAttribute('x1',x);L.setAttribute('y1',y);}
   if(L.dataset.to===id){L.setAttribute('x2',x);L.setAttribute('y2',y);}});}
-let drag=null;
+
+// Unified pan / pinch-zoom / node-drag via Pointer Events (mouse + touch + pen).
+// Single pointer on background = pan; single pointer on .node = drag; two pointers = pinch-zoom.
+const ptrs=new Map();
+let pan=null, drag=null, pinchD=null;
+frame.addEventListener('pointerdown',e=>{
+ ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY});
+ try{frame.setPointerCapture(e.pointerId);}catch(_){}
+ if(ptrs.size===1){
+  const node=e.target.closest('.node');
+  if(node){const[x,y]=nodeXY(node); const r=svg.getBoundingClientRect();
+   drag={id:e.pointerId,g:node,ox:e.clientX,oy:e.clientY,sx:x,sy:y,sc:VB.w/r.width};}
+  else{pan={id:e.pointerId,x:e.clientX,y:e.clientY}; frame.classList.add('grabbing');}
+ }else if(ptrs.size===2){
+  pan=null; drag=null;
+  const [a,b]=[...ptrs.values()]; pinchD=Math.hypot(a.x-b.x,a.y-b.y);
+ }
+});
+frame.addEventListener('pointermove',e=>{
+ if(!ptrs.has(e.pointerId))return;
+ ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY});
+ if(ptrs.size===2){
+  const [a,b]=[...ptrs.values()]; const d=Math.hypot(a.x-b.x,a.y-b.y);
+  if(pinchD && d>0){zoomAt((a.x+b.x)/2,(a.y+b.y)/2, pinchD/d);}
+  pinchD=d; return;
+ }
+ if(drag && drag.id===e.pointerId){
+  moveNode(drag.g, drag.sx+(e.clientX-drag.ox)*drag.sc, drag.sy+(e.clientY-drag.oy)*drag.sc);
+ }else if(pan && pan.id===e.pointerId){
+  const r=svg.getBoundingClientRect();
+  VB.x-=(e.clientX-pan.x)/r.width*VB.w; VB.y-=(e.clientY-pan.y)/r.height*VB.h;
+  pan={id:pan.id,x:e.clientX,y:e.clientY}; apply();
+ }
+});
+function endPointer(e){
+ ptrs.delete(e.pointerId);
+ if(ptrs.size<2)pinchD=null;
+ if(drag && drag.id===e.pointerId)drag=null;
+ if(pan && pan.id===e.pointerId){pan=null; frame.classList.remove('grabbing');}
+}
+frame.addEventListener('pointerup',endPointer);
+frame.addEventListener('pointercancel',endPointer);
+
+// Hover / tooltip (mouse only — touch has no hover; tap-to-tooltip would conflict with drag).
+const tip=document.getElementById('tip');
 document.querySelectorAll('.node').forEach(g=>{
- g.addEventListener('mousedown',e=>{e.stopPropagation();const[x,y]=nodeXY(g);const r=svg.getBoundingClientRect();
-  drag={g,ox:e.clientX,oy:e.clientY,sx:x,sy:y,sc:VB.w/r.width};});
  g.addEventListener('mouseenter',()=>highlight(g));
  g.addEventListener('mouseleave',()=>{clearHi();tip.style.display='none';});
  g.addEventListener('mousemove',e=>{tip.style.display='block';tip.style.left=(e.clientX+14)+'px';tip.style.top=(e.clientY+14)+'px';
   tip.innerHTML=`<b>${g.querySelector('.nlabel').textContent}</b><br><span class="p">${g.dataset.polity} · ${g.dataset.class}</span>`+(g.dataset.note?`<br>${g.dataset.note}`:'');});
 });
-window.addEventListener('mousemove',e=>{if(!drag)return;moveNode(drag.g,drag.sx+(e.clientX-drag.ox)*drag.sc,drag.sy+(e.clientY-drag.oy)*drag.sc);});
-window.addEventListener('mouseup',()=>drag=null);
-const tip=document.getElementById('tip');
 function highlight(g){const id=g.dataset.id;const nbr=new Set([id]);
  document.querySelectorAll('.edge').forEach(L=>{if(L.dataset.from===id)nbr.add(L.dataset.to);if(L.dataset.to===id)nbr.add(L.dataset.from);});
  document.querySelectorAll('.node').forEach(n=>n.classList.toggle('dim',!nbr.has(n.dataset.id)));
@@ -738,7 +776,7 @@ HEADER = '''<header>
 <h1>THE LOCAL BELT <span class="amp">of</span> STARS</h1>
 <div class="subhead">A topological survey of the post-collapse beacon network, knnu corridors, and political regions in <em>Unconquerable Sun</em> &amp; <em>Furious Heaven</em>.</div>
 <p class="lede">Positions are <em>force-laid</em>, not physical — the novels give no coordinates, only the relational topology of beacon pairings and the knnu gaps that bridge them. Lines are <strong>paired connections</strong>, not distances. Generated from the verified <code>topology.json</code>; re-laid automatically as the compendium grows.</p>
-<div class="meta"><span>Force-directed layout</span><span>Drag nodes · scroll to zoom · drag canvas to pan · hover for detail</span><span>Dead beacons noted in node labels (†)</span></div>
+<div class="meta"><span>Force-directed layout</span><span>Drag nodes · scroll or pinch to zoom · drag/swipe to pan · hover for detail</span><span>Dead beacons noted in node labels (†)</span></div>
 </header>'''
 
 # Region swatches are GENERATED from pcolor (the same palette the nodes + hulls use), so
