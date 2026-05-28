@@ -208,13 +208,40 @@ not a settled border (Marshal Qìngzhī argues to fall back to a "static frontie
 Kanesh was the defining grind of the prior generation: Eirene's brother **Queen-Marshal
 Nézhā** died there (a Hesjan ambush at the sixth battle of Kanesh, US ch. 12), and she
 succeeded him; "everyone my age and older fought at Kanesh." The numbered battles run to an
-**Eighth Battle of Kanesh** by FH. Deeper back, the **Battle of Eel Gulf** (~50+ yrs pre-FH:
-a lancer was "salvaged after fifty years drifting," FH ch. 94) was the **Yele victory that
-broke the Phene's decades-long invasion** of the Yele League — the defeat "instigated a
-rumored bloodbath within the Rider Council" and forced the imperial retreat (US ch. 41),
-leaving the Yele regional hegemon until Eirene reversed it. During Sun's FH visit to Kanesh's
-Esplanade, "a seer of Iros tried to murder me" (FH ch. 58) — a disguised militiaman tied to
-the pro-Phene **Evergreen** faction.
+**Eighth Battle of Kanesh** by FH. Critically, the system had been **jointly held by the
+Phene and the Hesjan cartels** — Eirene's reconquest "pushed the Phene and the Hesjan
+cartels out of Kanesh" (FH ch. 4) — co-belligerence, not Phene alone (see Hesjan history
+below). Deeper back, the **Battle of Eel Gulf** (~50+ yrs pre-FH: a lancer was "salvaged
+after fifty years drifting," FH ch. 94) was the **Yele victory that broke the Phene's
+decades-long invasion** of the Yele League — the defeat "instigated a rumored bloodbath
+within the Rider Council" and forced the imperial retreat (US ch. 41), leaving the Yele
+regional hegemon until Eirene reversed it. During Sun's FH visit to Kanesh's Esplanade,
+"a seer of Iros tried to murder me" (FH ch. 58) — a disguised militiaman tied to the
+pro-Phene **Evergreen** faction.
+
+### Chaonia–Hesjan relations cycle across three generations
+
+**Tier:** canon
+
+*— FH ch. 96*
+
+*— US ch. 22*
+
+Chaonia–Hesjan relations cycle with the local balance of power, not with any fixed
+enmity. **Sun's grandfather** struck a treaty with the Hesjan when he needed their
+support (FH ch. 96, an aside in Sun's list of ancestral pragmatism). The relationship
+turned hostile in the post-Eel-Gulf, pre-Eirene era under Yele instigation: **~25 years
+before US**, Hesjan pirates were stealing Argosy knnu ships "with the connivance and
+assistance of the Yele League" (US ch. 22 — a concrete date anchor for the Yele-Hesjan
+secret-alliance era). That hostility culminated in the **Hesjan ambush at the sixth
+Battle of Kanesh** that killed Queen-Marshal Nézhā (US ch. 12), and Eirene's reconquest
+that "pushed the Phene and the Hesjan cartels out of Kanesh" jointly (FH ch. 4). By
+mid-FH, **about half the cartels are allied with the Republic** (FH ch. 53) — the cycle
+has rotated again. Three generations: pro-Chaonia (grandfather) → anti-Chaonia
+(Yele-instigation era; Nézhā's death) → defeated by Eirene → half-aligned under Sun.
+See the Hesjan polity entry in [`polities.md`](polities.md) for the cartel structure and
+symbiont culture that underlie these shifts; the unnamed honcho consort who betrayed
+Nézhā and her son **Prince Jiàn** are in [`characters.md`](characters.md).
 
 ---
 

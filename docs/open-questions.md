@@ -243,6 +243,48 @@ which of the original five, and where the three live ones point (only Troia conf
 attack on *Lukka Prime*; FH ch. 11/16 site *the* Esplanade on *Kanesh Prime*. Two worlds, or
 an inconsistency? Unresolved.
 
+### Hesjan unknowns: cartel count, named cartels, home system, ethnic origin
+
+**Tier:** open
+
+The Hesjan are well-attested as a people (FH ch. 70 lists them as a peer of Phene /
+Chaonia / Yele / Mishirru / Skuda / Gatoi) but the books withhold several basics. Four
+specific gaps:
+
+- **How many cartels exist.** "About half the cartels are allied with the Republic" (FH
+  ch. 53) implies countability, but no count is given.
+- **Any named cartel.** Across both books no individual cartel is named, even when
+  specific cartels matter to the plot (Nézhā's consort's cartel, Makinde's grandmother's
+  cartel, Sun's grandfather's treaty counterparty — none of them named).
+- **Hesjan home system(s) and capital.** "Hesjan-controlled regions" (FH ch. 58) and
+  "Hesjan territory" (FH ch. 47) are geographic abstractions; Rosetta is the
+  *outbound boundary* but is not stated to be Hesjan-held itself. No home world or
+  capital named.
+- **Ethnic origin.** Mishirru, Phene, Yele, and Chaonia all have origin stories anchored
+  to the Argosy-fleet diaspora. The Hesjan have none on the page — silent in canon.
+
+### Where do Hesjan symbionts come from?
+
+**Tier:** open
+
+Symbiont "bees" are central to Hesjan identity (sealed at 1,000 days, treated as
+courtesy sapients under cartel protocol, available in multiple specialised models —
+decapod, war, cargo, wasp, hornet, ribbon). The books **do not say where they come
+from**: are they engineered creatures (Hesjan biotech)? Native fauna of a Hesjan
+world that coevolved with humans? Apsaras-era leftovers, like the beacons themselves?
+A Yele philosopher even debates symbiont consciousness explicitly (FH ch. 55) without
+the question being resolved.
+
+### The half-Hesjan heir — Prince Jiàn's child
+
+**Tier:** open
+
+Prince Jiàn's cartel-honcho consort fled with their infant at the FH endgame; that
+child is half-Hesjan + half-Chaonian-royal, not yet sealed to a symbiont (under 1,000
+days at FH's close, FH ch. 74). Open: the child's name, the refuge cartel, and the
+storyline role. A credible (currently inactive) dynastic claim against Sun's succession
+— almost certainly a *Lady Chaos* thread.
+
 ## Resolved
 
 ### ~~What are the names of all seven Karnos beacons, and which is non-functional?~~

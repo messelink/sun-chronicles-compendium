@@ -60,6 +60,118 @@ notables to congratulate her; she absolves him of complicity in Eirene's death a
 to talk, while warning his mandate is gone. He survives the war. **Open:** anything beyond
 this opening awaits *Lady Chaos* (Book 3).
 
+## Makinde Bō
+
+### Identity — half-Hesjan Bō House scion, Royal Academy graduate, Sun's Companion
+
+**Tier:** canon
+
+*— FH ch. 13*
+
+Makinde Bō is **half Hesjan by descent** — his Hesjan grandmother (a cartel **head
+honcho**) married into Chaonia's **Bō House** as part of "a trade and revenues alliance
+negotiated by her brother" (FH ch. 13). Makinde graduates from the Chaonian Royal Academy
+and is named to Sun's Companions in FH ch. 13 — one of the small group of young
+officer-aristocrats placed beside the queen-marshal. He serves as an ensign on the
+*Sunbird*. The grandmother is unnamed on-page but is referred to as **"the Old Honcho"**
+and inspired a popular in-world serial *Old Honcho and Baby Bee* (FH ch. 13).
+
+### Physical — human-standard; bonded to a decapod symbiont named Dozer
+
+**Tier:** canon
+
+*— FH ch. 13*
+
+Makinde's Hesjan identity is carried by his **bee** — **Dozer**, a decapod symbiont with
+eight arms and two tentacles, mottled mood-colour skin (pink = excitement, yellow = joy,
+orange = anxiety, grey = distress). Dozer can fold and conceal — *"Dozer hides folded
+against Makinde's back"* (FH ch. 23). Per the Hesjan sealing rite, Makinde was bonded to
+Dozer at 1,000 days of age; the bond is lifelong, and Dozer is treated as a courtesy
+sapient under cartel protocol (see [`polities.md`](polities.md#hesjan-symbionts--engineered-bees-bonded-at-one-thousand-days)).
+Makinde's body itself is unmodified — half-Hesjan does not mean half-anything-visible.
+
+### Persona — formal, dutiful, his Hesjan heritage worn quietly
+
+**Tier:** canon
+
+Makinde reads as a properly-trained academy graduate: composed, polite, mission-focused.
+He treats Dozer as a partner — corrects others' use of "it" — and educates curious
+Companions on Hesjan etiquette ("among Hesjan it's considered discourteous to use 'it' for
+symbionts", FH ch. 13). His half-Hesjan heritage is a fact he carries, not a banner he
+waves.
+
+### Arc — Companion appointment, *Sunbird* posting, and the long shadow of the Old Honcho
+
+**Tier:** canon
+
+Through FH he serves as Companion and ensign, supports Sun's tactical decisions, and
+appears at the Anchor campaign's later stages. The Old Honcho serial (FH ch. 13) is a
+recurring cultural reference — Sayre Guī Alsura even takes the Old Honcho persona in a
+cosplay (FH ch. 13). Specific battle moments and command decisions for Makinde await a
+follow-up pass.
+
+### Fate — survives FH; the half-Hesjan inheritance is a thread for *Lady Chaos*
+
+**Tier:** canon
+
+Makinde survives the Anchor campaign and remains a Companion through FH's close. The
+deeper "half-Hesjan in Chaonia's inner circle" thread connects to the open question of
+Sun's grandfather's earlier Hesjan treaty (see [`history.md`](history.md)) and to Prince
+Jiàn's half-Hesjan heir (below) — both anticipating *Lady Chaos*.
+
+## Prince Jiàn
+
+### Identity — half-Hesjan son of Queen-Marshal Nézhā and his traitor consort
+
+**Tier:** canon
+
+*— US ch. 5*
+
+*— FH ch. 74*
+
+Prince Jiàn is the son of Queen-Marshal **Nézhā** (Eirene's elder brother) by his
+**Hesjan honcho consort** — an unnamed cartel boss in her own right. The marriage was a
+dynastic Chaonia-Hesjan alliance that one faction of the cartels sabotaged: the consort
+betrayed Nézhā at the **sixth Battle of Kanesh**, where he died (US ch. 12). She fled
+back to her cartel afterwards, leaving the infant Jiàn behind.
+
+### Physical — half-Hesjan, unmodified body; raised on Pelasgia Terce in internal exile
+
+**Tier:** canon
+
+Like Makinde, Jiàn is half-Hesjan by descent without visible body modification. He was
+raised in internal exile on **Pelasgia Terce** (US ch. 33, FH ch. 39 area) — kept clear
+of Chaonian succession politics by Eirene, the aunt who took her brother's throne.
+
+### Persona — a dynastic complication, never fully developed on-page
+
+**Tier:** canon
+
+Jiàn appears as a political fact more than as a fleshed-out character: the legitimate
+half-Hesjan heir of Nézhā's line, alive and at large, an alternative throne claim Eirene
+chose to manage rather than eliminate. His onscreen interactions are minimal.
+
+### Arc — coup support and death; leaves a secret half-Hesjan child behind
+
+**Tier:** canon
+
+*— FH ch. 74 (paraphrase context; the consort wears the **ribbon symbiont** = class-four
+military-grade, "reserved for high-level cartel honchos")*
+
+Jiàn supports the coup against Eirene that opens FH; the coup fails. Jiàn is killed
+during the FH endgame. Critically, his **cartel-born consort** (also unnamed; wears a
+ribbon symbiont marking her as cartel elite) had borne him an infant **not yet 1,000 days
+old**, who has therefore **not yet been sealed to a symbiont** at the close of FH (FH ch.
+74). The consort flees back to her cartel with the child.
+
+### Fate — dead; the half-Hesjan heir survives in cartel space — a *Lady Chaos* thread
+
+**Tier:** canon
+
+Jiàn dies; his half-Hesjan, half-Chaonian-royal child remains alive in cartel-controlled
+Hesjan space, hidden, a credible (and currently inactive) dynastic claim against Sun's
+succession. **Open:** named cartel of refuge, child's name, role in *Lady Chaos*.
+
 ---
 
 ---

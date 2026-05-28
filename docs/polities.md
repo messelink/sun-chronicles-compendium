@@ -210,19 +210,119 @@ elsewhere" (FH ch. 64).
 
 ## Frontier peoples
 
-### The Hesjan and Skuda — outer-rim peoples whose lands the caravan route crosses
+The local-belt enumeration (FH ch. 70: "Mishirru, Yele, the empire, Chaonia, the Hesjan
+and the Skuda Reach and Gatoi") groups three peer outer-rim peoples — **Hesjan, Skuda,
+Gatoi** — alongside the four major powers. They are *not* a single bloc: each is its own
+people with its own territory, culture, and ships.
+
+### The Hesjan — fractious cartels of bonded-symbiont people
 
 **Tier:** canon
 
-*— US ch. 13*
+*— US ch. 2*
 
-The outer-rim caravan route (see [`systems.md`](systems.md)) runs through two semi-independent
-frontier peoples. The **Hesjan** are organised as "fractious cartels" — a body-modifying
-culture, historically half-allied / half-hostile to both Chaonia and the Phene (about half the
-cartels side with the Republic by FH). The **Skuda** hold the **Skuda Reach** at "the farthest
-boundaries of beacon space," home to raiders and subgroups like the **Skew-Neck Skuda** at
-**Flood Terminus**. Neither is a beacon-network polity; their region is the broken-beacon,
-knnu-bridged middle of the rim route, raided also by **Gatoi brigands**.
+*— FH ch. 31*
+
+The Hesjan are a people organised politically as **cartels** — plural, fractious, with no
+named central state. The in-world title for a cartel boss is **honcho** (gender-neutral;
+"head honcho" the highest). Cartels conduct **cross-cartel marriage alliances** as a
+diplomatic instrument; "killing a bonded symbiont breaches cartel protocol" (FH ch. 81,
+which grants symbionts "courtesy sapient" status). Cartels also operate a protection /
+escort economy on the outer-rim caravan route — *"The cartels protect shipping. As long
+as you pay them"* (FH ch. 11). No individual cartel is named on-page; nor is any Hesjan
+home system. Their territory begins at **Rosetta System** outbound from Chaonia (FH ch.
+53, *"Once we reach Rosetta System we'll enter cartel-controlled space"*) and stretches
+along the partly-collapsed outer-rim corridor toward Tranquility on the Phene side
+(see [`systems.md`](systems.md)).
+
+**Cycle of alignment with Chaonia.** Hesjan loyalties oscillate with the local balance
+of power: Sun's grandfather "made a treaty with the Hesjan because he needed their
+support" (FH ch. 96); the Yele then "contracted secret alliances with the Hesjan to
+make trouble for us" pre-Eirene (US ch. 4), culminating in the Hesjan ambush at the
+sixth Battle of Kanesh that killed Queen-Marshal Nézhā (US ch. 12); Eirene reconquered
+Kanesh from "the Phene and the Hesjan cartels" jointly (FH ch. 4) and "defeated the
+Hesjan cartels" politically (US ch. 4); by mid-FH **about half the cartels are allied
+with the Republic** and the other half are independent corsairs (FH ch. 53). They are
+*courted by both sides*, not expanding, not unified.
+
+**Religion.** Hesjan religion is organised enough to export a recognisable sacred-place
+type: the **"Hesjan henge"**, a paved stone-circle "split into three sections," appears
+on Tjeker (US ch. 41) and on a Phene-built habitat (FH ch. 87) — listed in
+religious-tolerance districts alongside Bel temples, Mishirruvian theatra, basilicas.
+
+**Note on "Hesjan corsairs."** The standard outer-rim raider triad (FH ch. 47, "Skuda
+raiders, Gatoi brigands, and Hesjan corsairs") is three distinct ship-and-people
+combinations. The Yele-class hull used by Skuda and Gatoi (FH ch. 11) is *not* the
+Hesjan corsair hull; the Hesjan type is unnamed in canon. Visually distinctive at dock —
+*"the corsairs with their motley crews and wild symbionts"* (FH ch. 47).
+
+### Hesjan symbionts — engineered "bees" bonded at one thousand days
+
+**Tier:** canon
+
+*— FH ch. 13*
+
+*— FH ch. 13*
+
+**Bees** = bionic enhanced escorts. Every Hesjan-descent child is sealed to one at 1,000
+days of age — a life-stage rite of the whole people, not a class privilege. Bonds are
+lifelong; each bee has its own name and individual personality ("among Hesjan it's
+considered discourteous to use 'it' for symbionts. My grandmother's clan uses 'ou' for
+theirs" — FH ch. 13; pronoun usage varies by clan).
+
+**Models seen on-page.** *Decapod* — common ship/habitat model, eight arms + two
+tentacles, mood-colour mottled skin (pink = excitement, yellow = joy, orange = anxiety,
+grey = distress, FH ch. 13). *War bee* and *cargo bee* (specialised function, FH ch.
+13). *Wasps* and *hornets* — smaller, FH ch. 11 / ch. 55. *Ribbon* symbiont — meter-long
+hundred-legged, classified by Chaonia as a **class-four military-grade weapon**, and
+"generally reserved for high-level cartel honchos, especially family members intended
+for cross-cartel alliances" (FH ch. 74). The symbiont **species at sealing-age signals
+rank-and-purpose** in cartel hierarchy: decapods are everyday, ribbon-bonded are the
+alliance-marriage dynastic class.
+
+**Capabilities.** Symbionts can spit killing toxins (FH ch. 74), extrude comms /
+recording tendrils, fold and conceal in pockets, communicate with their bonded human
+via subvocal channels (FH ch. 55, *"ZAP THE FUCKER… subvocalized to Dozer"*). Chaonia
+registers them as low-mind AI (FH ch. 13); cartel protocol treats them as **courtesy
+sapients** (FH ch. 81) — a legal/cultural divergence. A Yele bystander identifies a
+Hesjan symbiont *on sight* in a casual setting (FH ch. 55) — the symbiont, not the
+carrier's body, is the recognisable Hesjan marker.
+
+**Note: Hesjan bodies themselves are not modified.** Half-Hesjan characters (see
+[`characters.md`](characters.md), Makinde Bō; Prince Jiàn) pass as Chaonian unmarked.
+The "body-modifying culture" framing is **bonded engineered companion organisms**, not
+somatic engineering — explicitly distinct from Phene gene-engineering.
+
+### The Skuda — peoples at the terminus end of beacon space
+
+**Tier:** canon
+
+*— US ch. 32*
+
+*— FH ch. 31*
+
+The Skuda hold the **Skuda Reach** at the outermost edge of the surviving beacon
+network — past Hesjan space along the caravan-route axis, "in the shadow of **Jade
+Skirt** System." They have their own language (FH ch. 76: a Trinity multilingual learns
+"hundreds of words" of it), their own diplomatic delegation style — *"peaked hats and
+spangled waistcoats"* at Sun's accession (FH ch. 31) — and named sub-tribes including
+the **Skew-Neck Skuda** at **Flood Terminus** (FH ch. 50). They overlap with the
+Hesjan in the standard outer-rim raider triad (Skuda raiders / Gatoi brigands / Hesjan
+corsairs, FH ch. 47), but are **a distinct people**, not the same as the Hesjan
+("through the Hesjan territories *and along* the Skuda Reach", FH ch. 47).
+
+### The Gatoi — knnu-wheelship clan nomads
+
+**Tier:** canon (briefly recorded; needs its own dedicated mining)
+
+*— US ch. 2*
+
+The third of the outer-rim triad. Clan-structured nomads on **knnu-drive wheelships**;
+eleven clan wheelships in total. Have a **Royal** caste (Sun's father is a Gatoi
+Royal, US ch. 1). "**90 percent of Gatoi banner soldiers fight for the Phene**" (US ch.
+1) — Phene-aligned mercenaries, fundamentally different from Hesjan cartel-corsair
+culture. The ship class **"Gatoi arrows"** (FH ch. 11) is the Yele-class hull flown by
+Gatoi raiders. The Gatoi warrant their own mining pass when prioritised.
 
 ## The Hatti region
 
