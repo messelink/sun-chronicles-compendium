@@ -3,8 +3,8 @@
     "title": "Sun Chronicles beacon-network topology",
     "provenance": "GENERATED from the ```topology blocks in compendium/*.md by scripts/build-topology.py. Do not hand-edit. The compendium is the source of truth.",
     "counts": {
-      "systems": 57,
-      "edges": 64,
+      "systems": 60,
+      "edges": 67,
       "convergences": 2
     }
   },
@@ -109,7 +109,24 @@
       "beacons_functional": 8,
       "beacons_dead": 3,
       "named_beacons": [],
-      "control": "Phene Empire (imperial capital; one of the Triple A — Anchor/Auger/Axiom)"
+      "control": "Phene Empire (imperial capital; one of the Triple A — Anchor/Auger/Axiom)",
+      "stubs": [
+        {
+          "region": "unknown",
+          "severed": true,
+          "note": "dead beacon — Apsaras-collapse casualty, pair-end unnamed; inferred Gap-bound (inner-radial hub casualty)"
+        },
+        {
+          "region": "unknown",
+          "severed": true,
+          "note": "dead beacon — Apsaras-collapse casualty, pair-end unnamed; inferred Gap-bound"
+        },
+        {
+          "region": "unknown",
+          "severed": true,
+          "note": "dead beacon — Apsaras-collapse casualty, pair-end unnamed; inferred Gap-bound"
+        }
+      ]
     },
     {
       "id": "arafel",
@@ -275,9 +292,18 @@
       "role": "smuggler haven; Karnos-side mouth of the Phene↔Yele back door",
       "note": "was janus; smuggler back-door mouth",
       "beacons_total": 1,
+      "beacons_functional": 1,
+      "beacons_dead": 1,
       "class_former": "janus",
       "connects": [
         "karnos"
+      ],
+      "stubs": [
+        {
+          "region": "unknown",
+          "severed": true,
+          "note": "the dead 2nd beacon — Apsaras-collapse cascade casualty with 'spiny starburst' aura (FH ch.41); pair-end unnamed but inferred Gap-bound (Hellion sits on the Gap edge)"
+        }
       ]
     },
     {
@@ -371,6 +397,14 @@
       "chain_slot": "Yele-adjacent (modelling choice; one unnamed intermediate remains)"
     },
     {
+      "id": "libertalia",
+      "name": "Libertalia",
+      "class": "unknown",
+      "polity": "unknown",
+      "note": "lost in the Apsaras collapse; unreachable; pair-end of Tsurru's dead Libertalia Beacon (FH ch.67); possibly She Who Bore Them All per Persephone's speculation (FH ch.61), but not stated",
+      "status": "lost"
+    },
+    {
       "id": "maras_shantiya",
       "name": "Maras Shantiya",
       "class": "unknown",
@@ -427,6 +461,21 @@
       "detail": "appears to lack a settled planet"
     },
     {
+      "id": "odrysa",
+      "name": "Odrysa",
+      "class": "terminus",
+      "polity": "chaonia",
+      "note": "outer-rim Chaonian frontier; the Sunbird picket-circuit (FH ch.12); was janus, now terminus after the Apsaras-collapse killed its 2nd beacon; the dead beacon's toxic aura infected its anchor planet Odrysa Sept; an Argosy knnu anchor from ~94 yrs pre-FH (Queen-Marshal Metis's reign) still sits at the heliopause",
+      "beacons_total": 2,
+      "beacons_functional": 1,
+      "beacons_dead": 1,
+      "class_former": "janus",
+      "planets": [
+        "Odrysa Prime",
+        "Odrysa Sept"
+      ]
+    },
+    {
       "id": "old_spiral",
       "name": "Old Spiral",
       "class": "unknown",
@@ -448,6 +497,13 @@
       "class": "waypoint",
       "polity": "mishirru",
       "note": "brown-dwarf waypoint (Cataract route)"
+    },
+    {
+      "id": "pselkis",
+      "name": "Pselkis",
+      "class": "janus",
+      "polity": "chaonia",
+      "note": "Chaonian outer-rim; partner of the Odrysa working beacon; site of the Pselkis Campaign ~45 yrs pre-FH where Queen-Marshal Jīnzhā died (FH ch.47); recent battle 'last year' before FH (FH ch.12)"
     },
     {
       "id": "rake",
@@ -664,7 +720,24 @@
       "beacons_functional": 8,
       "beacons_dead": 3,
       "control": "Yele League (capital)",
-      "hub_note": "hub monopoly is the basis of League power"
+      "hub_note": "hub monopoly is the basis of League power",
+      "stubs": [
+        {
+          "region": "unknown",
+          "severed": true,
+          "note": "dead beacon — Apsaras-collapse casualty, pair-end unnamed; inferred Gap-bound (inner-radial hub casualty, see history.md)"
+        },
+        {
+          "region": "unknown",
+          "severed": true,
+          "note": "dead beacon — Apsaras-collapse casualty, pair-end unnamed; inferred Gap-bound"
+        },
+        {
+          "region": "unknown",
+          "severed": true,
+          "note": "dead beacon — Apsaras-collapse casualty, pair-end unnamed; inferred Gap-bound"
+        }
+      ]
     }
   ],
   "edges": [
@@ -753,6 +826,21 @@
       "note": "Hatti territories 'link inward to Kanesh' (FH ch.58) — a corridor, hop count unstated (not a confirmed single beacon); render_pad:2 reflects Kanesh being the deepest Hatti system (formerly Phene)"
     },
     {
+      "from": "odrysa",
+      "to": "pselkis",
+      "type": "beacon",
+      "name": "Pselkis Beacon",
+      "anchor_planet": "Odrysa Prime"
+    },
+    {
+      "from": "pselkis",
+      "to": "chaonia",
+      "type": "route",
+      "status": "inferred",
+      "render_pad": 2,
+      "note": "'route led back into the heart of the republic' (FH ch.12); no intermediate systems named — render_pad:2 marks it as inferred-length, not a direct hop"
+    },
+    {
       "from": "yele",
       "to": "nalanda",
       "type": "route",
@@ -828,6 +916,13 @@
       "to": "tsurru",
       "type": "knnu",
       "note": "6 light-years"
+    },
+    {
+      "from": "tsurru",
+      "to": "libertalia",
+      "type": "beacon",
+      "status": "severed",
+      "note": "Libertalia Beacon — dead beacon anchored at Tsurru Prime, Apsaras-collapse casualty (FH ch.67)"
     },
     {
       "from": "landfall",

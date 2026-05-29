@@ -131,6 +131,55 @@ Tomyris Vata. Its parliament is **indigenous** — Kanesh's own body, shut by th
 "comity" envoys to Chaonia. **Five beacons** were charted before the collapse, only
 **three functional** now (FH ch. 11) — a scylla degraded to three live beacons.
 
+## Chaonian outer rim
+
+### Odrysa System — janus → terminus; the Phene picket *Sunbird*'s posting; Apsaras-collapse casualty
+
+**Tier:** canon
+
+*— FH ch. 12*
+
+*— FH ch. 12*
+
+A Chaonian frontier system, **terminus** today, formerly **janus**. Two planets named
+on-page: **Odrysa Prime** (anchor of the surviving Pselkis Beacon) and **Odrysa Sept**
+(anchor of the dead beacon — *"a terrestrial world with a sluggish white-and-pink cloud
+cover filled with toxins"*, FH ch. 12; the cloud toxicity is canonical evidence of the
+**dead-beacon "garish-aura" infection** that ruins anchor planets). The surviving
+**Pselkis Beacon** anchored at Odrysa Prime *"led back into the heart of the republic"*
+— so Odrysa is Chaonian, not Phene as the *Sunbird*'s "ass end of nowhere" posting
+descriptor might first suggest.
+
+Site of Makinde Bō's picket-cutter command (*Sunbird*, FH ch. 12) — where the
+Argosy-wreck plot opens. Also a date-anchor for the deep-history: a **knnu anchor** laid
+by an Argosy fleet last seen here "during Queen-Marshal Metis's reign" (~94 yrs pre-FH)
+still sits at Odrysa's heliopause.
+
+**Apsaras-collapse casualty.** *"Eight hundred years ago, parts of the beacon network had
+collapsed for reasons no one understood. Many beacons had failed. This was one of those.
+No ships would ever enter or exit this beacon again. An aura of garish colors shimmered
+inside its coil and spilled outward… Whatever had killed the beacon had infected the
+previously habitable planet"* (FH ch. 12). The dead beacon's paired system is **unnamed
+in canon** — recorded as count-only (not as a `severed` edge, because we have no named
+pair to render to).
+
+### Pselkis System — Chaonian-inward beacon partner of Odrysa; site of the Pselkis Campaign
+
+**Tier:** canon
+
+*— FH ch. 12*
+
+*— FH ch. 47*
+
+A Chaonian system on the Odrysa→republic route; surfaced in canon as the destination of
+Odrysa's Pselkis Beacon and as the locus of the **Pselkis Campaign** ~45 yrs pre-FH —
+Queen-Marshal **Jīnzhā** (Sun's uncle) was *"knifed through the eye into the brain by a
+banner soldier during a boarding action"* there. Pselkis was also a recent flashpoint
+(*"in the wake of last year's battle"*, FH ch. 12). Beacon class is **not stated**; the
+two beacons we can infer are *(a)* the Odrysa Beacon at Pselkis (pair of Odrysa's
+Pselkis Beacon) and *(b)* the inward link "back into the heart of the republic" — so
+Pselkis is minimum **janus** (prime-rule) but could be larger.
+
 ## Mishirru / deep-interior systems
 
 ### Tsurru System — three beacons on every map, but a hidden fourth (and a forced fifth)
@@ -146,6 +195,15 @@ must also exist — making Tsurru a concealed scylla. This independently reconfi
 prime-number rule *and* establishes that beacon maps can be incomplete: beacons can be
 hidden or omitted. The discovered fourth beacon is itself dead/inert (a "big dead"
 artifact with no aura).
+
+**The dead Tsurru-Prime beacon is canonically named Libertalia** (FH ch. 67, Persephone:
+*"Libertalia is a dead beacon"*) — per the convention that beacons are named for their
+destination, **Libertalia is the (lost) destination system**. Persephone speculates
+(FH ch. 61) about a dead Tsurru-system beacon: *"For all we know, it linked directly to
+She Who Bore Them All"* — i.e. the dead Tsurru-side beacon may have faced the lost
+Apsaras hub. **First named Gap-cascade casualty pair** in the compendium; see the
+[Libertalia entry](#libertalia--apsaras-collapse-casualty-lost-system-paired-with-the-dead-libertalia-beacon-at-tsurru)
+below and Apsaras Gap topology in [`history.md`](history.md).
 
 ### Landfall — terminus; first Argosy haven and end of the Mishirru janus line
 
@@ -190,6 +248,17 @@ Chaonia (a three-beacon run, FH ch. 58 — whose Yele-adjacent first hop is the 
 beacons have unmapped destinations**; four named League members
 (**Takshashila, Al-Quaraouiyine, Gondishapur, Padua** — US ch. 48) are candidates
 without asserted beacon links (see entry after Nalanda & Sankore).
+
+**On the 3 dead beacons.** Persephone notes the symmetry explicitly — *"Of Yele's
+eleven beacons, three are dead, which, curiously enough, is the same number of dead
+beacons in Anchor's eleven-beacon system"* (FH ch. 90). **The most parsimonious reading
+is that both eleven-beacon hubs lost their inner-radial connections toward She Who Bore
+Them All** in the Apsaras collapse — Yele and Anchor are the two survivors of the
+original Apsaras hub class, both lost an identical 3 to the collapse, both face the
+central Gap topologically. Not canonically stated; strong inference. See the Apsaras
+Gap entry in [`history.md`](history.md) and the open question on dead-beacon
+directionality in [`open-questions.md`](open-questions.md). The pair-ends are
+**unnamed** in canon — recorded as count-only, not as `severed` edges.
 
 ### Yele Prime — capital planet; the Glorious City and the Celestial Shrine
 
@@ -262,6 +331,14 @@ and one of the three founding **Triple A** capital systems — Anchor, Auger, Ax
 [`polities.md`](polities.md)). Capital planet **Anchor Prime**. Reached from Karnos along
 the Sleepless corridor (below) and, in FH's climax, invaded for the first time in Phene
 history (see [`history.md`](history.md)).
+
+**On the 3 dead beacons.** Persephone flags the **identical-to-Yele symmetry** as
+*"curiously enough"* (FH ch. 90). **Most parsimonious reading: both 11-beacon survivors
+lost their inner-radial connections toward She Who Bore Them All in the collapse** —
+each 11-beacon system was structurally a primary Apsaras hub, and both face the central
+Gap. Not canonically stated; strong inference. See [`history.md`](history.md) Apsaras
+Gap entry. The 3 dead pair-ends are **unnamed** in canon — recorded as count-only, not
+as `severed` edges.
 
 ### Haymarket System — intact cerberus crossroads on the Karnos→Anchor corridor
 
@@ -349,7 +426,36 @@ cf. Odrysa, FH ch. 11). Not a dead end but a *back door*: a six-light-year knnu 
 reaches **Tsurru** in the Trinity Coalition, opening the Phene↔Yele bypass around Chaonia.
 A smuggler haven, outside Chaonian reach pre-FH.
 
-### Tsurru — Trinity role (addendum to the entry above)
+**The dead Hellion beacon is a visible Apsaras-collapse casualty.** *"It had originally
+been a janus system but was now a terminus because its second beacon had died in the
+Apsaras Collapse. She'd seen that beacon up close, stained with a glorious neon-glow
+aura in the shape of spiny starburst, an artifact of the cascading failure"* (FH ch. 41).
+The dead beacon's paired system is **not named** — but its destination is canonically
+*toward* the Gap (Hellion sits on the Gap's outer rim — see Apsaras Gap entry in
+[`history.md`](history.md)).
+
+### Libertalia — Apsaras-collapse casualty; lost system paired with the dead Libertalia Beacon at Tsurru
+
+**Tier:** canon
+
+*— FH ch. 67*
+
+The destination system of Tsurru's dead beacon, named per the convention that beacons
+are named for the systems they link to (see [`travel-tech.md`](travel-tech.md)). The
+beacon at the Tsurru-Prime anchor is the **Libertalia Beacon**; Libertalia System is its
+(unreachable) pair. Lost in the **Apsaras collapse** ~800 yrs ago — no surviving link.
+Persephone's speculation in FH ch. 61 (*"For all we know, it linked directly to She
+Who Bore Them All"*) is the only on-page guess at Libertalia's identity; whether the
+named-and-lost Libertalia *is* the Apsaras homeworld, or merely a Gap-bound system that
+happened to be on the Libertalia-Tsurru link, is **open**.
+
+**The first named Gap-cascade casualty pair in the compendium.** Other dead-beacon
+counts in surviving systems (Karnos's 7th, Yele's 3, Anchor's 3, Kanesh's 2, Hellion's
+2nd, Odrysa's 2nd) have **unnamed pairs** — Libertalia is the only specifically named
+lost system on-page. Modelled as a **severed beacon edge** from Tsurru, no spring-pull
+adjustment for now; future map work may pull Libertalia (and others) inward toward an
+explicit Apsaras Gap centre — see the open question in
+[`open-questions.md`](open-questions.md).
 
 **Tier:** canon
 

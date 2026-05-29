@@ -171,6 +171,43 @@ Apsaras-era engineers caught in the collapsing network, (b) residual memory
 imprints, (c) genuine non-human intelligences inhabiting the beacon-substrate, or
 (d) artefacts of Persephone's beacon-sickness, the text refuses to resolve.
 
+### Which specific dead beacons face the Gap vs the outer-network cascade?
+
+**Tier:** open
+
+The collapse left ~1/3 of beacons dead via two distinct patterns (US ch. 3): a central
+catastrophe at She Who Bore Them All (11→13 overload hypothesis, FH ch. 60) and random
+outer-network cascade ruptures. **Canon names exactly one Gap-cascade pair**: Tsurru ↔
+**Libertalia** (FH ch. 67). All other dead beacons in the modern map have **unnamed
+pairs** — Karnos's 7th, Yele's 3, Anchor's 3, Kanesh's 2, Hellion's 2nd, Odrysa's 2nd,
+plus Tsurru's hidden dead beacons (per the prime-rule reconstruction).
+
+**The inference for Anchor's 3 dead and Yele's 3 dead facing the Gap** is strong — both
+are 11-beacon survivors of the original Apsaras hub class, both lost an identical 3 to
+the collapse, and Persephone explicitly flags the symmetry as *"curious"* (FH ch. 90).
+Inner-radial connections to She Who Bore Them All would account for it precisely. But
+not stated. Other dead beacons (Karnos's 7th, Kanesh's 2, Hellion's 2nd, Odrysa's 2nd)
+could equally be outer-network cascade ruptures pointing at non-Gap surviving systems.
+
+Persephone's strategic project (FH ch. 76) is to back-derive the pre-collapse beacon
+map from a Phene-Immortal memory device — i.e. **this is an explicit in-universe open
+project**. Until *Lady Chaos* or Persephone's reconstruction surfaces specific
+pair-end identifications, we record only Libertalia as a confirmed Gap pair and note
+all other dead beacons as count-only.
+
+### Are the apsaras in the Gap surviving minds, residual recordings, or hallucinations?
+
+**Tier:** open (sharpened — confirmed canonical, but nature unresolved)
+
+Earlier framing in the file noted the rumour (US ch. 39); FH ch. 80 confirms the
+minds operationally — Persephone *lets them in*, addresses them as the divine apsaras,
+and contacts them. **The phenomenon is canonical**, not rumour. What stays open is
+their **nature**: (a) surviving consciousnesses of Apsaras-era people fractured in
+the collapse, (b) residual memory imprints, (c) non-human intelligences inhabiting
+the beacon substrate, or (d) artefacts of beacon-sickness perception. The Oracle's
+restoration prophecy (FH ch. 76) implies the Gap can be undone — what then happens to
+the minds inside is the load-bearing cosmological question for *Lady Chaos*.
+
 ### Who were the Celestial Empire's people, and where was it physically?
 
 **Tier:** open

@@ -7,8 +7,8 @@ technology, and key strategic situations.
 
 Every fact is drawn from the published novels and **cited** (book + chapter), and tiered
 **canon** (stated in the text), **inference** (reasoned, labelled), or **open** (the
-books are silent). Currently **148 entries** (110 canon) across
-**57 catalogued systems**.
+books are silent). Currently **154 entries** (115 canon) across
+**60 catalogued systems**.
 
 ## Start here
 

@@ -215,6 +215,116 @@ She Who Bore Them All restored to her central place in the network."* The Apsara
 secrets lie at the unreachable home system; the Oracle frames restoration as Sun's
 potential mission. Almost certainly a *Lady Chaos* thread.
 
+### The Apsaras Gap as a topological feature — synonymy, scale, and the survivors on its rim
+
+**Tier:** canon
+
+*— US ch. 3*
+
+*— FH ch. 60*
+
+*— FH ch. 58*
+
+The Gap is **canonically named three ways**: "Apsaras Gap" (formal, US ch. 3), "Middle
+Gap" (strategos register, FH ch. 60), and "the Gap" (common shortening). All three
+denote the same central beaconless expanse — though the plural "**gaps**" (FH ch. 58)
+sharpens an important point: the collapse left **multiple voids**, of which the central
+Apsaras Gap is the largest. *"Whole route sections vanished"* (US ch. 42, plural) is
+consistent with this — the Gap is topologically fragmented even if "the Gap" usually
+denotes the central one.
+
+**Quantitative scale.** *"At least a third of the beacons stopped working"* (FH ch. 4).
+The Argosy knnu crossings give two concrete metrics: **Hellion ↔ Tsurru ~6 light-years,
+55–60 days knnu** (FH ch. 60); Trinity ↔ neighbours generally **50–70 days** (FH ch. 60).
+No total Gap width in light-years is stated; the 6-ly figure is one edge hop, not the
+diameter.
+
+**Trinity is on the EDGE of the Gap, not inside it.** *"The three star systems now known
+as the Trinity Coalition became an **island** because they remained linked to each other
+in a Tinker-Evers-Chance convergence"* (FH ch. 60). Trinity is the canonical
+"island" survival case — it sits *on the inner rim* of the central Gap, with its three
+internal beacons intact and its four external links being **knnu hops across the Gap
+edge** to surviving neighbours. Trinity is therefore the **best-mapped edge of the
+central Gap**, not a stranded survivor inside it.
+
+**Named Gap-edge systems** (those whose surviving topology sits *on the rim* of the
+central Gap, not in it):
+
+| edge system | polity | edge-of-Gap role |
+|---|---|---|
+| **Hellion Terminus** | (Phene-controlled, contested) | Phene outpost on Karnos's far side; once janus, now terminus — its dead beacon is a visible Apsaras-cascade casualty (FH ch. 41, *"stained with a glorious neon-glow aura in the shape of spiny starburst"*) |
+| **Karnos** | contested | Carries Hellion's pair; Eirene (US ch. 3) frames *"two of the [other] beacons lead to the Gap"* in the **political-territorial** sense (toward Phene-heartland-via-Hellion), not literal central-Apsaras-Gap-bound |
+| **Tsurru** (Trinity) | trinity | Internal Trinity link + the dead **Libertalia** beacon (see Tsurru and Libertalia entries in [`systems.md`](systems.md)) |
+| **Meli** (Trinity) | trinity | Knnu hops to Nalanda + Sankore (Yele edge) |
+| **Kumbala** (Trinity) | trinity | Knnu to Harahuvati (Mishirru edge) |
+| **Harahuvati** | mishirru | Mishirru-side rim; "three drops to Destiny" inward |
+| **Nalanda, Sankore** | yele_league | Yele-side rim; each three-beacon chain inward to Yele Prime |
+
+**Cascade casualties — dead beacons facing the Gap.** *"Tendrils of destruction like
+cracks had splintered out along the outer network to randomly rupture individual
+beacons, which meant some routes were left more or less intact while others had broken
+links"* (US ch. 3) gives the canonical mechanism. The two patterns to keep apart:
+- **Central catastrophe** at She Who Bore Them All — the 11→13 overload hypothesis
+  (FH ch. 60). All Apsaras-home-system-bound beacons died; their surviving-system
+  pair-ends became dead orphans facing inward.
+- **Outer-network cascade** — random scattered ruptures along the periphery; the
+  Hellion 2nd, Odrysa's 2nd (janus → terminus, FH ch. 12), and likely many others.
+
+Strict canon names **one Gap-cascade pair**: Tsurru ↔ **Libertalia** (FH ch. 67); see
+the Libertalia entry in [`systems.md`](systems.md). The dead-beacon counts on Anchor and
+Yele (**both exactly 3 dead of 11** — Persephone flags the symmetry as *"curious"*, FH
+ch. 90) most parsimoniously read as **the inner-radial connections of two surviving
+11-beacon hubs**, lost when She Who Bore Them All collapsed. Not stated; strong
+inference. See [`open-questions.md`](open-questions.md) for the unresolved question of
+which specific dead beacons faced the Gap vs the outer cascade.
+
+**The Gap is not really empty space.** From the Argosy POV (US ch. 42): *"Argosy fleets
+powered by knnu drive still ply their slow roads through what is not really a gap but
+just normal space, guided by the ancient art of celestial navigation, a skill the
+Argosy guilds guard jealously and never teach to outsiders."* The Ousoos Argosy runs
+**scheduled trade Hellion ↔ Tsurru** (FH ch. 51) across this nominally-empty space; the
+Phene crossed it with knnu-fitted dreadnoughts to strike Molossia (US ch. 36, FH ch. 56)
+using **interdicted knnu drives and suborned Argosy wayfinders** (FH ch. 13) — the
+charter-violation scandal that animates the Phene knnu-drive supply mystery. Smugglers
+run through the Gap; Phene patrols hunt them along *"the old knnu transit lines"*
+(US ch. 3).
+
+### The minds in the Gap — consciousness lodged in the network
+
+**Tier:** canon
+
+*— FH ch. 80*
+
+*— US ch. 39*
+
+The post-collapse Gap is *also* a region of **consciousness**. **Persephone confirms in
+the second book** what she'd suspected was rumour in the first: real **minds** inhabit
+the beacon network's substrate, and she contacts them by *letting them in*. The minds
+identify themselves cosmologically as the **divine apsaras** — the thousand
+divine-messenger figures attending She Who Bore Them All (see the She-Who-Bore-Them-All
+entry above and Iros entry in [`polities.md`](polities.md), which veneration centres on).
+
+**Topological origin: the Gap.** US ch. 39 places the cold breath at *"the mouth of the
+Gap"* during transit. *"Fractured when the inner system collapsed"* — the minds
+originate in the central Apsaras Gap; they pervade what's left of the surviving network
+because the substrate itself is continuous. The Apsaras religious cosmology (divine
+messengers, beacon-badge iconography, see [`history.md`](history.md) Apsaras entries)
+is on Persephone's reading **not metaphor — it's substrate-level reality**.
+
+**Banner-soldier eschatology** picks up the thread from another angle: *"Every child of
+Lady Chaos falls into the Gap in the end"* (US ch. 30). Death = the Gap. The same
+Lady-Chaos / She-Who-Bore-Them-All figure who is the banner-soldier creator-progenitor
+is also the destination of the soul at death. The Gap is, in banner-soldier theology,
+*literally* a place of consciousness — and the book-3 title *Lady Chaos* names its
+ruling figure.
+
+**Open thread for *Lady Chaos*** (see [`open-questions.md`](open-questions.md)): whether
+the apsaras Persephone contacts are literal surviving consciousnesses of Apsaras-era
+people caught in the collapse, residual memory imprints, genuine non-human
+intelligences inhabiting the beacon substrate, or beacon-sickness artefacts of
+Persephone's own perception. The Oracle's restoration prophecy implies the Gap can be
+undone — if so, what happens to the minds inside it is the open cosmological question.
+
 ### The original Apsaras network was a hub of radiating lines centered on the lost home world
 
 **Tier:** inference (Persephone's reconstruction) / canon (the home world's existence & loss)
