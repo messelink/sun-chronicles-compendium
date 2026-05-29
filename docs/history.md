@@ -270,10 +270,12 @@ links"* (US ch. 3) gives the canonical mechanism. The two patterns to keep apart
 - **Outer-network cascade** — random scattered ruptures along the periphery; the
   Hellion 2nd, Odrysa's 2nd (janus → terminus, FH ch. 12), and likely many others.
 
-Strict canon names **one Gap-cascade pair**: Tsurru ↔ **Libertalia** (FH ch. 67); see
-the Libertalia entry in [`systems.md`](systems.md). The dead-beacon counts on Anchor and
-Yele (**both exactly 3 dead of 11** — Persephone flags the symmetry as *"curious"*, FH
-ch. 90) most parsimoniously read as **the inner-radial connections of two surviving
+Strict canon names **zero Gap-cascade pairs by destination identity.** The name
+*Libertalia* (FH ch. 66–67, *"Libertalia is a dead beacon"*) refers to the in-system
+conurbation sitting on Tsurru's own 4th hidden dead beacon, not a paired lost system —
+see the [Libertalia entry in `systems.md`](systems.md). The dead-beacon counts on Anchor
+and Yele (**both exactly 3 dead of 11** — Persephone flags the symmetry as *"curious"*,
+FH ch. 90) most parsimoniously read as **the inner-radial connections of two surviving
 11-beacon hubs**, lost when She Who Bore Them All collapsed. Not stated; strong
 inference. See [`open-questions.md`](open-questions.md) for the unresolved question of
 which specific dead beacons faced the Gap vs the outer cascade.

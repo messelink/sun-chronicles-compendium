@@ -4,7 +4,7 @@
     "provenance": "GENERATED from the ```topology blocks in compendium/*.md by scripts/build-topology.py. Do not hand-edit. The compendium is the source of truth.",
     "counts": {
       "systems": 60,
-      "edges": 67,
+      "edges": 66,
       "convergences": 2
     }
   },
@@ -48,6 +48,11 @@
       "id": "unknown",
       "name": "Unknown / unaligned",
       "color": "#BDC3C7"
+    },
+    {
+      "id": "apsaras_gap",
+      "name": "Apsaras Gap (lost network centre)",
+      "color": "#5a4870"
     }
   ],
   "systems": [
@@ -112,19 +117,19 @@
       "control": "Phene Empire (imperial capital; one of the Triple A — Anchor/Auger/Axiom)",
       "stubs": [
         {
-          "region": "unknown",
+          "region": "apsaras_gap",
           "severed": true,
-          "note": "dead beacon — Apsaras-collapse casualty, pair-end unnamed; inferred Gap-bound (inner-radial hub casualty)"
+          "note": "dead beacon — Apsaras-collapse casualty, pair-end unnamed; inferred Gap-bound (Anchor's inner-radial hub casualty)"
         },
         {
-          "region": "unknown",
+          "region": "apsaras_gap",
           "severed": true,
-          "note": "dead beacon — Apsaras-collapse casualty, pair-end unnamed; inferred Gap-bound"
+          "note": "dead beacon — Apsaras-collapse casualty, pair-end unnamed; inferred Gap-bound (Anchor's inner-radial hub casualty)"
         },
         {
-          "region": "unknown",
+          "region": "apsaras_gap",
           "severed": true,
-          "note": "dead beacon — Apsaras-collapse casualty, pair-end unnamed; inferred Gap-bound"
+          "note": "dead beacon — Apsaras-collapse casualty, pair-end unnamed; inferred Gap-bound (Anchor's inner-radial hub casualty)"
         }
       ]
     },
@@ -300,7 +305,7 @@
       ],
       "stubs": [
         {
-          "region": "unknown",
+          "region": "apsaras_gap",
           "severed": true,
           "note": "the dead 2nd beacon — Apsaras-collapse cascade casualty with 'spiny starburst' aura (FH ch.41); pair-end unnamed but inferred Gap-bound (Hellion sits on the Gap edge)"
         }
@@ -395,14 +400,6 @@
       "control": "chaonia",
       "on_route": "Yele ↔ Chaonia",
       "chain_slot": "Yele-adjacent (modelling choice; one unnamed intermediate remains)"
-    },
-    {
-      "id": "libertalia",
-      "name": "Libertalia",
-      "class": "unknown",
-      "polity": "unknown",
-      "note": "lost in the Apsaras collapse; unreachable; pair-end of Tsurru's dead Libertalia Beacon (FH ch.67); possibly She Who Bore Them All per Persephone's speculation (FH ch.61), but not stated",
-      "status": "lost"
     },
     {
       "id": "maras_shantiya",
@@ -562,6 +559,16 @@
       "control": "Mishirru Province (Phene) → Chaonian invasion staging system (FH)"
     },
     {
+      "id": "she_who_bore_them_all",
+      "name": "She Who Bore Them All",
+      "class": "eleven-beacon",
+      "polity": "apsaras_gap",
+      "role": "original Apsaras-Convergence hub; the 'central place in the network' of the Lady Chaos restoration prophecy",
+      "note": "Apsaras homeworld; central hub of the original 11 radial beacon routes; lost in the collapse ~800 yrs ago; unreachable, location unknown (FH ch.15, 61, 76); the Oracle's restoration prophecy concerns her central place in the network",
+      "beacons_total": 11,
+      "beacons_dead": 11
+    },
+    {
       "id": "sleepless",
       "name": "Sleepless",
       "class": "janus",
@@ -666,14 +673,16 @@
     {
       "id": "tsurru",
       "name": "Tsurru",
-      "class": "cerberus?",
+      "class": "scylla?",
       "polity": "trinity",
-      "note": "charted cerberus, hidden >=4; Karsh capital",
-      "beacons_total": 3,
+      "note": "charts say cerberus; canon scylla (FH ch.66 prime-rule); Karsh capital",
+      "beacons_total": 5,
+      "beacons_functional": 2,
+      "beacons_dead": 2,
       "class_charted": "cerberus",
       "class_actual": ">= scylla",
-      "beacons_charted": 3,
-      "beacons_actual": ">=4; must be 5 (prime rule)",
+      "beacons_charted": "3 (2 working + 1 dead)",
+      "beacons_actual": "≥5 (Libertalia 4th discovered FH ch.66, also dead; prime-rule inference forces a 5th)",
       "named_beacons": [
         {
           "to": "meli"
@@ -686,10 +695,24 @@
           "status": "dead"
         },
         {
-          "status": "dead, undocumented"
+          "anchor_planet": "Tsurru ice giant (Libertalia)",
+          "status": "dead",
+          "undocumented": true
         }
       ],
-      "hidden_note": "maps can omit beacons; prime rule forces a 5th, destinations unknown"
+      "hidden_note": "maps can omit beacons; prime rule forces a 5th, destinations unknown",
+      "stubs": [
+        {
+          "region": "apsaras_gap",
+          "severed": true,
+          "note": "the Tsurru-Prime-anchored dead beacon (one of the 3 charted) — pair-end unnamed; Persephone's speculation (FH ch.61): 'For all we know, it linked directly to She Who Bore Them All' — inferred Gap-bound"
+        },
+        {
+          "region": "apsaras_gap",
+          "severed": true,
+          "note": "Libertalia — the 4th, undocumented beacon at a Tsurru ice-giant moon (FH ch.66); dead and inert (no aura); pair-end unnamed; inferred Gap-bound. In-system conurbation also called Libertalia sits on the beacon's surface."
+        }
+      ]
     },
     {
       "id": "windworn",
@@ -723,17 +746,17 @@
       "hub_note": "hub monopoly is the basis of League power",
       "stubs": [
         {
-          "region": "unknown",
+          "region": "apsaras_gap",
           "severed": true,
           "note": "dead beacon — Apsaras-collapse casualty, pair-end unnamed; inferred Gap-bound (inner-radial hub casualty, see history.md)"
         },
         {
-          "region": "unknown",
+          "region": "apsaras_gap",
           "severed": true,
           "note": "dead beacon — Apsaras-collapse casualty, pair-end unnamed; inferred Gap-bound"
         },
         {
-          "region": "unknown",
+          "region": "apsaras_gap",
           "severed": true,
           "note": "dead beacon — Apsaras-collapse casualty, pair-end unnamed; inferred Gap-bound"
         }
@@ -916,13 +939,6 @@
       "to": "tsurru",
       "type": "knnu",
       "note": "6 light-years"
-    },
-    {
-      "from": "tsurru",
-      "to": "libertalia",
-      "type": "beacon",
-      "status": "severed",
-      "note": "Libertalia Beacon — dead beacon anchored at Tsurru Prime, Apsaras-collapse casualty (FH ch.67)"
     },
     {
       "from": "landfall",

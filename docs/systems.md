@@ -196,14 +196,20 @@ prime-number rule *and* establishes that beacon maps can be incomplete: beacons 
 hidden or omitted. The discovered fourth beacon is itself dead/inert (a "big dead"
 artifact with no aura).
 
-**The dead Tsurru-Prime beacon is canonically named Libertalia** (FH ch. 67, Persephone:
-*"Libertalia is a dead beacon"*) — per the convention that beacons are named for their
-destination, **Libertalia is the (lost) destination system**. Persephone speculates
-(FH ch. 61) about a dead Tsurru-system beacon: *"For all we know, it linked directly to
-She Who Bore Them All"* — i.e. the dead Tsurru-side beacon may have faced the lost
-Apsaras hub. **First named Gap-cascade casualty pair** in the compendium; see the
-[Libertalia entry](#libertalia--apsaras-collapse-casualty-lost-system-paired-with-the-dead-libertalia-beacon-at-tsurru)
-below and Apsaras Gap topology in [`history.md`](history.md).
+**Two distinct dead beacons in Tsurru System:**
+- The **Tsurru-Prime-anchored dead beacon** (one of the three on every chart, FH ch. 66).
+  Its pair-end is *unnamed* in canon; Persephone (FH ch. 61) speculates *"For all we know,
+  it linked directly to She Who Bore Them All"* — Gap-bound is the strong inference.
+- **Libertalia** — the **4th, undocumented** dead beacon, anchored at a Tsurru ice-giant
+  moon and discovered by Persephone in FH ch. 66. *Not* a separate lost destination
+  system: on the beacon's surface sits the in-system conurbation also called Libertalia
+  (*"cocoon-like habitats… tens-of-klicks-long conurbations"*, FH ch. 66). See the
+  [Libertalia entry](#libertalia--tsurru-internal-conurbation-on-the-4th-hidden-dead-beacon)
+  below for the corrected modelling.
+
+Both dead beacons are modelled as **severed Gap-bound stubs from Tsurru** (pair-ends
+unnamed in canon). The Apsaras Gap topology entry in [`history.md`](history.md) sets the
+canon framing.
 
 ### Landfall — terminus; first Argosy haven and end of the Mishirru janus line
 
@@ -434,28 +440,35 @@ The dead beacon's paired system is **not named** — but its destination is cano
 *toward* the Gap (Hellion sits on the Gap's outer rim — see Apsaras Gap entry in
 [`history.md`](history.md)).
 
-### Libertalia — Apsaras-collapse casualty; lost system paired with the dead Libertalia Beacon at Tsurru
+### Libertalia — Tsurru-internal conurbation on the 4th hidden dead beacon
 
 **Tier:** canon
 
 *— FH ch. 67*
 
-The destination system of Tsurru's dead beacon, named per the convention that beacons
-are named for the systems they link to (see [`travel-tech.md`](travel-tech.md)). The
-beacon at the Tsurru-Prime anchor is the **Libertalia Beacon**; Libertalia System is its
-(unreachable) pair. Lost in the **Apsaras collapse** ~800 yrs ago — no surviving link.
-Persephone's speculation in FH ch. 61 (*"For all we know, it linked directly to She
-Who Bore Them All"*) is the only on-page guess at Libertalia's identity; whether the
-named-and-lost Libertalia *is* the Apsaras homeworld, or merely a Gap-bound system that
-happened to be on the Libertalia-Tsurru link, is **open**.
+*— FH ch. 66*
 
-**The first named Gap-cascade casualty pair in the compendium.** Other dead-beacon
-counts in surviving systems (Karnos's 7th, Yele's 3, Anchor's 3, Kanesh's 2, Hellion's
-2nd, Odrysa's 2nd) have **unnamed pairs** — Libertalia is the only specifically named
-lost system on-page. Modelled as a **severed beacon edge** from Tsurru, no spring-pull
-adjustment for now; future map work may pull Libertalia (and others) inward toward an
-explicit Apsaras Gap centre — see the open question in
-[`open-questions.md`](open-questions.md).
+Libertalia is **the 4th, hidden beacon of Tsurru System** — discovered by Persephone in
+FH ch. 66 when her ship is sent to a destination charted as a moon and arrives to find
+*"a monstrously large spiral artifact with a dull ceramic surface"*. The beacon itself
+is dead and inert (no aura, unlike the broken Hellion Terminus beacon). On its surface
+sits the in-system conurbation that the Trinity calls **Libertalia**: *"the surface of
+the beacon is pitted by growths… cocoon-like habitats connect to each other by sealed
+freight-ways… tens-of-klicks-long conurbations lit by sparkling lights"* (FH ch. 66).
+
+**Correction to the earlier model.** Libertalia is **not a separate (lost) destination
+system** reached via a Tsurru beacon. It is a **place inside Tsurru System**, sitting on
+the surface of one of Tsurru's *own* dead beacons (the 4th, undocumented one — separate
+from the 3rd-charted dead beacon anchored at Tsurru Prime). The beacon's *pair-end*
+(where the 4th beacon's twin sits, in some now-disconnected star system) is **unnamed**
+in canon.
+
+**Map model.** No separate `libertalia` system node. Tsurru's two dead beacons (the
+3rd-charted Tsurru-Prime one + the 4th-hidden Libertalia one) are rendered as **two
+severed Gap-bound stubs** from Tsurru — see the Tsurru topology block above. The
+prime-rule-inferred **5th** beacon (FH ch. 66, *"there must also be at least a fifth
+since beacons always appear in star systems in prime numbers"*) is *not* rendered: its
+existence, state (working / dead), and destination are all unknown.
 
 **Tier:** canon
 

@@ -33,6 +33,7 @@ POLITIES = [
     {"id": "mishirru", "name": "Mishirru Province (Phene-administered)", "color": "#82dca0"},
     {"id": "contested", "name": "Contested / frontier", "color": "#f4f0e2"},
     {"id": "unknown", "name": "Unknown / unaligned", "color": "#BDC3C7"},
+    {"id": "apsaras_gap", "name": "Apsaras Gap (lost network centre)", "color": "#5a4870"},
 ]
 NODE_KNOWN = {"system", "name", "class", "beacons", "polity", "role", "note", "links"}
 EDGE_KNOWN = {"to", "type", "status", "hops", "via", "name", "note"}

@@ -177,10 +177,13 @@ imprints, (c) genuine non-human intelligences inhabiting the beacon-substrate, o
 
 The collapse left ~1/3 of beacons dead via two distinct patterns (US ch. 3): a central
 catastrophe at She Who Bore Them All (11→13 overload hypothesis, FH ch. 60) and random
-outer-network cascade ruptures. **Canon names exactly one Gap-cascade pair**: Tsurru ↔
-**Libertalia** (FH ch. 67). All other dead beacons in the modern map have **unnamed
-pairs** — Karnos's 7th, Yele's 3, Anchor's 3, Kanesh's 2, Hellion's 2nd, Odrysa's 2nd,
-plus Tsurru's hidden dead beacons (per the prime-rule reconstruction).
+outer-network cascade ruptures. **Canon names zero Gap-cascade pairs by destination
+identity.** The name *Libertalia* (FH ch. 66–67) refers to the in-system conurbation on
+Tsurru's own 4th hidden dead beacon (see the [Libertalia entry in `systems.md`](systems.md)
+for the corrected modelling), not a paired lost system. Every dead beacon in the modern
+map has an **unnamed pair-end**: Karnos's 7th, Yele's 3, Anchor's 3, Kanesh's 2, Hellion's
+2nd, Odrysa's 2nd, and Tsurru's two confirmed dead (the Tsurru-Prime-anchored 3rd +
+Libertalia 4th) plus the prime-rule-inferred 5th of unknown state.
 
 **The inference for Anchor's 3 dead and Yele's 3 dead facing the Gap** is strong — both
 are 11-beacon survivors of the original Apsaras hub class, both lost an identical 3 to
@@ -192,8 +195,9 @@ could equally be outer-network cascade ruptures pointing at non-Gap surviving sy
 Persephone's strategic project (FH ch. 76) is to back-derive the pre-collapse beacon
 map from a Phene-Immortal memory device — i.e. **this is an explicit in-universe open
 project**. Until *Lady Chaos* or Persephone's reconstruction surfaces specific
-pair-end identifications, we record only Libertalia as a confirmed Gap pair and note
-all other dead beacons as count-only.
+pair-end identifications, **no dead beacon in the modern map has a canon pair-end**;
+all are recorded as count-only (Gap-bound by inference where the symmetry argument is
+strong, outer-cascade or unknown otherwise).
 
 ### Are the apsaras in the Gap surviving minds, residual recordings, or hallucinations?
 

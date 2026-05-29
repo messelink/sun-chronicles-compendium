@@ -64,11 +64,32 @@ for s in list(systems):
         pid = f"_stub_{s['id']}_{i}"
         systems.append({"id": pid, "name": "", "class": "placeholder",
                         "polity": st.get("region", "unknown"), "route": "stub", "inferred": True})
-        edges.append({"from": s["id"], "to": pid, "type": "route"})
+        # severed-beacon stubs (Apsaras-collapse Gap-cascade casualties whose pair-end is
+        # canonically unnamed) render as severed beacon edges; ordinary stubs are routes.
+        if st.get("severed"):
+            edges.append({"from": s["id"], "to": pid, "type": "beacon", "status": "severed"})
+        else:
+            edges.append({"from": s["id"], "to": pid, "type": "route"})
 sid = {s["id"]: s for s in systems}
 # layout hints (presentation only, not topology): {id: [target ids to pull toward]}
 HINT = {s["id"]: [t for t in s["layout_near"] if t in sid]
         for s in systems if s.get("layout_near")}
+
+# GAP_HOSTS: surviving systems with a severed-beacon link to an apsaras_gap polity partner.
+# GHOST_PER_HOST: host_id → sorted list of ghost ids (for SWBTA→host hard-positioning).
+_gap_polity_nodes = {s["id"] for s in systems if s.get("polity") == "apsaras_gap"}
+GAP_HOSTS = set()
+GHOST_PER_HOST = {}
+for _e in edges:
+    if _e.get("type") == "beacon" and _e.get("status") == "severed":
+        if _e["from"] not in _gap_polity_nodes and _e["to"] in _gap_polity_nodes:
+            GAP_HOSTS.add(_e["from"])
+            GHOST_PER_HOST.setdefault(_e["from"], []).append(_e["to"])
+        if _e["to"] not in _gap_polity_nodes and _e["from"] in _gap_polity_nodes:
+            GAP_HOSTS.add(_e["to"])
+            GHOST_PER_HOST.setdefault(_e["to"], []).append(_e["from"])
+for _h in GHOST_PER_HOST:
+    GHOST_PER_HOST[_h] = sorted(GHOST_PER_HOST[_h])
 
 def x(s):  # XML-escape dynamic text/attribute content
     return (str(s).replace("&", "&amp;").replace("<", "&lt;")
@@ -80,7 +101,28 @@ ANCHOR = {  # Karnos (contested hub) at centre; others loosely around it
     "hatti": (920, 560),   # conquered frontier between the Chaonian core and Karnos
     "yele_league": (660, 1050), "trinity": (950, 1080), "mishirru": (1480, 1000),
     "unknown": (1100, 750),
+    "apsaras_gap": (1100, 750),   # historical centre of the lost network — pulls SWBTA + severed-stub ghosts inward
 }
+# Per-polity gravity-strength overrides (default 0.010 for all polities not listed):
+#  - apsaras_gap: 3× — pulls Gap-region members (SWBTA + severed-stub ghosts) toward the lost centre.
+#  - contested: 0 — Karnos/Hellion/Eel Gulf are scattered by definition (NON_REGION; no
+#    hull). The centre-anchor was artificially clustering them; with 0 gravity they're
+#    placed by springs + centring + repulsion only.
+POLITY_GRAVITY = {"apsaras_gap": 0.030, "contested": 0.0}
+# Hard (x, y) position pin — overrides force-layout each iteration. Use sparingly; intended
+# for the lost Apsaras hub She Who Bore Them All, whose canonical "central place in the
+# network" (FH ch.76 Oracle's restoration prophecy) is the conceptual anchor of the Gap region.
+HARD_PIN = {"she_who_bore_them_all": (1100, 750)}
+# Gap-rim layout: surviving "host" systems with a severed beacon to a Gap-polity partner
+# settle on a soft ring around SWBTA — close to centre but not collapsed onto it — so the
+# severed line visually points inward toward the lost hub.
+HOST_TARGET_DISTANCE = 200         # rim radius from SWBTA (px)
+HOST_RADIAL_STRENGTH = 8.0         # spring constant of the pull-to-target-distance — strong enough to fight Anchor's beacons to Auger/Axiom and Yele's to Larissa/Nalanda/Sankore
+# Gap-polity ghost endpoints (severed-stub placeholders) are HARD-POSITIONED
+# each iteration on the SWBTA→host line at GHOST_RING_RADIUS from SWBTA. Multiple ghosts
+# sharing one host are angularly spread across GHOST_FAN_DEG.
+GHOST_RING_RADIUS = 100
+GHOST_FAN_DEG = 35
 # Explicit region-label anchor: pin the polity label above this system. Checked first,
 # then the capital-note heuristic, then the component centroid. Use for regions whose
 # label belongs at a named eponym/seat that isn't a polity *capital* (e.g. the Hatti
@@ -100,7 +142,7 @@ EDGES = [(e["from"], e["to"]) for e in edges]
 # route/route_seg — all tentative) may be crossed freely, so the layout doesn't distort to
 # route around a guess. Only hard×hard crossings (and hard edges for node clearance) count.
 def _is_soft(e):
-    return (e.get("status") == "inferred" or bool(e.get("inferred"))
+    return (e.get("status") in ("inferred", "severed") or bool(e.get("inferred"))
             or e.get("type") in ("route", "route_seg"))
 HARD_PAIRS = {frozenset((e["from"], e["to"])) for e in edges if not _is_soft(e)}
 def _hard(a, b):
@@ -146,7 +188,12 @@ def force_layout(seed):
             # spring by type: knnu shortest (close neighbours), route longest, beacon mid.
             # knnu = physical short-haul gaps (50–70 days, ≤ a few light-years), so they
             # should render visibly tighter than beacon edges (instantaneous wormholes).
-            w = {"knnu": 9.0, "beacon": 1.0, "route": 1.0}.get(e.get("type"), 1.0)   # knnu = short hops
+            # Severed beacons (Apsaras-collapse casualties) carry NO spring — the ghost
+            # endpoint is hard-positioned on the SWBTA→host line each iteration (below);
+            # host position is determined by polity gravity + working springs + rim pull.
+            if e.get("type") == "beacon" and e.get("status") == "severed":
+                continue
+            w = {"knnu": 12.0, "beacon": 1.0, "route": 1.0}.get(e.get("type"), 1.0)   # knnu = short hops
             f = d * d / k * w * 1.5; ux, uy = dx / d, dy / d
             disp[fr][0] -= ux * f; disp[fr][1] -= uy * f
             disp[to][0] += ux * f; disp[to][1] += uy * f
@@ -159,13 +206,46 @@ def force_layout(seed):
             disp[ia][0] += ux * f; disp[ia][1] += uy * f
             disp[ib][0] -= ux * f; disp[ib][1] -= uy * f
         for s in systems:                 # gentle polity gravity + centring
-            i = s["id"]; ax, ay = ANCHOR.get(s.get("polity"), (W / 2, H / 2))
-            disp[i][0] += (ax - p[i][0]) * 0.010 + (W / 2 - p[i][0]) * 0.006
-            disp[i][1] += (ay - p[i][1]) * 0.010 + (H / 2 - p[i][1]) * 0.006
+            i = s["id"]; pol = s.get("polity"); ax, ay = ANCHOR.get(pol, (W / 2, H / 2))
+            grav = POLITY_GRAVITY.get(pol, 0.010)   # apsaras_gap gets a stronger pull (see POLITY_GRAVITY above)
+            disp[i][0] += (ax - p[i][0]) * grav + (W / 2 - p[i][0]) * 0.006
+            disp[i][1] += (ay - p[i][1]) * grav + (H / 2 - p[i][1]) * 0.006
+        # Gap-rim radial pull on surviving severed-link hosts toward HOST_TARGET_DISTANCE
+        # from SWBTA. Pull in if too far, push out if too close — net effect: hosts on a ring.
+        SWBTA_X, SWBTA_Y = HARD_PIN["she_who_bore_them_all"]
+        for h in GAP_HOSTS:
+            if h not in p:
+                continue
+            dx_h, dy_h = p[h][0] - SWBTA_X, p[h][1] - SWBTA_Y
+            d_h = math.hypot(dx_h, dy_h) or 1
+            delta = d_h - HOST_TARGET_DISTANCE
+            disp[h][0] -= (dx_h / d_h) * delta * HOST_RADIAL_STRENGTH
+            disp[h][1] -= (dy_h / d_h) * delta * HOST_RADIAL_STRENGTH
         for i in ids:
             dx, dy = disp[i]; d = math.hypot(dx, dy) or 0.01
             p[i][0] += dx / d * min(d, temp); p[i][1] += dy / d * min(d, temp)
             p[i][0] = min(max(p[i][0], 60), W - 60); p[i][1] = min(max(p[i][1], 90), H - 70)
+        for sid_pin, (px_pin, py_pin) in HARD_PIN.items():   # direct (x, y) pin — overrides every iteration
+            if sid_pin in p:
+                p[sid_pin] = [px_pin, py_pin]
+        # Hard-position each Gap-polity ghost on the SWBTA→host line at GHOST_RING_RADIUS,
+        # with angular fan for multi-ghost hosts. Runs every iteration so the severed link
+        # visually points inward from host (rim) to ghost (near SWBTA).
+        for host_id, ghosts in GHOST_PER_HOST.items():
+            if host_id not in p:
+                continue
+            dx_g, dy_g = p[host_id][0] - SWBTA_X, p[host_id][1] - SWBTA_Y
+            d_g = math.hypot(dx_g, dy_g) or 1
+            base_ang = math.atan2(dy_g, dx_g)
+            n_g = len(ghosts)
+            fan_rad = math.radians(GHOST_FAN_DEG)
+            for j, gid in enumerate(ghosts):
+                if gid not in p:
+                    continue
+                off = ((j - (n_g - 1) / 2) * (fan_rad / (n_g - 1))) if n_g > 1 else 0
+                ang = base_ang + off
+                p[gid] = [SWBTA_X + GHOST_RING_RADIUS * math.cos(ang),
+                          SWBTA_Y + GHOST_RING_RADIUS * math.sin(ang)]
         for i, targets in HINT.items():   # hard layout pin: hold near the target centroid
             tx = sum(p[t][0] for t in targets) / len(targets)
             ty = sum(p[t][1] for t in targets) / len(targets)
@@ -182,6 +262,10 @@ def force_layout(seed):
     leaves_of = {}
     for i in ids:
         if len(nbrs.get(i, [])) == 1 and i not in HINT:   # hinted nodes keep their pull
+            # Gap-polity ghosts are hard-positioned in the iteration loop on the SWBTA→host
+            # line — skip them here so the leaf-fan doesn't undo the work.
+            if sid.get(i, {}).get("polity") == "apsaras_gap":
+                continue
             leaves_of.setdefault(nbrs[i][0], []).append(i)
     for nb, leaves in leaves_of.items():
         nx, ny = p[nb]
@@ -310,12 +394,19 @@ def _xnodes():
                 s.update((a, b, c, d))
     return s
 
+def _is_hard_pinned(nid):
+    """SWBTA and Gap-polity ghosts are positioned by hard rules — don't let
+    reduce_crossings relocate them or the SWBTA→host orientation breaks."""
+    if nid in HARD_PIN:
+        return True
+    return sid.get(nid, {}).get("polity") == "apsaras_gap"
+
 def reduce_crossings():
     # greedy single-node relocation (smallest move on ties) …
     for _round in range(10):
         moved = 0
         for nid in ids:
-            if nid in HINT:                 # pinned by a layout hint — don't relocate
+            if nid in HINT or _is_hard_pinned(nid):   # pinned — don't relocate
                 continue
             base = penalty(nid)
             if base == 0:
@@ -345,10 +436,10 @@ def reduce_crossings():
             if b in xn: cand.add(a)
         base, improved = total_crossings(), False
         for x in xn:
-            if x in HINT:
+            if x in HINT or _is_hard_pinned(x):
                 continue
             for y in cand:
-                if x == y or y in HINT:
+                if x == y or y in HINT or _is_hard_pinned(y):
                     continue
                 pos[x], pos[y] = pos[y][:], pos[x][:]
                 if total_crossings() < base:
@@ -361,9 +452,33 @@ def reduce_crossings():
 # multi-start: keep the layout with the fewest (crossings, then node-on-edge overlaps).
 # (use `sc`, not `x` — `x` is the XML-escape function defined above.)
 best_pos, best_score = None, (10 ** 9, 10 ** 9)
+def _apply_ghost_hard_positions(p):
+    """Re-pin SWBTA and Gap-polity ghosts after any post-layout step that might have
+    moved them (reduce_crossings does greedy single-node moves)."""
+    for sid_pin, (px_pin, py_pin) in HARD_PIN.items():
+        if sid_pin in p:
+            p[sid_pin] = [px_pin, py_pin]
+    SX, SY = HARD_PIN["she_who_bore_them_all"]
+    for host_id, ghosts in GHOST_PER_HOST.items():
+        if host_id not in p:
+            continue
+        dxg, dyg = p[host_id][0] - SX, p[host_id][1] - SY
+        d_g = math.hypot(dxg, dyg) or 1
+        base_ang = math.atan2(dyg, dxg)
+        n_g = len(ghosts)
+        fan_rad = math.radians(GHOST_FAN_DEG)
+        for j, gid in enumerate(ghosts):
+            if gid not in p:
+                continue
+            off = ((j - (n_g - 1) / 2) * (fan_rad / (n_g - 1))) if n_g > 1 else 0
+            ang = base_ang + off
+            p[gid] = [SX + GHOST_RING_RADIUS * math.cos(ang),
+                      SY + GHOST_RING_RADIUS * math.sin(ang)]
+
 for seed in (7, 1, 2, 3, 5, 8, 13, 21, 4, 6, 9, 11, 17, 23, 42, 99):   # extra starts: the
     pos = force_layout(seed)                                          # Hatti corridor is fussy
     reduce_crossings()
+    _apply_ghost_hard_positions(pos)                                  # restore SWBTA + ghost ring
     sc = (total_crossings(), total_on_edge())
     if sc < best_score:
         best_score, best_pos = sc, {i: v[:] for i, v in pos.items()}
@@ -446,12 +561,14 @@ for pol in pname:
         continue
     col = pcolor[pol]
     comps = _components(members)
-    # Shade per connected component, BUT fold lone (disconnected) members into the region's
-    # main cluster — a node with no known links (e.g. Maras Shantiya) belongs to its region's
-    # hull, not its own. Genuine multi-node sub-clusters (the Tranquility exclave) stay separate.
-    clusters = sorted((c for c in comps if len(c) >= 2), key=len, reverse=True)
-    lone = [n for c in comps if len(c) == 1 for n in c]
-    groups = ([clusters[0] + lone] + clusters[1:]) if clusters else ([lone] if lone else [])
+    # Shade per connected component, BUT fold disconnected fragments (size < 3) into the
+    # region's main cluster — a node with no real links (e.g. Maras Shantiya) or with only
+    # an unmapped-beacon-stub partner (e.g. Windworn, paired with its FH ch.69 stub ghost)
+    # belongs to its region's hull, not its own. Genuine multi-node sub-clusters of size ≥ 3
+    # (the Tranquility exclave) stay separate.
+    clusters = sorted((c for c in comps if len(c) >= 3), key=len, reverse=True)
+    fragments = [n for c in comps if len(c) < 3 for n in c]
+    groups = ([clusters[0] + fragments] + clusters[1:]) if clusters else ([fragments] if fragments else [])
     for comp in groups:
         pts = [tuple(pos[i]) for i in comp]
         cx = sum(p[0] for p in pts) / len(pts); cy = sum(p[1] for p in pts) / len(pts)
@@ -480,8 +597,10 @@ for pol in pname:
         ly = min(max(min(p[1] for p in bp) - 58, 46), H - 30)
     lbl = pname[pol].split(" (")[0].upper()       # drop parentheticals (e.g. "(Phene-administered)")
     lw = len(lbl) * 11.5 + 22                      # approx width incl. letter-spacing
-    zones.append(f'<rect x="{lx-lw/2:.0f}" y="{ly-16:.0f}" width="{lw:.0f}" height="23" '
-                 f'rx="4" fill="#07091d" opacity="0.66"/>')        # backing chip for legibility
+    # No backing chip — keep the polity label transparent so the polity hull shade shows
+    # through. Letter-spacing + the soft glow on the label itself supply enough contrast
+    # against the busy chart.
+
     zones.append(f'<text x="{lx:.0f}" y="{ly:.0f}" text-anchor="middle" '
                  f'font-family="Cinzel, serif" letter-spacing="0.22em" font-size="15" '
                  f'fill="{col}" opacity="0.95">{lbl}</text>')
@@ -490,21 +609,46 @@ for pol in pname:
 def edge_style(e):
     t, st = e.get("type"), e.get("status", "working")
     if t == "beacon":
+        if st == "severed":   # PHYSICAL state: the beacon link is dead (Apsaras-collapse casualty)
+            return 'stroke:#b06a6a;stroke-width:1.6;stroke-dasharray:3 6;opacity:0.5'
+        # Polity-tinted: within-region beacons take the shared polity's colour (same
+        # convention as canon-hop route_seg edges); cross-region beacons fall back to
+        # neutral. Inferred has the same thickness/opacity as confirmed — only the dash
+        # pattern distinguishes them.
+        try:
+            _shared = _eregion(e["from"], e["to"])
+        except KeyError:
+            _shared = set()
+        _c = pcolor.get(next(iter(_shared))) if len(_shared) == 1 else None
+        if _c is None:
+            _c = "#cfd6ea"   # neutral fallback (cross-region, or both endpoints NON_REGION)
         if st == "inferred":
-            return 'stroke:#6f7494;stroke-width:1.5;stroke-dasharray:3 5;opacity:0.8'
-        return 'stroke:#cfd6ea;stroke-width:2;opacity:0.9'
+            # dash-dot pattern — reads more deliberate than plain short-dash, matches the
+            # "we're nearly sure, just lacking the on-page witness" tier for inferred beacons.
+            return f'stroke:{_c};stroke-width:2;stroke-dasharray:6 4 2 4;opacity:0.9'
+        return f'stroke:{_c};stroke-width:2;opacity:0.9'
     if t == "knnu":
         if st == "severed":   # PHYSICAL state: the link is cut/destroyed (not mere disuse)
             return 'stroke:#b06a6a;stroke-width:1.6;stroke-dasharray:6 5;opacity:0.5'
         return 'stroke:#d6a85a;stroke-width:1.7;stroke-dasharray:6 5;opacity:0.8'  # type look (superseded folds in)
     if t == "route":
-        return 'stroke:#cfd6ea;stroke-width:1.7;stroke-dasharray:14 6;opacity:0.6'
+        # Polity-tint plain (unexpanded) routes the same way as beacons: shared region →
+        # polity colour, cross-region → neutral.
+        try:
+            _shared = _eregion(e["from"], e["to"])
+        except KeyError:
+            _shared = set()
+        _c = pcolor.get(next(iter(_shared))) if len(_shared) == 1 else None
+        if _c is None:
+            _c = "#cfd6ea"
+        return f'stroke:{_c};stroke-width:1.7;stroke-dasharray:14 6;opacity:0.6'
     if t == "route_seg":   # a hop of an expanded multi-hop route (through ghost nodes)
-        if e.get("inferred"):   # length-unknown → identical to a 'route'/stub: grey long-dash
-            return 'stroke:#cfd6ea;stroke-width:1.7;stroke-dasharray:14 6;opacity:0.6'
-        rg = e.get("region")    # canon hop count, names unknown → solid region tint
-        c = pcolor.get(rg, "#8d96b8") if rg and rg != "unknown" else "#8d96b8"
-        return f'stroke:{c};stroke-width:1.5;opacity:0.7'
+        rg = e.get("region")
+        # Polity tint when the route runs within a real region; neutral fallback otherwise.
+        _c_seg = pcolor.get(rg) if rg and rg in pcolor and rg not in NON_REGION else "#cfd6ea"
+        if e.get("inferred"):   # length-unknown — long dash, polity-tint when within-region
+            return f'stroke:{_c_seg};stroke-width:1.7;stroke-dasharray:14 6;opacity:0.6'
+        return f'stroke:{_c_seg};stroke-width:1.5;opacity:0.7'   # canon hop count, names unknown
     return 'stroke:#6f7494;stroke-width:1;opacity:0.5'
 
 edge_svg = []
@@ -781,29 +925,23 @@ HEADER = '''<header>
 
 # Region swatches are GENERATED from pcolor (the same palette the nodes + hulls use), so
 # the legend can never drift from what's drawn. Order/labels fixed for presentation.
-LEGEND_REGIONS = [("chaonia", "Chaonian Republic"), ("hatti", "Hatti region (Chaonia-held)"),
+LEGEND_REGIONS = [("apsaras_gap", "Apsaras Gap (lost network centre)"),
+                  ("chaonia", "Chaonian Republic"), ("hatti", "Hatti region (Chaonia-held)"),
                   ("phene", "Phene Empire"), ("yele_league", "Yele League"),
                   ("mishirru", "Mishirru Province"), ("trinity", "Trinity Coalition"),
                   ("contested", "Contested / frontier")]
 region_li = "".join(
     f'<li><span class="sw" style="color:{pcolor[i]};background:{pcolor[i]}"></span>{lbl}</li>'
     for i, lbl in LEGEND_REGIONS)
-# "severed" = a physically cut link; show the key only if one actually exists (none today —
-# Eel Gulf was a loss of chokepoint access, not a cut link).
-has_severed = any(e.get("status") == "severed" for e in edges)
-severed_li = ('<li><svg width="34" height="6"><line x1="0" y1="3" x2="34" y2="3" '
-              'stroke="#b06a6a" stroke-width="1.6" stroke-dasharray="6 5"/></svg>'
-              'Severed (physically cut) link</li>') if has_severed else ''
-severed_clause = " and physical state (red = severed/cut)" if has_severed else ""
 LEGEND = f'''<section class="legend">
 <div><h3>Connections</h3><ul>
-<li><svg width="34" height="6"><line x1="0" y1="3" x2="34" y2="3" stroke="#cfd6ea" stroke-width="2"/></svg>Confirmed beacon</li>
-<li><svg width="34" height="6"><line x1="0" y1="3" x2="34" y2="3" stroke="#6f7494" stroke-width="1.4" stroke-dasharray="3 5"/></svg>Inferred beacon</li>
-<li><svg width="34" height="6"><line x1="0" y1="3" x2="34" y2="3" stroke="#d6a85a" stroke-width="1.8" stroke-dasharray="6 5"/></svg>Knnu (non-beacon link)</li>
-<li><svg width="34" height="10"><line x1="0" y1="5" x2="13" y2="5" stroke="#8d96b8" stroke-width="1.5"/><circle cx="17" cy="5" r="3" fill="#0a0c16" stroke="#6b7088"/><line x1="21" y1="5" x2="34" y2="5" stroke="#8d96b8" stroke-width="1.5"/></svg>Multi-hop route <span class="note">○ = unnamed intermediate (dashed = inferred)</span></li>
-<li><svg width="34" height="6"><line x1="0" y1="3" x2="34" y2="3" stroke="#cfd6ea" stroke-width="1.7" stroke-dasharray="14 6" opacity="0.6"/></svg>Route, length unknown / inferred</li>
-{severed_li}
-</ul><p>Line style marks the link <em>type</em> (beacon · knnu · route){severed_clause}; how often a link is travelled is not styled. Faint grey dashes mark inferred or length-unknown routes.</p></div>
+<li><svg width="34" height="6"><line x1="0" y1="3" x2="34" y2="3" stroke="#cfd6ea" stroke-width="2"/></svg>Beacon (confirmed) <span class="note">solid · polity colour within region · neutral when cross-region</span></li>
+<li><svg width="34" height="6"><line x1="0" y1="3" x2="34" y2="3" stroke="#cfd6ea" stroke-width="2" stroke-dasharray="6 4 2 4"/></svg>Beacon (inferred) <span class="note">dash-dot · same width / opacity as confirmed</span></li>
+<li><svg width="34" height="6"><line x1="0" y1="3" x2="34" y2="3" stroke="#b06a6a" stroke-width="1.6" stroke-dasharray="3 6" opacity="0.7"/></svg>Beacon (severed) <span class="note">red-brown · Apsaras-collapse casualty · pair unreachable</span></li>
+<li><svg width="34" height="6"><line x1="0" y1="3" x2="34" y2="3" stroke="#d6a85a" stroke-width="1.8" stroke-dasharray="6 5"/></svg>Knnu <span class="note">short physical-gap hop (50–70 days, ≤ a few light-years) · not instantaneous</span></li>
+<li><svg width="34" height="10"><line x1="0" y1="5" x2="13" y2="5" stroke="#cfd6ea" stroke-width="1.5"/><circle cx="17" cy="5" r="3" fill="#0a0c16" stroke="#6b7088"/><line x1="21" y1="5" x2="34" y2="5" stroke="#cfd6ea" stroke-width="1.5"/></svg>Multi-hop route (canon hops) <span class="note">solid · ○ = unnamed intermediate</span></li>
+<li><svg width="34" height="6"><line x1="0" y1="3" x2="34" y2="3" stroke="#cfd6ea" stroke-width="1.7" stroke-dasharray="14 6" opacity="0.6"/></svg>Route, length unknown / inferred <span class="note">long-dash</span></li>
+</ul><p>Line style marks the link <em>type</em> (beacon · knnu · route) and the <em>tier</em> (confirmed solid · inferred dash-dot/long-dash · severed red-brown). Within a region, line colour matches the polity hull; cross-region links and ones where either endpoint is non-region (contested / unknown) fall back to neutral.</p></div>
 <div><h3>Systems</h3><ul>
 <li><span class="sw" style="color:#cfd6ea;background:#cfd6ea"></span>Major hub / capital <span class="note">★ + ring · colour = polity</span></li>
 <li><span class="sw" style="color:#cfd6ea;background:#cfd6ea;width:7px;height:7px"></span>Standard system <span class="note">colour = polity</span></li>
@@ -815,8 +953,9 @@ LEGEND = f'''<section class="legend">
 </ul></div>
 <div><h3>Reading the Chart</h3>
 <p><strong style="color:#e8e5d6">Topology, not geography.</strong> Position implies relational role (hub, periphery, frontier), not distance.</p>
+<p><strong style="color:#e8e5d6">Apsaras Gap.</strong> The lost central region of the original beacon network — collapsed ~800 yrs ago. <strong>She Who Bore Them All</strong> at canvas centre is the unreachable Apsaras homeworld; severed beacons converge inward from surviving hosts that retain a dead Gap-bound link. <strong>None of the pair-ends are named in canon</strong> — the ghosts on the inner ring are placeholders, not identified systems. (The name <em>Libertalia</em>, FH ch. 66–67, refers to a conurbation on Tsurru's own 4th hidden dead beacon, not a paired lost system.) See <a href="history.md">history</a> and <a href="open-questions.md">open questions</a> for canon details and tier reasoning.</p>
 <p><strong style="color:#e8e5d6">TEC</strong> — Tinker-Evers-Chance Convergence, a rare three-way mutual beacon link. <strong>Two confirmed</strong> (Chaonian core and Trinity Coalition); the books call TECs &ldquo;rare&rdquo;, not &ldquo;only two&rdquo;.</p>
-<p><strong style="color:#e8e5d6">Karnos</strong> is the load-bearing junction — the one hub wiring Chaonia, Phene, the Trinity back door, and the outer rim together.</p></div>
+<p><strong style="color:#e8e5d6">Karnos</strong> is the load-bearing modern junction — the one hub wiring Chaonia, Phene, the Trinity back door, and the outer rim together.</p></div>
 </section>'''
 
 FOOTER = '''<footer><div class="ct">Provenance &amp; caveats</div>
