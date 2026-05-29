@@ -87,16 +87,106 @@ League "under her boot," and by FH the Phene court the League (via Voy, the seer
 Iros, and the exiled Admiral Manu) to flip it — exploiting the short "three-beacons hop
 from Yele System to Chaonia" (FH ch. 58). Baron Voy later turns toward the Phene.
 
-### The seers of Iros — a Yele order that reads heat and lies, and a faction in its own right
+### The Order of Iros — religious order of surgically blinded seers
 
 **Tier:** canon
 
 *— FH ch. 8*
 
-A Yele religious order whose seers are blind to visible light but perceive heat and
-detect falsehood. They are a distinct power bloc within the League — they "resisted"
-Chaonian control (FH ch. 19) and are courted by the Phene — so their loyalties cut
-across League patriotism. (Also an "ability" thread for a future Characters entry.)
+*— FH ch. 8*
+
+A Yele-cultural religious order whose seers cannot see the visible spectrum but perceive
+**heat and lies**. Officially "the Order of Iros" (FH ch. 8). **"Iros" is the order name
+only** — never a system, planet, person, founder, or oracle on-page; the etymology is
+left silent. The order's only on-page origin claim is **descent from the ancient
+Argosies** (the pre-beacon ship-clans, FH ch. 8) — pre-Apsaras lineage, "the long view"
+as their stated working principle. Monotheistic in framing — *"obliged by his oath to
+the god to tell the truth"* (US ch. 13) — but the god is **unnamed**.
+
+**Biology (correction to earlier framing).** Seer eyes are **surgically implanted**, not
+congenital — FH ch. 9 is explicit (*"a sheen-like screen of artificially implanted eyes
+hooked to a brain's neurons, like the eyes of a seer"*). Persephone's *"Born with eyes
+blind to the visible spectrum"* (US ch. 14) is the order's own framing, not biology. The
+implant trades visible-light sight for heat + lie-detection; the eyes have a recognisable
+silvery **"sheen"** that outsiders pick up at a glance (FH ch. 48, *"the telltale eyes of
+a seer of Iros"*), and seers operate undercover via **cosmetic lenses** (FH ch. 12).
+Seer perception is more than thermal — infrared lenses are *"not as effective as an Iros
+seer's vision"* (FH ch. 90) — but the books don't specify the full sensory modality.
+
+**Hierarchy.** Attested ranks: **novice** (head shaved short, doorkeeper duties) →
+**seer** (full implants) → **prime** (head of a *single* hermitage, distinctive collar,
+addressed *"Your Wisdom"*) → **Prime** of the whole order (capital P). Honorifics
+"Eminence" and "Holiness" appear in formal address. Robes: layered **off-white with a
+cream sash**, sandals (FH ch. 82); the order's wayfinding glyph is a **mediation Eye**
+painted on hermitage doors (FH ch. 88, 90). The Yele palms-pressed-together greeting
+(FH ch. 8). Seers can **leave the order to marry** without formal expulsion and may
+return to a hermitage in retirement (US ch. 43 / US ch. 41 — Hetty's father).
+
+**Hermitages.** Architecture is **standardised across sites** for blind navigation —
+identical floor plans, no windows, infrared floor-strips, all-hinge doors, an apothecary
+cabinet, a medicinal garden under ribbed glass (US ch. 43; FH ch. 90). Known locations:
+- **Yele Prime** — the cardinal hermitage, the **"fatherhouse"** (gendered term;
+  US ch. 41). Plus a separate **Timoteo Hermitage** in the Glorious City (FH ch. 15),
+  and at least one *"old hermitage repurposed as an administrative center"* (FH ch. 15).
+- **Congress Moon** — *"shuttered thirty years ago after a shocking bribery scandal
+  that rocked the League and soured the local reputation of the seers"* (FH ch. 15).
+  The scandal hit their core role of paid mediator (FH ch. 19).
+- **Tjeker** (Repose District religious-tolerance zone) — destroyed by Sun in US ch.
+  43–44; the catastrophic loss (see below and [`history.md`](history.md)).
+- **Kanesh Prime** — closed after the failed Esplanade assassination on Sun (FH ch. 11/12).
+- **Anchor Prime** (Phene capital) — *"hermitage hostel on Yele Central on the
+  Antikythera Terrace"* (FH ch. 95), expatriate Yele seers, where Kiran sheltered before
+  capture.
+- **Sena habitat** Repose District (FH ch. 88).
+- **Explicitly none in Mishirru** (FH ch. 76 — only the local religion is permitted).
+
+**Tjeker decapitated the order.** The elderly man Sun cornered at the Tjeker hermitage,
+*Prime Deo*, was **the head of the entire order** — not just the local hermitage —
+revealed in FH ch. 16 (*"A big enough faction that the head of the order was involved
+and killed himself rather than be captured by me"*). He swallowed a vial of **"late
+bloomer"** as Sun closed in (US ch. 44). After Tjeker the League disowned them — *"The
+seers have fallen out of favor with the leading factions in the League. They're seen as
+militant, uncooperative, and untrustworthy"* (FH ch. 18) — and the surviving militant
+faction became operational clients of the Phene Rider Council.
+
+**Three internal factions** (sharpened from canon contrasts):
+- **Militant** — anti-Chaonia, Phene-tilted; the Tjeker leadership, the Kanesh attacker,
+  Kiran Seth de Lee (see [`characters.md`](characters.md)). Phene-trained leash-baton
+  operators of banner soldiers (FH ch. 66).
+- **Apolitical mediators** — the public face that the order claims (US ch. 35, *"The
+  seers of Iros belong to a religious order. They are apolitical."*); the bribery
+  scandal corrupted this role.
+- **Scholarly retirees** — *"head-in-the-clouds scholars like the Honorable Hestia's
+  father"* (US ch. 39, US ch. 41).
+
+**Late bloomer.** A signature Iros-produced toxin; hermitage **apothecaries** are the
+supply chain. The same poison kills Octavian (US, Kiran's shot at Manea's wedding),
+takes Prime Deo at Tjeker, and reaches Eirene through Aisa Lee (FH ch. 49). Sun executes
+Kiran by **incineration** rather than serving him his own poison (FH ch. 96).
+
+### The Oculi — the order's female sister branch
+
+**Tier:** canon
+
+*— FH ch. 48*
+
+*— FH ch. 19*
+
+The **Oculi** ("eyes") are the female-coded sister branch to the male-coded seers of
+Iros. The naming convention (Iros / Oculi; fatherhouse for the cardinal seat /
+"sisters" for the Oculi) and the **shared hermitage infrastructure** (FH ch. 15: a
+*"clerk of the Oculi"* signs off on hermitage employment licences) read as **one order
+in two sex-segregated wings**, not two orders. Distinct cybernetic implant — *rumoured*
+single cyclops eye, never directly observed on-page.
+
+**Operational role.** The Oculi run HUMINT and wet-work: **Navah** — placed as Hetty's
+cee-cee in the Chaonian palace, the assassin who killed Sun's brother **Perseus** and
+Duke Guī Alargos in the tender sabotage — *"Hetty's cee-cee Navah was hired by the order
+of the Oculi"* (FH ch. 59). Their broader project, per Kiran's account to Apama, was to
+place a Yele-beholden ruler on Chaonia's throne (Prince Jiàn — see
+[`characters.md`](characters.md)). The Oculi function broadly enough as covert operatives
+that *being suspected* of working for them is a credible accusation against any skilled
+cee-cee in the Yele orbit (Tiana was so accused, falsely — FH ch. 86/88).
 
 ### Yele culture — prestige scholarship and a reputation for arrogance
 

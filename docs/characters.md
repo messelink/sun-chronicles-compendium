@@ -119,6 +119,141 @@ deeper "half-Hesjan in Chaonia's inner circle" thread connects to the open quest
 Sun's grandfather's earlier Hesjan treaty (see [`history.md`](history.md)) and to Prince
 Jiàn's half-Hesjan heir (below) — both anticipating *Lady Chaos*.
 
+## Kiran Seth de Lee ("Hot Dad")
+
+### Identity — Yele-born seer of Iros, deep-cover spouse in Chaonia's Lee House, father of Persephone
+
+**Tier:** canon
+
+*— US ch. 34*
+
+*— FH ch. 96*
+
+**Full naturalised form:** Kiran Seth de Lee. The "de Lee" is added by his marriage into
+Chaonia's **Lee House**; in formal Yele/Order contexts he is simply **Kiran Seth, a seer
+of the Order of Iros** (FH ch. 8). **Yele-born** (specific world unstated); married **Aisa
+Lee** ~25 yrs pre-FH; spouse of one of three Lee sisters (Nona, Moira, Aisa). The
+marriage was **vetted by Nona Lee**, not Moira (US ch. 34: *"Nona vetted him, and Nona
+allowed it"*) — significant because Nona and Kiran later prove to be long-term partners
+in the **clone-puppet project** (FH ch. 80, Kiran: *"Nona Lee and I made a deal a long
+time ago"*).
+
+**Nominal father of three Lee children — only one biologically his.** Aisa's three named
+offspring are **Ereshkigal ("Resh"), Perseus ("Percy"), and Persephone**. **Only Perseus
+is biologically Aisa-and-Kiran's**; Resh and Persephone are **Nona Lee's clones**,
+gestated in a secret lab and raised by Aisa as her own — FH ch. 80, Kiran to Persephone:
+*"Perseus is not genetically related to Nona, Moira, or Aisa."* See the Lee House clones
+thread in the FH endgame.
+
+### Physical — two-armed Yele in off-white seer's robes; surgically implanted sheen-eyes; canonically handsome
+
+**Tier:** canon
+
+*— FH ch. 8*
+
+Two-armed (so not imperial Phene); surgically implanted seer's eyes (see
+[`polities.md`](polities.md), Iros entry — they *look* born-blind but are an installed
+optoelectronic sensorium). "Distinguished good looks" → **"Hot Dad"** is the Companions'
+nickname, used straight (not ironic) and recognisable even to enemies on first sight.
+*"A handsome, impeccably groomed older man who stands with the effortless posture of a
+Yele native"* (US ch. 25). Layered off-white robes with cream sash and sandals when in
+order dress; vac suit and Phene leash-baton when operating with troops (FH ch. 66).
+
+### Persona — cold, analytic, unctuous; honest by oath, never warm
+
+**Tier:** canon
+
+*— US ch. 34*
+
+Moira's verdict; Persephone's counter is *"at least he's always been honest with me"* —
+the line that becomes load-bearing in his arc. A seer of Iros is **oath-bound to the
+truth**, but Persephone discovers the bind is performative: *"Being a seer of Iros does
+not preclude prevarication on his own behalf, does it?"* (FH ch. 83). What he says is
+true; what he chooses to say, and to whom, is a separate question.
+
+Public role: the man who manages Aisa's volatility through *"unctuous smoothing"* (US
+ch. 25). Marduk Lee from inside the House: *"he wasn't warm or likable, but he did his
+job effectively"* (FH ch. 25). Treats his own family feeling as a weakness (FH ch. 90:
+*"I succumbed to the weakness of parental concern"*) — the order's "long view" code in
+personal practice.
+
+### Arc — 25-year sleeper inside Lee House; Octavian's murder triggers his exposure; flight to Phene; pitches a regicide-and-puppet deal; kidnaps Persephone
+
+**Tier:** canon
+
+*— FH ch. 59*
+
+*— FH ch. 8*
+
+For 25+ years Kiran serves as a senior administrator in Chaonia's **Ministry of
+Security, Punishment, and Corrections** (FH ch. 9), running interrogations on the
+strength of his oath-bound truthfulness — and feeding the Order from inside. The arc
+breaks at **Manea Lee's wedding banquet** (US ch. 33–34): disguised as a Lee House
+gendarme on the wall-walks, supposedly secluded in mourning, Kiran shoots a
+**late-bloomer** dart at Sun's escape boat and kills **Octavian** in the crossfire.
+
+He flees Chaonia (US closing arc): cargo train → Five Prosperities Station → the
+commercial vessel *Weak Execution* → a Remora freighter → the Molossia beacon, dropping
+into the Phene Empire less than an hour before the Phene raid on Sun's father's research
+lab — at which he himself appears, ushering the Phene Rider through a tunnel in the Iros
+hermitage's apothecary cabinet on Tjeker (US ch. 44).
+
+In mid-FH he is on Anchor Prime as the Phene Synod sits, pitching the **Rider Council**
+on a deal: eliminate Sun, install a pliable Chaonian heir (Prince Jiàn, see below).
+Backed by Rider **Manishtusu**; doubted by **Zakurru** and **Kubaba**. He runs an arrow
+of banner soldiers via a Phene-issued **leashing baton**, distils more late-bloomer at
+the **Antikythera Terrace hermitage**, and at FH chs. 78–82 kidnaps Persephone at Port
+Khayzuran using two Metis clones posing as their cousin. His plan, disclosed to a
+captive Persephone (FH ch. 80): replace the real Metis with one of four surviving Metis
+clones, install her as queen-marshal, and **"rule through her"** with Persephone as
+queen-consort.
+
+### Fate — captured by Persephone in the Antikythera hermitage; incinerated alive in his lifepod by Sun
+
+**Tier:** canon
+
+*— FH ch. 96*
+
+Persephone infiltrates the Antikythera hermitage with the Phene defector Bartholomew Kr
+Manalon, slips a Lee-House sedative pin into Kiran's ankle, seizes his leash-baton, and
+commands the leashed banner soldiers to deposit him in a lifepod (FH ch. 91). The Rider
+Council, learning Anchor is falling, deliberately abandons him: *"had his schemes borne
+fruit, we would not be in this situation… he can find his own way"* (Zakurru, FH ch. 91).
+
+Sun briefly considers force-feeding him his own late-bloomer, decides against it, and
+runs the decontamination cycle. The lifepod's record is wiped. **Dead and unburied.**
+*"It was more dignity than Kiran Seth deserved"* (FH ch. 96).
+
+### Allegiances — militant Iros wing; long-term partner of Nona Lee; client of Rider Manishtusu; abandoned at the end
+
+**Tier:** canon
+
+*— FH ch. 59*
+
+Kiran sits on the **militant** wing of the Order (see [`polities.md`](polities.md)),
+opposite Baron Voy's *accommodationist* Yele faction. Operationally tag-teams with the
+**Oculi** — they planted Navah inside Hestia's household (who killed Sun's brother
+Perseus). His parallel deep alliance is with **Nona Lee** in the clone-puppet project
+(predating his Lee House marriage). Toward the Phene Rider Council he is a transactional
+client — useful to Manishtusu while he was delivering, dropped by Zakurru and Kubaba
+when he wasn't.
+
+### Abilities — heat-and-lies sight; Phene leash-baton operator; late-bloomer chemist; oath-bound truthful
+
+**Tier:** canon
+
+*— FH ch. 90*
+
+The seer's heat-and-lies sight is the on-page operational tool — *"His seer's gaze
+examines Ti"* (US ch. 13). Beyond that: **Phene leash-baton proficiency** controlling an
+arrow of banner soldiers (FH ch. 66, 91); **late-bloomer chemistry** at hermitage
+apothecaries (FH ch. 91); standard Iros navigation in unlit hermitage corridors via
+floor-strips. He did **not** train Persephone in any Iros art — she relies on Cadet
+Academy training and a Lee-House medical kit at his capture.
+
+Crucially, his social power rests on **"A seer of Iros is unimpeachable. Everyone knows
+that"** (US ch. 25) — a trust currency he weaponised inside Lee House for 25 years.
+
 ## Prince Jiàn
 
 ### Identity — half-Hesjan son of Queen-Marshal Nézhā and his traitor consort

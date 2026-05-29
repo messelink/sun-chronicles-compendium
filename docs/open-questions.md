@@ -285,6 +285,46 @@ days at FH's close, FH ch. 74). Open: the child's name, the refuge cartel, and t
 storyline role. A credible (currently inactive) dynastic claim against Sun's succession
 — almost certainly a *Lady Chaos* thread.
 
+### What is the etymology / referent of "Iros"?
+
+**Tier:** open
+
+The Order of Iros is named after **nothing on-page** — there is no system, planet,
+person, founder, oracle, or saint of that name across both books. The order's only
+on-page origin claim is descent from "the ancient Argosies" (FH ch. 8). Open whether
+Iros is a lost world, a mythic figure, an Apsaras-era founder, or pure invented
+nomenclature.
+
+### How are seers recruited and at what age?
+
+**Tier:** open
+
+Seer eyes are **surgically implanted** (FH ch. 9), not congenital, so an Iros novice
+is at some point cybernetically modified — but the books never describe the entry
+pathway. Childhood placement? Vocation-tested adults? Recruitment from poor families?
+Vows of celibacy or property? Hetty's father "fell in love and left the hermitage"
+(US ch. 43) — so we know exit is possible without expulsion — but how he entered, and
+the age of implantation, is silent.
+
+### Who replaced Prime Deo as head of the Order after Tjeker?
+
+**Tier:** open
+
+Sun's Tjeker raid killed the head of the entire Order in US (FH ch. 16 confirms his
+role). Through FH the seers are referred to as "fallen out of favor" but **no new
+Prime is named**. Open: is there a successor leading the militant wing after Kiran's
+death too? A *Lady Chaos* thread.
+
+### What was the Congress Moon bribery scandal actually about?
+
+**Tier:** open
+
+The seers' Congress Moon hermitage was *"shuttered thirty years ago after a shocking
+bribery scandal that rocked the League"* (FH ch. 15), in their core role as objective
+mediators (FH ch. 19). The books reference the scandal but never name the dispute, the
+bribers, or which seer(s) were corrupted. A potential entry point for the order's
+earlier political entanglements.
+
 ## Resolved
 
 ### ~~What are the names of all seven Karnos beacons, and which is non-functional?~~

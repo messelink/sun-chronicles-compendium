@@ -243,6 +243,34 @@ See the Hesjan polity entry in [`polities.md`](polities.md) for the cartel struc
 symbiont culture that underlie these shifts; the unnamed honcho consort who betrayed
 Nézhā and her son **Prince Jiàn** are in [`characters.md`](characters.md).
 
+### The Tjeker raid decapitated the Order of Iros (late US)
+
+**Tier:** canon
+
+*— FH ch. 16*
+
+*— US ch. 44*
+
+Late in *Unconquerable Sun*, Sun's investigation of the **Tjeker hermitage** (Repose
+District, on a moon of Tjeker — a religious-tolerance zone hosting multiple shrines)
+uncovered the hermitage hosting Phene Riders, smuggling them through a secret tunnel
+hidden in an apothecary cabinet into the adjacent saints basilica, and synthesising
+the **late bloomer** toxin. When Sun closed on the elderly prime overseeing the
+operation, he swallowed a vial of late bloomer rather than be taken (US ch. 44). Sun
+later reveals (FH ch. 16) that **this prime was the head of the *entire* Order of
+Iros**, not just the Tjeker hermitage — Sun's raid was a **decapitation strike**.
+
+**Strategic consequences.** The Yele League formally disowns the order through FH —
+*"The seers have fallen out of favor with the leading factions in the League. They're
+seen as militant, uncooperative, and untrustworthy"* (FH ch. 18) — and the surviving
+militant faction (Kiran Seth de Lee, the Kanesh assassin, others) becomes operationally
+dependent on the Phene Rider Council. A second consequence chains forward into FH: it is
+Kiran's late-bloomer (the same Iros supply chain) that **kills Octavian** at Manea's
+wedding banquet and later **kills Eirene** through Aisa Lee (FH ch. 49) — the Tjeker
+raid neutralised the order's leadership but did not extinguish its operations. See the
+Order of Iros entry in [`polities.md`](polities.md), Kiran's cluster in
+[`characters.md`](characters.md), and the open questions in [`open-questions.md`](open-questions.md).
+
 ---
 
 *This is an unofficial fan project. It is **not approved, endorsed by, or affiliated with** Kate Elliott or her publishers. All facts are drawn from and cited to the published novels; no substantial text is reproduced. Copyright in the* Sun Chronicles *belongs to Kate Elliott.*
