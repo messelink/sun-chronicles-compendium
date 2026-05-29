@@ -298,6 +298,85 @@ political neutrality, a framing Chaonia treats as a de-facto Phene alliance (FH 
 Its economy also rests on indentured **"drones,"** a debt-bound labour class "banned
 elsewhere" (FH ch. 64).
 
+## The Argosies
+
+A people older than the local belt — the original refugee fleets that carried humanity
+out of the Celestial Empire (see [`history.md`](history.md) for the deep-history
+chronology). Surviving today as a federation of **ship-clan guilds** bound by a
+written **Argosy charter**, operating the **knnu-drive** and **Navigator** monopoly
+that crosses where beacons don't. Not a state; not a polity in the Yele/Chaonia/Phene
+sense. A guild civilisation.
+
+### Argosy guilds, ranks, and customs
+
+**Tier:** canon
+
+*— FH ch. 14*
+
+Named guilds: **Wayfinders** (Navigators — **rhombus implant** in the forehead, neural
+enhancement, artificial irises; "highest status. Even a humble apprentice was like to
+royalty", FH ch. 14); **Communicators** (diplomats; silver vests; tow-chain earrings,
+FH ch. 13). Guild placement is decided by aptitude in childhood. **No Wayfinder may
+pilot warships** under any circumstance (FH ch. 14 — charter restriction).
+
+**Governance.** **Consensus of Elders** + **Sterling Senate** (Alabaster Argosy;
+FH ch. 13). The Alabaster Argosy is a diplomatic peer of Chaonia (Treaty 31.7.2.14
+Injunction 5.31, from ~25 yrs pre-FH).
+
+**Customs.** Palms-pressed-together **mirror of trust** bonding (FH ch. 14);
+profuse greetings as a custom (FH ch. 22); the cant *"Loose ropes!"* (FH ch. 61).
+Tall slender ship-born phenotype with **gravity braces**; Argosy term for planet folk
+is *"dirt-siders"*. They use a **standard ideographic script** across all Argosies
+that Chaonia later adopted as its writing system (FH ch. 86).
+
+**Charter ideal: safe passage.** *"An Argosy pledges safe passage. The Ousoos Argosy
+has betrayed the Argosies' most treasured traditions and ideals"* (FH ch. 62, Sun to
+the Karsh). Knnu drives and Navigator services are interdicted from sale to
+non-Argosy parties (FH ch. 68) — the Ousoos sale of 10 knnu drives to the Phene was
+charter violation.
+
+**Beacon-sickness immunity.** Argosies avoid beacons, and so are immune to the
+hereditary condition that afflicts (e.g.) Lee House: *"The Argosies avoid beacon
+sickness by avoiding beacons"* (FH ch. 80).
+
+### Named modern Argosies
+
+**Tier:** canon
+
+*— FH ch. 12*
+
+| Argosy | role | notes |
+|---|---|---|
+| **Alabaster** | Chaonia treaty | Soaring's home; Consensus + Sterling Senate; runs Titan motherships; named after Alabaster System (one of the five marginally habitable Mishirru-frontier planets — see [`systems.md`](systems.md)) |
+| **Ousoos** | Trinity knnu-hop operator | Runs Tsurru↔Hellion, Meli↔Nalanda/Sankore, Kumbala↔Harahuvati; loyal to the **Karsh** of Trinity; flagship Titan **Bountiful**; **suspected source of the Phene's illegally acquired knnu drives** (FH ch. 76) |
+| **Mopsos** | historical / dissolved | Past tense in canon; the **seven inhabited moons of Colophon** (Troia System) are named after its seven auxiliary ships — Ekwesh, Peleset, Shardana, Shekelesh, **Tjeker**, Teresh, Weshesh (US ch. 41) |
+| Solomon's clan ("knnu lineage") | Crow-ship Argosy | Stranded planet-side after Hesjan pirate raids ~25 yrs pre-US (US ch. 22); given a mini-Titan, the **Keoe**, by Sun in FH ch. 15 — *"go back to the space-faring knnu life that pirates kicked them out of"* |
+| Odrysa anchor-layers | last visit ~94 yrs pre-FH | Their knnu-anchor buoy still sits in Odrysa System, found by *Sunbird* in FH ch. 12 |
+
+Full Argosy count is **not enumerated** in canon. The fleets that left the Celestial
+Empire numbered "hundreds of millions" of refugees across an unknown number of
+Titan-mothership convoys; many were lost in transit or scattered out of contact.
+
+### Argosy descent claims — Iros, banner soldiers, and Sun's "argonauts"
+
+**Tier:** canon / inference
+
+The **seers of Iros** explicitly claim *"descendants of the ancient Argosies"* (FH ch.
+8). Their **surgically implanted sheen-eyes** (see Iros entry above) closely parallel
+the **Wayfinders' rhombus-implant + neural augmentation** — suggesting the Iros
+"heritage" claim has operational technical content: the order inherited Argosy
+sensory-modification tradition. The sister Oculi, with their rumoured single
+"cyclops eye" (FH ch. 48), fit the same pattern.
+
+The **banner soldiers** (and through them the **Phene Riders** and the **Gatoi
+wheelship clans**) have their own Apsaras-flight descent claim (US ch. 47) — *not*
+the same as Argosy descent. Two separate ancestry threads.
+
+Sun titles herself *"descendant of the argonauts who founded this realm"* (US ch. 22)
+in formal self-presentation — *"argonauts"* echoing but distinct from "Argosies"; the
+Chaonian foundation myth has an Argosy-adjacent register without claiming the
+identity directly.
+
 ## Frontier peoples
 
 The local-belt enumeration (FH ch. 70: "Mishirru, Yele, the empire, Chaonia, the Hesjan

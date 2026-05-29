@@ -109,6 +109,13 @@ Great-Grandmother Metis). Its three beacons connect to **Molossia** (inward, tow
 core), **Aspera** (one hop outward toward Karnos), and the **Kanesh** route into the
 Hatti region.
 
+**Argosy heritage at Troia.** The system's gas giant **Colophon** has **seven inhabited
+moons**, named after the seven auxiliary ships of the (historical) **Mopsos Argosy** —
+*Ekwesh, Peleset, Shardana, Shekelesh, Teresh, Tjeker, Weshesh* (US ch. 41). Tiana's
+father is from Tjeker. The **Mopsos Argosy** itself is referenced only in past tense
+in canon — apparently dissolved generations back, but leaving these onomastic traces
+in Chaonia's frontier system.
+
 ### Kanesh System — Chaonian-held gateway into the Hatti territories
 
 **Tier:** canon
@@ -151,7 +158,15 @@ artifact with no aura).
 The first planetary haven of the Argosy fleets fleeing the Celestial Empire — settled
 long before beacons existed. Now a **terminus** (single beacon; a dead end by beacon
 drive) at the far end of a long single-stage **janus line** running from Mishirru's
-capital out to Landfall. See [`history.md`](history.md) for the founding sequence.
+capital out to Landfall. See [`history.md`](history.md) for the founding sequence
+(~3,000 yrs ago).
+
+**The post-Landfall haven extended to five marginally habitable planets** — *"Landfall,
+Arafel, Cataract, Scepter, and Alabaster, each of which had a marginally habitable
+planet"* (FH ch. 71). All five are now on the Mishirru core line; Destiny (further
+along the same string) was the *fully* habitable destination that became the queendom
+capital. The **Alabaster Argosy** is named after Alabaster System and remains the
+diplomatic-treaty Argosy with Chaonia (FH ch. 13; see [`polities.md`](polities.md)).
 
 ## Yele region
 

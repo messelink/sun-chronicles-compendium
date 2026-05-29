@@ -60,6 +60,59 @@ a beacon toward the other, the **same physical link appears under two names** (t
 Karnos↔Sleepless edge is the "Sleepless Beacon" from Karnos and the "Karnos Beacon" from
 Sleepless). This is the edge-identity/deduplication problem flagged in the schema notes.
 
+### Living beacons are lethal on contact; dead beacons emit infectious auras
+
+**Tier:** canon
+
+*— FH ch. 66*
+
+*— FH ch. 12*
+
+Two physical properties of beacons beyond the prime-class taxonomy: **living beacons
+are lethal on direct contact** — you keep your distance; **dead beacons emit toxic
+auras that infect their anchor planet** plus nearby habitats and factories. The
+Odrysa dead beacon contaminated its previously habitable planet, rendering it
+uninhabitable. Part of why broken outer-rim corridors became dead in stretches after
+the collapse — and why caravan routes detour around such systems.
+
+### The Apsaras Convergence "invented, or discovered" the beacons
+
+**Tier:** canon (the uncertainty itself)
+
+*— US ch. 42*
+
+*— FH ch. 76*
+
+The text **deliberately hedges** on whether the Apsaras engineers *invented* beacons
+or *rediscovered* them. FH ch. 76 sharpens the question: the Apsaras "plundered" the
+Mishirru Gyre Archives and took **navigational charts** they never returned. The
+charts implied predecessor knowledge — possibly Celestial-Empire-era beacon physics
+already worked out and stored in the Archives. So the canonical position is uncertain:
+the engineers may have *recovered* a Celestial-Empire technology, repurposed it as
+an anti-Argosy infrastructure, and made it their own.
+
+### The original Apsaras network — eleven radial routes from She Who Bore Them All
+
+**Tier:** canon (mostly Persephone's reconstruction)
+
+*— FH ch. 15*
+
+*— FH ch. 15*
+
+The first beacon was a **single-hop proof of concept** (Persephone's reconstruction
+from the Tjeker map, FH ch. 76). The original network was **eleven radial routes**
+from the home system She Who Bore Them All — every trip passed through the centre.
+The **prime-number class hierarchy** (cerberus = 3, scylla = 5, hydra = 7) emerged
+*later*, as the engineers added cross-links between the original radial lines: *"At
+some point the engineers connected those original, separate lines to each other to
+make the network efficient, starting with three-beacon cerberus systems and
+five-beacon scylla systems"* (FH ch. 86). The seven-beacon class (Karnos, Destiny,
+Auger, Axiom) and the eleven-beacon class (Yele, Anchor) marked successive
+generations of network densification. The construction of the **twelfth and
+thirteenth beacons at She Who Bore Them All** is the leading on-page hypothesis for
+what eventually overloaded and crashed the network ~800 yrs ago (see
+[`open-questions.md`](open-questions.md)).
+
 ## Ships
 
 ### Yele ship design — the original template for corvettes and corsairs

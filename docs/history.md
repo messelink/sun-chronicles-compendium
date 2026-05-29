@@ -12,6 +12,101 @@ after a roughly thousand-year voyage the surviving fleets reached **Landfall**. 
 predates the beacons entirely — early travel was slow knnu-drive voyaging measured in
 months and years (US ch. 42).
 
+**Chronology, triangulated.** *"Think of the Celestial Empire, a place lost both in
+location and also to a past four thousand years gone"* (FH ch. 10); *"a hundred
+generations after the fact"* (FH ch. 1); *"they had been voyaging for a thousand
+years"* (FH ch. 71). So roughly **4,000 yrs since the flight, 1,000 yrs in transit,
+3,000 yrs since Landfall** — ~40 shipboard generations × ~25 yrs ≈ the voyage length.
+
+**Two warring ideologies of the fall still active.** Mishirru's recitation
+(FH ch. 72) blames "reckless explorations… drawn from the very root of the reckless
+explorations that had brought about the ruin of the Celestial Empire" — i.e. the
+plague was *biological/scientific transgression*, which is why Mishirru's hierocracy
+later persecuted proto-Phene gene-engineering. The Phene reading (US ch. 49) inverts
+it: *"aristocracy, the vilest of systems which so many fled the Celestial Empire to
+escape"* — failure of the leaders, per the ancient classic *Reflections on the Decree
+of Destiny* (FH ch. 5). The Chaonia-Phene-Mishirru war is partly this 4,000-yr
+ideological collision.
+
+**Religious framing.** **Saint Arthas the Cursebearer** — *"he who took on the curse
+so humanity could escape the plague of corrupted blood"* (FH ch. 20) — is the
+sainted figure of the escape in basilica tradition.
+
+### The last Celestial Emperor — Sun's namesake; venerated as eight avatars
+
+**Tier:** canon
+
+*— FH ch. 31*
+
+*— FH ch. 31*
+
+The **last Celestial Emperor was a single woman** — *"She Who Rises as the Sun"*,
+bearing the **eight-pointed sunburst** — who led humanity's final evacuation personally
+(FH ch. 72 *"the Celestial Emperor and Her Loyal Charioteer led the plague-struck
+people"*). The popular drama *Legendary Narratives from the Celestial Empire*
+dramatises her last stand (FH ch. 9). **Sun's father named her after this historical
+figure** (FH ch. 31) — Sun is, *in-universe explicitly*, named after the last
+Celestial Emperor; not an abstract title, an actual woman.
+
+She is venerated across the local belt as **eight avatars**, each one a face of the
+same Emperor: She Who Rises as the Sun (Chaonian); She Who Voyages on the Winds of
+Furious Heaven; **She Who Bore Them All** (also the Apsaras progenitor — see below);
+The Holy One Who Eases Misfortune; and four others not enumerated on-page. Court
+structure inherited from the Empire: **13 exalted officials** attending the throne
+(US ch. 1), **8 noble houses** as a ruling tradition (US ch. 12). Chaonia's seven
+Core Houses + the throne = the eight-house pattern.
+
+### The Argosies built a guild civilisation, not just fleets
+
+**Tier:** canon
+
+*— FH ch. 14*
+
+*— FH ch. 68*
+
+The Argosies were not just refugee fleets — they were (and remain) a **guild
+civilisation** governed by a written **charter** binding all Argosies. Named guilds:
+**Wayfinders Guild** (Navigators — **rhombus implant** in the forehead, neural
+enhancement, artificial irises, "highest status. Even a humble apprentice was like to
+royalty" — FH ch. 14); **Communicators Guild** (diplomats; silver vests; tow-chain
+earrings — FH ch. 13). Local governance via **Consensus of Elders** + **Sterling
+Senate** (Alabaster Argosy; FH ch. 13). Strict reproductive controls (reproduction
+licences; cross-fleet exchanges of young people to sustain genetic variation, FH ch. 14).
+
+**Argosy ideographic script** was adopted by Chaonia (FH ch. 86): *"Argosy fleets
+separated from each other for a thousand years obviously would experience language
+shift. That is why the Argosies all functioned with a standard written language."*
+Chaonia's modern writing system is **Argosy heritage**.
+
+**Customs and recognition.** The "**mirror of trust**" palm-to-palm bonding (FH ch.
+14); profuse greetings (FH ch. 22); *"Loose ropes!"* cant (FH ch. 61); narrow tall
+ship-born phenotype with gravity braces (FH ch. 22). Argosies refer to planet folk as
+*"dirt-siders"*. They are **immune to beacon sickness by behaviour** — the Lee House
+hereditary condition simply doesn't reach them because they don't use beacons
+(FH ch. 80).
+
+**Argosy charter ideals.** *"An Argosy pledges safe passage. The Ousoos Argosy has
+betrayed the Argosies' most treasured traditions and ideals"* (FH ch. 62, Sun to the
+Karsh). Pledge of safe passage is a core charter principle; knnu drives and Navigator
+services are interdicted from sale to outsiders.
+
+### The Founding War — Argosies fought after Landfall; queens of Mishirru imposed peace
+
+**Tier:** canon
+
+*— FH ch. 76*
+
+The arrival at Landfall was *not* the end of strife. The Argosies fell into a
+post-Landfall **Founding War** over the spoils — explicitly the cause of the
+**Archives** being shattered (Mishirru's primal trauma; see entry above). Out of this
+chaos rose the **queens of Mishirru**, who imposed hierocratic rule **specifically to
+end the Argosy feuding**. The "primordial" Mishirru-Argosy enmity is foundational:
+Mishirru is, structurally, *the people who stopped the Argosies*.
+
+The post-Landfall haven extended to **five marginally habitable planets**: *"Landfall,
+Arafel, Cataract, Scepter, and Alabaster, each of which had a marginally habitable
+planet"* (FH ch. 71). Settlement then continued along the string to Destiny.
+
 ### Mishirru was founded from Landfall and named the region "between voyage and home"
 
 **Tier:** canon
@@ -37,6 +132,88 @@ instantaneous travel that broke the Argosy guilds' monopoly on interstellar move
 This reframes the word *convergence*: the Apsaras was a **people/collective**, and its
 network is the ancestral beacon system whose later collapse opened the interregnum
 (below).
+
+**Engineers, not a state.** Members are *always* called "Apsaras engineers" — never
+council, military, territory, emperor. A **collective** that "named itself" the
+Apsaras Convergence (FH ch. 70). The Karsh's revelation (FH ch. 62) gives the
+Convergence's explicit raison d'être: *"Why do you think the Apsaras Convergence
+developed in the first place? … It was to combat the rise of war among the Argosies,
+a slow-burning series of slow-motion conflicts that threatened the web of contact
+between star systems."* The Convergence was an **anti-Argosy-war engineering
+movement** of engineer-priests centred on She Who Bore Them All — Argosy displacement
+was *the point*, not a side effect.
+
+**"Invented, or discovered."** Canon hedges (US ch. 42). FH ch. 76 sharpens the
+question: the Apsaras *"plundered"* navigation charts from the Mishirru Gyre
+Archives — *"Their messengers plundered what they desired from our stacks… They said
+they would return the navigational charts they stole, but we never saw them again."*
+So the Apsaras may have **rediscovered** beacon technology from earlier
+Celestial-Empire records, not invented it fresh. Persephone's working theory (FH ch.
+68) adds: the engineers **deliberately sized beacon coils** to exclude Argosy
+mothership-Titans — explicit anti-Argosy design.
+
+### Beacons are toxic — direct contact lethal; dead beacons infect their planets
+
+**Tier:** canon
+
+*— FH ch. 66*
+
+*— FH ch. 12*
+
+Two physical properties of the Apsaras beacons that the existing prime-class taxonomy
+doesn't capture: (1) **living beacons are lethal on direct contact** — you keep your
+distance; (2) **dead beacons emit toxic auras** that *infect* their anchor planet plus
+nearby habitats and factories. The Odrysa dead beacon contaminated its previously
+habitable planet. A useful framing for the post-collapse caravan routes: dead beacons
+aren't just inert — they actively poison the systems that held them, which is part of
+why broken outer-rim corridors became uninhabitable in stretches.
+
+### Banner soldiers descend from Apsaras-collapse refugees
+
+**Tier:** canon
+
+*— US ch. 47*
+
+*— FH ch. 67*
+
+The **banner soldiers** — the population from whom Phene-genengineered **Riders** are
+drawn, and from whom the **Gatoi clan-wheelships** descend — are by tradition
+**Apsaras-collapse refugees**. Eight hundred years ago they fled the failing
+Convergence; the **neural pathway** that distinguishes banner-born is *the* mark of
+this lineage. Banner-soldier cosmology mirrors the Apsaras hub-topology: **eleven
+banners = the eleven original radial routes** from She Who Bore Them All. So the
+Phene Empire's elite caste is, biologically, Apsaras-refugee-descended — a fact that
+threads back through the deep history more tightly than the local-belt-war framing
+otherwise suggests.
+
+### She Who Bore Them All — polysemic across four religious systems
+
+**Tier:** canon
+
+*— FH ch. 15*
+
+The same name appears in **four distinct religious systems** in the local belt:
+
+1. **Apsaras** homeworld progenitor goddess (FH ch. 15) — the planet they centred their
+   beacon network on; the "womb system" (FH ch. 76).
+2. **Chaonian** avatar of the Celestial Emperor — Sun walks to her feet at the
+   Temple of Celestial Peace, "braided headdress studded with stars and an infant
+   cradled in each arm" (FH ch. 31).
+3. **Banner-soldier** / Gatoi cosmology — *"Lady Chaos, … the ever-shifting maze of
+   She Who Bore Them All, progenitor of the eleven banners"* (FH ch. 67).
+4. **Mishirru** primordial creator — *"the glistening one, the primordial creator,
+   She Who Bore Them All"* (FH ch. 76).
+
+The 1,800-year Yele temple to her predates the Convergence's peak by ~1,000 years —
+suggesting she was an older pan-human creator-figure that the Apsaras *adopted* and
+made the centrepiece of their network, not invented. The book-3 title **Lady Chaos**
+is the banner-soldier name for her.
+
+**The restoration prophecy.** Mishirru's Oracle at the Gyre, to Sun (FH ch. 76):
+*"Perhaps worlds long sundered from the rest of humankind may be gathered back and
+She Who Bore Them All restored to her central place in the network."* The Apsaras
+secrets lie at the unreachable home system; the Oracle frames restoration as Sun's
+potential mission. Almost certainly a *Lady Chaos* thread.
 
 ### The original Apsaras network was a hub of radiating lines centered on the lost home world
 

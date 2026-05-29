@@ -125,13 +125,68 @@ linked, but only **Tsurru↔Meli** and **Tsurru↔Kumbala** are independently wi
 
 ### How many beacons did the Apsaras homeworld have, and where is it?
 
+**Tier:** open (sharpened — 11→13 progression is now the leading on-page hypothesis)
+
+The Apsaras homeworld ("She Who Bore Them All") was **originally built with eleven**
+radial beacons, all traffic routed through it (FH ch. 15). The 11→13 progression is
+now the dominant on-page hypothesis for the collapse: a pre-collapse map shows **13
+beacons** in the system (US ch. 42), and *"many have speculated that the construction
+of twelfth and thirteenth beacons in a single system is what overloaded and crashed
+the network."* FH ch. 60 reinforces this: *"in this region, called the Middle Gap,
+most connections failed when the thirteen beacons of the Apsaras home world underwent
+some manner of cataclysmic breakdown."* Sun (FH ch. 69) attributes the collapse to
+*"the Apsaras who had overreached with their engineering"*. But the cause is
+explicitly canon-unknown (FH ch. 12: *"Eight hundred years ago, parts of the beacon
+network had collapsed for reasons no one understood"*) — the overload theory is the
+loudest hypothesis, not the resolution. The system's **location** was lost in the
+collapse — *"even the Argosies can't find it"* (FH ch. 61). The Oracle at the Gyre
+(FH ch. 76) suggests Sun could find it, the *Lady Chaos* hook.
+
+### What did the Apsaras "plunder" from the Mishirru Gyre Archives, beyond navigation charts?
+
 **Tier:** open
 
-The Apsaras homeworld ("She Who Bore Them All") is the lost central hub of the original
-network. Persephone's reconstruction models it as the center of **eleven** radiating lines
-(FH ch. 76; see [`history.md`](history.md)) — which leans the count toward eleven — but she
-labels it "just a model," and an unverified "thirteen" also surfaced. So eleven is the best
-hypothesis, not hard canon, and its location was lost in the collapse (never found on-page).
+FH ch. 76: *"The Apsaras Convergence never cooperated with this Archive by sharing
+any of their knowledge. Their messengers plundered what they desired from our
+stacks… They said they would return the navigational charts they stole, but we never
+saw them again."* Only **navigational charts** are named on-page; the Oracle's
+phrasing ("plundered what they desired") implies broader knowledge taken. Whether
+this includes beacon-physics, Celestial-Empire records the Apsaras then *rediscovered
+rather than invented* (cf. US ch. 42 "invented, or discovered"), or other deep-past
+technologies — unstated. A central thread for *Lady Chaos* if Sun reaches She Who
+Bore Them All.
+
+### Are the "apsaras in the Gap" surviving minds, recordings, or hallucinations?
+
+**Tier:** open
+
+Persephone perceives "apsaras" — divine messenger figures — as living presences
+inside the beacon network during her transit-vision episodes (FH ch. 80: *"The divine
+apsaras whose existence fathoms this insubstantial web that weaves in and out of the
+physical universe. Let us in."*). US ch. 39 echoes: *"It's rumored but never been
+confirmed that other presences live inside the network, minds that either aren't
+human at all or that once were human and were fractured when the inner system
+collapsed."* Whether these are (a) the actual surviving consciousnesses of
+Apsaras-era engineers caught in the collapsing network, (b) residual memory
+imprints, (c) genuine non-human intelligences inhabiting the beacon-substrate, or
+(d) artefacts of Persephone's beacon-sickness, the text refuses to resolve.
+
+### Who were the Celestial Empire's people, and where was it physically?
+
+**Tier:** open
+
+We have a **chronology** (~4,000 yrs ago, fell to a plague of corrupted blood); a
+**ruler** (the last Celestial Emperor, a woman, now venerated as She Who Rises as the
+Sun); a **court structure** (13 exalted officials, 8 noble houses); and **fragments**
+(songs, sculpture, the Phene Anchor archives, the Yele scholar-linguists studying
+"forgotten languages of the Celestial Empire" — US ch. 35). The Gyre Oracle hints at
+Earth-like iconography in visions but never names coordinates. *"The personal accounts
+of the last emperor, my namesake"* (FH ch. 69) implies Mishirru holds CE primary
+sources. The Empire was almost certainly **multi-stellar** before the plague (per
+"the lands where humanity was born", US ch. 45) — a single homeworld plus colonies.
+Specific worlds: silent. Whether *anyone* survived in the abandoned CE territories
+(FH ch. 97 hints at "a remnant survived however they might or vanished one by one
+into oblivion") is canonically unanswered.
 
 ### What is the unnamed eighth system of the Mishirru "core eight"?
 
