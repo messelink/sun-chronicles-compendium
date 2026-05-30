@@ -672,17 +672,25 @@ for pol in pname:
     fragments = [n for c in comps if len(c) < LONE_FOLD for n in c]
     groups = ([clusters[0] + fragments] + clusters[1:]) if clusters else ([fragments] if fragments else [])
     for comp in groups:
-        pts = [tuple(pos[i]) for i in comp]
-        cx = sum(p[0] for p in pts) / len(pts); cy = sum(p[1] for p in pts) / len(pts)
+        # Track id-with-position so we can stash the core's member IDs onto the hull
+        # path for the drag handler to re-hull from current positions.
+        ipts = [(i, tuple(pos[i])) for i in comp]
+        cx = sum(p[1][0] for p in ipts) / len(ipts); cy = sum(p[1][1] for p in ipts) / len(ipts)
         # within a component, still drop a far outlier so a spread cluster stays tight
-        dists = sorted(math.hypot(p[0] - cx, p[1] - cy) for p in pts)
+        dists = sorted(math.hypot(p[1][0] - cx, p[1][1] - cy) for p in ipts)
         thr = max(dists[len(dists) // 2] * HULL_OUTLIER_MULT, 260) if dists else 260
-        core = [p for p in pts if math.hypot(p[0] - cx, p[1] - cy) <= thr] or pts
+        core_ip = [(i, p) for i, p in ipts if math.hypot(p[0] - cx, p[1] - cy) <= thr] or ipts
+        core_ids = [i for i, _ in core_ip]
+        core = [p for _, p in core_ip]
         ccx = sum(p[0] for p in core) / len(core); ccy = sum(p[1] for p in core) / len(core)
         if len(core) >= 3:                         # only shade a real cluster (≥3 nodes)
-            poly = pad_hull(hull(core), ccx, ccy, pad=HULL_PAD.get(pol, 46))
+            _hpad = HULL_PAD.get(pol, 46)
+            poly = pad_hull(hull(core), ccx, ccy, pad=_hpad)
             d = "M " + " L ".join(f"{x:.0f},{y:.0f}" for x, y in poly) + " Z"
-            zones.append(f'<path d="{d}" fill="{col}" opacity="0.05"/>')
+            zones.append(
+                f'<path class="hull" data-polity="{pol}" '
+                f'data-members="{",".join(core_ids)}" data-pad="{_hpad}" '
+                f'd="{d}" fill="{col}" opacity="0.05"/>')
         # 1–2-node components (e.g. a lone frontier system reachable only via enemy space)
         # get no hull — just their coloured node(s)
     # one region label, anchored (in order): an explicit REGION_LABEL_ANCHOR pin →
@@ -778,9 +786,13 @@ for e in edges:
     if e.get("type") == "route" or e.get("route_label"):   # stubs + (mid-segment of) inferred chains
         txt = f'{e["hops"]} hops' if e.get("hops") else "route"
         mx, my = (x1 + x2) / 2, (y1 + y2) / 2
-        lab = (f'<text class="elabel" x="{mx:.0f}" y="{my-4:.0f}" text-anchor="middle" '
-               f'font-family="IBM Plex Mono, monospace" font-size="10" fill="#9aa6c8" '
-               f'opacity="0.8">{txt}</text>')
+        # Tag route labels with their parent edge endpoints (parallel to sevlabel) so
+        # the drag handler can find each label by its edge and reposition it to the
+        # new midpoint when either endpoint moves.
+        lab = (f'<text class="elabel rlabel" data-edge-from="{e["from"]}" '
+               f'data-edge-to="{e["to"]}" x="{mx:.0f}" y="{my-4:.0f}" '
+               f'text-anchor="middle" font-family="IBM Plex Mono, monospace" '
+               f'font-size="10" fill="#9aa6c8" opacity="0.8">{txt}</text>')
     elif e.get("status") == "severed":   # physically cut — keep this state visible
         mx, my = (x1 + x2) / 2, (y1 + y2) / 2
         # Tag severed labels with the edge endpoints so the drag handler can find
@@ -824,12 +836,27 @@ for s in systems:
     px, py = pos[s["id"]]
     pol = s.get("polity", "unknown"); col = pcolor.get(pol, "#BDC3C7")
     cls = s.get("class", "unknown")
-    if cls == "placeholder":   # unnamed intermediate on an expanded route
-        if not s.get("inferred"):   # canon hop count, just unnamed → solid hollow ring
+    if cls == "placeholder":   # unnamed intermediate on an expanded route, or a stub ghost
+        # Wrap in <g class="node" data-id="..."> so the drag handler can grab the
+        # placeholder and so the existing edge-update logic (which matches by
+        # data-from/data-to) keeps the adjacent route_seg endpoints anchored to it.
+        if not s.get("inferred"):   # canon hop count → solid hollow ring (visible)
             gcol = pcolor.get(pol, "#6b7088") if pol != "unknown" else "#6b7088"
-            node_svg.append(f'<circle cx="{px:.0f}" cy="{py:.0f}" r="3.5" fill="#0a0c16" '
-                            f'stroke="{gcol}" stroke-width="1.1"/>')
-        # inferred ghosts are layout-only anchors — not drawn; the grey long-dash conveys the route
+            node_svg.append(
+                f'<g class="node" data-id="{s["id"]}" data-class="placeholder" '
+                f'transform="translate({px:.0f},{py:.0f})">'
+                f'<circle r="3.5" fill="#0a0c16" stroke="{gcol}" stroke-width="1.1"/>'
+                f'</g>')
+        else:
+            # inferred placeholders (render_pad ghosts; severed/inferred stub endpoints):
+            # not visually drawn — the dashed line / severed style conveys the route — but
+            # an invisible 6 px hit-target makes them draggable so the user can nudge a
+            # multi-hop chain's interior the same way they can move named nodes.
+            node_svg.append(
+                f'<g class="node" data-id="{s["id"]}" data-class="placeholder-inferred" '
+                f'transform="translate({px:.0f},{py:.0f})">'
+                f'<circle r="6" fill="transparent" pointer-events="all"/>'
+                f'</g>')
         continue
     if cls == "waypoint":
         col = WAYPOINT_COLOR
@@ -989,15 +1016,65 @@ function nodeXY(g){const t=g.getAttribute('transform');const m=/translate\\(([-\
 // Python layout constants in build-web-map.py — HARD_PIN['she_who_bore_them_all'],
 // GHOST_RING_RADIUS, GHOST_FAN_DEG).
 const SWBTA_X=%d, SWBTA_Y=%d, GHOST_RING_RADIUS=%d, GHOST_FAN_DEG=%d;
+// Convex hull (Andrew's monotone chain). Mirrors the Python hull() function.
+function convexHull(pts){
+ if(pts.length<=2) return pts.slice();
+ const s=pts.slice().sort((a,b)=>a[0]-b[0]||a[1]-b[1]);
+ const cross=(o,a,b)=>(a[0]-o[0])*(b[1]-o[1])-(a[1]-o[1])*(b[0]-o[0]);
+ const lo=[];
+ for(const p of s){
+  while(lo.length>=2 && cross(lo[lo.length-2],lo[lo.length-1],p)<=0) lo.pop();
+  lo.push(p);
+ }
+ const up=[];
+ for(let i=s.length-1;i>=0;i--){const p=s[i];
+  while(up.length>=2 && cross(up[up.length-2],up[up.length-1],p)<=0) up.pop();
+  up.push(p);
+ }
+ return lo.slice(0,-1).concat(up.slice(0,-1));
+}
+// Look up a node's current (x, y) by its data-id, parsed from its `transform`.
+function nodePos(id){const n=document.querySelector('[data-id="'+id+'"]'); return n?nodeXY(n):null;}
+
+// Recompute every polity hull from its current member positions. Cheap (≤ a few
+// hundred verts across ~7 polities). Runs at the end of every moveNode.
+function updateHulls(){
+ document.querySelectorAll('.hull').forEach(path=>{
+  const ids=path.dataset.members.split(',');
+  const pts=ids.map(nodePos).filter(p=>p);
+  if(pts.length<3) return;
+  const cx=pts.reduce((s,p)=>s+p[0],0)/pts.length;
+  const cy=pts.reduce((s,p)=>s+p[1],0)/pts.length;
+  const poly=convexHull(pts);
+  const pad=+path.dataset.pad;
+  const padded=poly.map(([x,y])=>{const dx=x-cx,dy=y-cy,d=Math.hypot(dx,dy)||1;
+   return [x+dx/d*pad, y+dy/d*pad];});
+  path.setAttribute('d','M '+padded.map(([x,y])=>(x|0)+','+(y|0)).join(' L ')+' Z');
+ });
+}
+
+// Reposition every edge-anchored label (sevlabel + rlabel) at the current midpoint
+// of its parent edge. Runs after all edge endpoints have been updated.
+function updateEdgeLabels(){
+ document.querySelectorAll('.elabel[data-edge-from][data-edge-to]').forEach(lbl=>{
+  const L=document.querySelector('.edge[data-from="'+lbl.dataset.edgeFrom+'"][data-to="'+lbl.dataset.edgeTo+'"]');
+  if(!L) return;
+  const mx=(+L.getAttribute('x1')+ +L.getAttribute('x2'))/2;
+  const my=(+L.getAttribute('y1')+ +L.getAttribute('y2'))/2;
+  lbl.setAttribute('x',(mx|0)); lbl.setAttribute('y',((my-4)|0));
+ });
+}
+
 function moveNode(g,x,y){
  const [ox,oy]=nodeXY(g); const dx=x-ox, dy=y-oy;
  g.setAttribute('transform',`translate(${x},${y})`); const id=g.dataset.id;
  // 1. Severed Gap stubs of this host: rotate to point toward SWBTA, fan across
  //    GHOST_FAN_DEG° around the new SWBTA→host axis at GHOST_RING_RADIUS from SWBTA.
- //    Mirrors the auto-layout's _apply_ghost_hard_positions logic.
+ //    Mirrors the auto-layout's _apply_ghost_hard_positions logic. Also moves the
+ //    ghost node's <g> transform so hull recompute reads the right position.
  const sevEdges=document.querySelectorAll('.edge[data-severed-host="'+id+'"]');
  if(sevEdges.length){
-  const baseAng=Math.atan2(y-SWBTA_Y, x-SWBTA_X);   // SWBTA → host direction
+  const baseAng=Math.atan2(y-SWBTA_Y, x-SWBTA_X);
   const fanRad=GHOST_FAN_DEG*Math.PI/180;
   sevEdges.forEach(L=>{
    const j=+L.dataset.stubJ, n=+L.dataset.stubN;
@@ -1005,26 +1082,31 @@ function moveNode(g,x,y){
    const a=baseAng+off;
    const gx=SWBTA_X+GHOST_RING_RADIUS*Math.cos(a);
    const gy=SWBTA_Y+GHOST_RING_RADIUS*Math.sin(a);
-   // host-side endpoint is always (x, y) regardless of which end is the host
+   const ghostId = L.dataset.from===id ? L.dataset.to : L.dataset.from;
    if(L.dataset.from===id){L.setAttribute('x1',x); L.setAttribute('y1',y); L.setAttribute('x2',gx); L.setAttribute('y2',gy);}
    else                   {L.setAttribute('x2',x); L.setAttribute('y2',y); L.setAttribute('x1',gx); L.setAttribute('y1',gy);}
-   // Move the "severed" label to the new midpoint.
-   const lbl=document.querySelector('.sevlabel[data-edge-from="'+L.dataset.from+'"][data-edge-to="'+L.dataset.to+'"]');
-   if(lbl){lbl.setAttribute('x',((x+gx)/2)|0); lbl.setAttribute('y',(((y+gy)/2-4)|0));}
+   const ghostG=document.querySelector('[data-id="'+ghostId+'"]');
+   if(ghostG) ghostG.setAttribute('transform','translate('+gx+','+gy+')');
   });
  }
  // 2. Other edges connected to this host (non-severed): host endpoint follows.
- //    Stub-ghost endpoints (`_stub_<host>_<n>`) ride along (translate by delta) for
- //    the non-severed case (e.g. Windworn's Triple-A inferred stub).
+ //    Stub-ghost endpoints (`_stub_<host>_<n>`) ride along (translate by delta); also
+ //    update the ghost's <g> transform so its node position stays in sync.
  const stubPrefix='_stub_'+id+'_';
  document.querySelectorAll('.edge').forEach(L=>{
   if(L.dataset.severedHost===id) return;   // already handled in step 1
   if(L.dataset.from===id){L.setAttribute('x1',x); L.setAttribute('y1',y);
    if(L.dataset.to.startsWith(stubPrefix)){
-    L.setAttribute('x2',+L.getAttribute('x2')+dx); L.setAttribute('y2',+L.getAttribute('y2')+dy);}}
+    const nx=+L.getAttribute('x2')+dx, ny=+L.getAttribute('y2')+dy;
+    L.setAttribute('x2',nx); L.setAttribute('y2',ny);
+    const gG=document.querySelector('[data-id="'+L.dataset.to+'"]');
+    if(gG) gG.setAttribute('transform','translate('+nx+','+ny+')');}}
   if(L.dataset.to===id){L.setAttribute('x2',x); L.setAttribute('y2',y);
    if(L.dataset.from.startsWith(stubPrefix)){
-    L.setAttribute('x1',+L.getAttribute('x1')+dx); L.setAttribute('y1',+L.getAttribute('y1')+dy);}}
+    const nx=+L.getAttribute('x1')+dx, ny=+L.getAttribute('y1')+dy;
+    L.setAttribute('x1',nx); L.setAttribute('y1',ny);
+    const gG=document.querySelector('[data-id="'+L.dataset.from+'"]');
+    if(gG) gG.setAttribute('transform','translate('+nx+','+ny+')');}}
  });
  // 3. "Unknown beacon" stubs (the small grey dashed lines on Molossia, Destiny etc.)
  //    are bare <line>/<circle>.stub elements with data-stub-of="<host>". Translate.
@@ -1036,6 +1118,10 @@ function moveNode(g,x,y){
    el.setAttribute('cx',+el.getAttribute('cx')+dx); el.setAttribute('cy',+el.getAttribute('cy')+dy);
   }
  });
+ // 4. Reposition all edge-anchored labels (route + severed) to their new midpoints.
+ updateEdgeLabels();
+ // 5. Recompute every polity hull from the new member positions.
+ updateHulls();
 }
 
 // Unified pan / pinch-zoom / node-drag via Pointer Events (mouse + touch + pen).
@@ -1085,6 +1171,11 @@ const tip=document.getElementById('tip');
 document.querySelectorAll('.node').forEach(g=>{
  g.addEventListener('mouseenter',()=>highlight(g));
  g.addEventListener('mouseleave',()=>{clearHi();tip.style.display='none';});
+ // Placeholder ghosts (canon-hop intermediates and inferred-pad/stub ghosts) carry no
+ // .nlabel / polity / class detail — highlight still works (their route endpoints get
+ // dimmed-in), but skip the tooltip wiring so it doesn't try to render their absent
+ // metadata and leave stale content from the last named system on screen.
+ if(g.dataset.class && g.dataset.class.indexOf('placeholder')===0) return;
  g.addEventListener('mousemove',e=>{tip.style.display='block';tip.style.left=(e.clientX+14)+'px';tip.style.top=(e.clientY+14)+'px';
   tip.innerHTML=`<b>${g.querySelector('.nlabel').textContent}</b><br><span class="p">${g.dataset.polity} · ${g.dataset.class}</span>`+(g.dataset.note?`<br>${g.dataset.note}`:'');});
 });
