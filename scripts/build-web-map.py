@@ -877,9 +877,11 @@ for s in systems:
         x1, y1 = ox + math.cos(ang) * 9, oy + math.sin(ang) * 9
         x2, y2 = ox + math.cos(ang) * 62, oy + math.sin(ang) * 62
         stub_svg.append(
-            f'<line x1="{x1:.0f}" y1="{y1:.0f}" x2="{x2:.0f}" y2="{y2:.0f}" stroke="#8d96b8" '
+            f'<line class="stub" data-stub-of="{n}" x1="{x1:.0f}" y1="{y1:.0f}" '
+            f'x2="{x2:.0f}" y2="{y2:.0f}" stroke="#8d96b8" '
             f'stroke-width="1" stroke-dasharray="2 4" opacity="0.4"/>'
-            f'<circle cx="{x2:.0f}" cy="{y2:.0f}" r="2.2" fill="#0a0c16" stroke="#8d96b8" '
+            f'<circle class="stub" data-stub-of="{n}" cx="{x2:.0f}" cy="{y2:.0f}" '
+            f'r="2.2" fill="#0a0c16" stroke="#8d96b8" '
             f'stroke-width="0.9" opacity="0.45"/>')
 
 # ── assemble SVG ───────────────────────────────────────────────────────────
@@ -957,9 +959,34 @@ frame.addEventListener('wheel',e=>{e.preventDefault(); zoomAt(e.clientX,e.client
 
 // node helpers (used by drag + the highlight tooltip)
 function nodeXY(g){const t=g.getAttribute('transform');const m=/translate\\(([-\\d.]+),([-\\d.]+)\\)/.exec(t);return[+m[1],+m[2]];}
-function moveNode(g,x,y){g.setAttribute('transform',`translate(${x},${y})`);const id=g.dataset.id;
- document.querySelectorAll('.edge').forEach(L=>{if(L.dataset.from===id){L.setAttribute('x1',x);L.setAttribute('y1',y);}
-  if(L.dataset.to===id){L.setAttribute('x2',x);L.setAttribute('y2',y);}});}
+function moveNode(g,x,y){
+ const [ox,oy]=nodeXY(g); const dx=x-ox, dy=y-oy;
+ g.setAttribute('transform',`translate(${x},${y})`); const id=g.dataset.id;
+ // Severed-/inferred-stub ghosts have ids `_stub_<host>_<n>` and are connected via an
+ // `.edge` line. Translate the ghost endpoint of any such edge so the line moves with
+ // the host instead of stretching.
+ const stubPrefix='_stub_'+id+'_';
+ document.querySelectorAll('.edge').forEach(L=>{
+  if(L.dataset.from===id){L.setAttribute('x1',x); L.setAttribute('y1',y);
+   if(L.dataset.to.startsWith(stubPrefix)){
+    L.setAttribute('x2',+L.getAttribute('x2')+dx); L.setAttribute('y2',+L.getAttribute('y2')+dy);}}
+  if(L.dataset.to===id){L.setAttribute('x2',x); L.setAttribute('y2',y);
+   if(L.dataset.from.startsWith(stubPrefix)){
+    L.setAttribute('x1',+L.getAttribute('x1')+dx); L.setAttribute('y1',+L.getAttribute('y1')+dy);}}
+ });
+ // "Unknown beacon" stubs (the small grey dashed lines marking a system's unaccounted
+ // beacons — Molossia, Karnos's spare, etc.) are bare <line>/<circle>.stub elements
+ // tagged with data-stub-of="<host>". Translate them by the host's delta so they ride
+ // along too.
+ document.querySelectorAll('.stub[data-stub-of="'+id+'"]').forEach(el=>{
+  if(el.hasAttribute('x1')){
+   el.setAttribute('x1',+el.getAttribute('x1')+dx); el.setAttribute('y1',+el.getAttribute('y1')+dy);
+   el.setAttribute('x2',+el.getAttribute('x2')+dx); el.setAttribute('y2',+el.getAttribute('y2')+dy);
+  } else {
+   el.setAttribute('cx',+el.getAttribute('cx')+dx); el.setAttribute('cy',+el.getAttribute('cy')+dy);
+  }
+ });
+}
 
 // Unified pan / pinch-zoom / node-drag via Pointer Events (mouse + touch + pen).
 // Single pointer on background = pan; single pointer on .node = drag; two pointers = pinch-zoom.
