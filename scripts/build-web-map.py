@@ -754,10 +754,27 @@ def edge_style(e):
         return f'stroke:{_c_seg};stroke-width:1.5;opacity:0.7'   # canon hop count, names unknown
     return 'stroke:#6f7494;stroke-width:1;opacity:0.5'
 
+# Pre-compute severed-stub fan indices so the drag handler can replicate the layout's
+# SWBTA-ring + fan placement when the host is moved. Each severed-beacon stub edge
+# (from a real host to a `_stub_<host>_<n>` placeholder ghost) gets its j-index and
+# the host's total severed-stub count, written to the SVG as data-* attributes.
+host_severed_stubs = {}
+for e in edges:
+    if e.get("type") == "beacon" and e.get("status") == "severed":
+        if str(e["to"]).startswith("_stub_"):
+            host_severed_stubs.setdefault(e["from"], []).append((e["from"], e["to"]))
+        elif str(e["from"]).startswith("_stub_"):
+            host_severed_stubs.setdefault(e["to"], []).append((e["from"], e["to"]))
+severed_stub_jn = {}   # (from, to) -> (j, n, host)
+for h, lst in host_severed_stubs.items():
+    for j, key in enumerate(lst):
+        severed_stub_jn[key] = (j, len(lst), h)
+
 edge_svg = []
 for e in edges:
     x1, y1 = pos[e["from"]]; x2, y2 = pos[e["to"]]
     lab = ""
+    extra = ""
     if e.get("type") == "route" or e.get("route_label"):   # stubs + (mid-segment of) inferred chains
         txt = f'{e["hops"]} hops' if e.get("hops") else "route"
         mx, my = (x1 + x2) / 2, (y1 + y2) / 2
@@ -766,10 +783,19 @@ for e in edges:
                f'opacity="0.8">{txt}</text>')
     elif e.get("status") == "severed":   # physically cut — keep this state visible
         mx, my = (x1 + x2) / 2, (y1 + y2) / 2
-        lab = (f'<text class="elabel" x="{mx:.0f}" y="{my-4:.0f}" text-anchor="middle" '
-               f'font-family="IBM Plex Mono, monospace" font-size="9" fill="#b06a6a">severed</text>')
+        # Tag severed labels with the edge endpoints so the drag handler can find
+        # and reposition them when their parent host moves.
+        lab = (f'<text class="elabel sevlabel" data-edge-from="{e["from"]}" '
+               f'data-edge-to="{e["to"]}" x="{mx:.0f}" y="{my-4:.0f}" '
+               f'text-anchor="middle" font-family="IBM Plex Mono, monospace" '
+               f'font-size="9" fill="#b06a6a">severed</text>')
+        # Severed-stub edges get fan-index metadata for the drag-rotate logic.
+        key = (e["from"], e["to"])
+        if key in severed_stub_jn:
+            j, n, h = severed_stub_jn[key]
+            extra = f' data-severed-host="{h}" data-stub-j="{j}" data-stub-n="{n}"'
     edge_svg.append(
-        f'<line class="edge" data-from="{e["from"]}" data-to="{e["to"]}" '
+        f'<line class="edge" data-from="{e["from"]}" data-to="{e["to"]}"{extra} '
         f'x1="{x1:.0f}" y1="{y1:.0f}" x2="{x2:.0f}" y2="{y2:.0f}" style="{edge_style(e)}"/>' + lab)
 
 # ── nodes ────────────────────────────────────────────────────────────────
@@ -959,14 +985,40 @@ frame.addEventListener('wheel',e=>{e.preventDefault(); zoomAt(e.clientX,e.client
 
 // node helpers (used by drag + the highlight tooltip)
 function nodeXY(g){const t=g.getAttribute('transform');const m=/translate\\(([-\\d.]+),([-\\d.]+)\\)/.exec(t);return[+m[1],+m[2]];}
+// Constants for the severed-stub rotate-toward-SWBTA drag behaviour (must match the
+// Python layout constants in build-web-map.py — HARD_PIN['she_who_bore_them_all'],
+// GHOST_RING_RADIUS, GHOST_FAN_DEG).
+const SWBTA_X=%d, SWBTA_Y=%d, GHOST_RING_RADIUS=%d, GHOST_FAN_DEG=%d;
 function moveNode(g,x,y){
  const [ox,oy]=nodeXY(g); const dx=x-ox, dy=y-oy;
  g.setAttribute('transform',`translate(${x},${y})`); const id=g.dataset.id;
- // Severed-/inferred-stub ghosts have ids `_stub_<host>_<n>` and are connected via an
- // `.edge` line. Translate the ghost endpoint of any such edge so the line moves with
- // the host instead of stretching.
+ // 1. Severed Gap stubs of this host: rotate to point toward SWBTA, fan across
+ //    GHOST_FAN_DEG° around the new SWBTA→host axis at GHOST_RING_RADIUS from SWBTA.
+ //    Mirrors the auto-layout's _apply_ghost_hard_positions logic.
+ const sevEdges=document.querySelectorAll('.edge[data-severed-host="'+id+'"]');
+ if(sevEdges.length){
+  const baseAng=Math.atan2(y-SWBTA_Y, x-SWBTA_X);   // SWBTA → host direction
+  const fanRad=GHOST_FAN_DEG*Math.PI/180;
+  sevEdges.forEach(L=>{
+   const j=+L.dataset.stubJ, n=+L.dataset.stubN;
+   const off = n>1 ? (j-(n-1)/2)*(fanRad/(n-1)) : 0;
+   const a=baseAng+off;
+   const gx=SWBTA_X+GHOST_RING_RADIUS*Math.cos(a);
+   const gy=SWBTA_Y+GHOST_RING_RADIUS*Math.sin(a);
+   // host-side endpoint is always (x, y) regardless of which end is the host
+   if(L.dataset.from===id){L.setAttribute('x1',x); L.setAttribute('y1',y); L.setAttribute('x2',gx); L.setAttribute('y2',gy);}
+   else                   {L.setAttribute('x2',x); L.setAttribute('y2',y); L.setAttribute('x1',gx); L.setAttribute('y1',gy);}
+   // Move the "severed" label to the new midpoint.
+   const lbl=document.querySelector('.sevlabel[data-edge-from="'+L.dataset.from+'"][data-edge-to="'+L.dataset.to+'"]');
+   if(lbl){lbl.setAttribute('x',((x+gx)/2)|0); lbl.setAttribute('y',(((y+gy)/2-4)|0));}
+  });
+ }
+ // 2. Other edges connected to this host (non-severed): host endpoint follows.
+ //    Stub-ghost endpoints (`_stub_<host>_<n>`) ride along (translate by delta) for
+ //    the non-severed case (e.g. Windworn's Triple-A inferred stub).
  const stubPrefix='_stub_'+id+'_';
  document.querySelectorAll('.edge').forEach(L=>{
+  if(L.dataset.severedHost===id) return;   // already handled in step 1
   if(L.dataset.from===id){L.setAttribute('x1',x); L.setAttribute('y1',y);
    if(L.dataset.to.startsWith(stubPrefix)){
     L.setAttribute('x2',+L.getAttribute('x2')+dx); L.setAttribute('y2',+L.getAttribute('y2')+dy);}}
@@ -974,10 +1026,8 @@ function moveNode(g,x,y){
    if(L.dataset.from.startsWith(stubPrefix)){
     L.setAttribute('x1',+L.getAttribute('x1')+dx); L.setAttribute('y1',+L.getAttribute('y1')+dy);}}
  });
- // "Unknown beacon" stubs (the small grey dashed lines marking a system's unaccounted
- // beacons — Molossia, Karnos's spare, etc.) are bare <line>/<circle>.stub elements
- // tagged with data-stub-of="<host>". Translate them by the host's delta so they ride
- // along too.
+ // 3. "Unknown beacon" stubs (the small grey dashed lines on Molossia, Destiny etc.)
+ //    are bare <line>/<circle>.stub elements with data-stub-of="<host>". Translate.
  document.querySelectorAll('.stub[data-stub-of="'+id+'"]').forEach(el=>{
   if(el.hasAttribute('x1')){
    el.setAttribute('x1',+el.getAttribute('x1')+dx); el.setAttribute('y1',+el.getAttribute('y1')+dy);
@@ -1043,7 +1093,9 @@ function highlight(g){const id=g.dataset.id;const nbr=new Set([id]);
  document.querySelectorAll('.node').forEach(n=>n.classList.toggle('dim',!nbr.has(n.dataset.id)));
  document.querySelectorAll('.edge').forEach(L=>L.classList.toggle('dim',!(L.dataset.from===id||L.dataset.to===id)));}
 function clearHi(){document.querySelectorAll('.dim').forEach(n=>n.classList.remove('dim'));}
-"""  % (VBX, VBY, VBW, VBH, int(VBW * 1.6))
+"""  % (VBX, VBY, VBW, VBH, int(VBW * 1.6),
+        HARD_PIN["she_who_bore_them_all"][0], HARD_PIN["she_who_bore_them_all"][1],
+        GHOST_RING_RADIUS, GHOST_FAN_DEG)
 
 HEADER = '''<header>
 <div class="eyebrow">Field Reference Chart · Sun Chronicles · K. Elliott · verified compendium</div>
