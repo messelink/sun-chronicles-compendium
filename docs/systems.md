@@ -553,8 +553,8 @@ Mishirru (FH ch. 70). A knnu-in / beacon-out transit node — extends the existi
 Mishirru reaches the Phene core through **two frontier crossings, Sena and Aila** (the
 Phene-side border systems are Jorsha and Alternity). The climactic invasion routes:
 **Sena → Jorsha → Agate → Old Spiral → Refuge → Haymarket → Cut Stone → Anchor**, and
-**Aila → Hunger → Rake → Gardens → Anchor**. There is **no direct Destiny↔Axiom beacon** —
-the lead's claim is refuted; Axiom is several hops deep in the Phene core.
+**Aila → Alternity → Hunger → Rake → Gardens → Anchor**. There is **no direct Destiny↔Axiom
+beacon** — the lead's claim is refuted; Axiom is several hops deep in the Phene core.
 
 ### Sena — the "official" Mishirru/Phene boundary; mouth of the Sena prong
 
@@ -582,12 +582,20 @@ the Aila invasion prong (Aila → Hunger → Rake → Gardens → Anchor). Beaco
 
 *— FH ch. 83*
 
-The Phene-side pair facing Mishirru's Sena/Aila. **Jorsha** is Sena's partner (the Jorsha
-Beacon) and the first Phene hop on the Sena prong (→ Agate). **Alternity** is the second
-border system; it is *not* placed on either named prong, so its Mishirru-side partner is
-unconfirmed (see [`open-questions.md`](open-questions.md)). The Rider Manishtusu seats at
-Jorsha; the Rider Arakamani *took refuge* at Alternity after Sun's fleets reached Destiny
-(FH ch.83) — so she may be a fugitive there rather than its resident Rider.
+The Phene-side pair facing Mishirru's Sena/Aila — **exactly two**, per FH ch.83.
+**Jorsha** is Sena's partner (the Jorsha Beacon) and the first Phene hop on the Sena
+prong (→ Agate). **Alternity** is Aila's partner — the first Phene hop on the Aila prong,
+between Aila and Hunger. The Chaonian briefing in FH ch.78 (*"He will proceed via Hunger,
+Rake, and Gardens Systems to Anchor, fighting all the way"*) abbreviates the Aila prong
+by listing the forward **fighting locations** after the border crossing; *"drove forward
+from Aila into Phene territory"* IS the act of entering Alternity (the border), so the
+narrator doesn't redundantly name it. This reading makes FH ch.83's "the two border
+systems" exact (Jorsha + Alternity) and the Chaonian briefing's three named fight stops
+(Hunger / Rake / Gardens) coherent.
+
+The Rider Manishtusu seats at Jorsha; the Rider Arakamani *took refuge* at Alternity
+after Sun's fleets reached Destiny (FH ch.83) — refuge, not residence, fitting a border
+system that wasn't a primary battlefield (so omitted from the briefing's fight-list).
 
 ### Anchor-corridor pass-through systems (Agate, Old Spiral, Refuge / Hunger, Rake, Gardens)
 

@@ -4,7 +4,7 @@
     "provenance": "GENERATED from the ```topology blocks in compendium/*.md by scripts/build-topology.py. Do not hand-edit. The compendium is the source of truth.",
     "counts": {
       "systems": 60,
-      "edges": 66,
+      "edges": 67,
       "convergences": 2
     }
   },
@@ -94,14 +94,9 @@
       "name": "Alternity",
       "class": "unknown",
       "polity": "phene",
-      "note": "border; Mishirru-side partner unknown",
-      "detail": "Phene border system facing Mishirru; Mishirru-side partner UNNAMED (FH ch.83)",
-      "control": "Phene",
-      "layout_near": [
-        "jorsha",
-        "sena",
-        "aila"
-      ]
+      "note": "border, faces Aila; first Phene hop on the Aila prong",
+      "detail": "Phene border system; Aila↔Alternity (FH ch.83 + ch.78 read together — see prose above); Arakamani took refuge here",
+      "control": "Phene"
     },
     {
       "id": "anchor",
@@ -989,16 +984,16 @@
       "to": "aila",
       "type": "route",
       "status": "inferred",
-      "render_pad": 2,
-      "note": "Aila route reached 'via Destiny' (FH ch.89); hops unknown (render_pad is a presentation-only length cue, not a hop count)"
+      "render_pad": 3,
+      "note": "Aila route reached 'via Destiny' (FH ch.89); hops unknown (render_pad is a presentation-only length cue, not a hop count) — bumped 2→3 to give the Mishirru-side chain more spring slack and reduce the eastward pull on the Phene cluster"
     },
     {
       "from": "destiny",
       "to": "sena",
       "type": "route",
       "status": "inferred",
-      "render_pad": 2,
-      "note": "Sun's Eighth Fleet 'attacked from Sena' and both prongs were staged from Destiny (FH ch.83); Mishirru-side intermediates unnamed. render_pad is a presentation-only length cue, not a hop count"
+      "render_pad": 3,
+      "note": "Sun's Eighth Fleet 'attacked from Sena' and both prongs were staged from Destiny (FH ch.83); Mishirru-side intermediates unnamed. render_pad is a presentation-only length cue, not a hop count — bumped 2→3 along with the Aila prong"
     },
     {
       "from": "cataract",
@@ -1113,6 +1108,12 @@
     },
     {
       "from": "aila",
+      "to": "alternity",
+      "type": "beacon",
+      "route": "Mishirru → Phene heartland (Aila prong)"
+    },
+    {
+      "from": "alternity",
       "to": "hunger",
       "type": "beacon",
       "route": "Mishirru → Phene heartland (Aila prong)"
@@ -1327,6 +1328,7 @@
       "link_type": "beacon",
       "ordered": [
         "aila",
+        "alternity",
         "hunger",
         "rake",
         "gardens",

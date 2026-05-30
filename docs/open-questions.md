@@ -282,14 +282,17 @@ but no destination beacon or direction is named. Anchor's only named outbound li
 Auger and Axiom Beacons (which the Phene had stripped of defenders), so escape *toward Auger
 and/or Axiom* is the natural inference — not stated.
 
-### Mishirru↔Phene corridor: Alternity's partner and Axiom's position
+### Mishirru↔Phene corridor: Axiom's position relative to the Aila prong
 
 **Tier:** open
 
-**Alternity**'s Mishirru-side beacon partner is unnamed — it sits on neither named invasion
-prong (Sena→Jorsha or Aila→Hunger). And **Axiom**'s position relative to the Mishirru front
-isn't given; only **Auger** is canon-confirmed as the Aila-facing reinforcement source for
-Anchor (FH ch. 89). (The corridor systems' beacon counts are covered above.)
+**Axiom**'s position relative to the Mishirru front isn't given; only **Auger** is
+canon-confirmed as the Aila-facing reinforcement source for Anchor (FH ch. 89). (The
+corridor systems' beacon counts are covered above.) — *Previously also open:* Alternity's
+Mishirru-side partner; now reconciled as **Aila** (Aila → Alternity → Hunger → Rake →
+Gardens → Anchor), making FH ch.83's "the two border systems" exact and consistent with
+FH ch.78's fight-locations briefing. See the Jorsha & Alternity entry in
+[`systems.md`](systems.md).
 
 ### Which Mishirru systems lie between Destiny and Sena, and was Sena an original route?
 
