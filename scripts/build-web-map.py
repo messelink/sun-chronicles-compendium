@@ -118,6 +118,13 @@ HARD_PIN = {"she_who_bore_them_all": (1100, 750)}
 # severed line visually points inward toward the lost hub.
 HOST_TARGET_DISTANCE = 200         # rim radius from SWBTA (px)
 HOST_RADIAL_STRENGTH = 8.0         # spring constant of the pull-to-target-distance — strong enough to fight Anchor's beacons to Auger/Axiom and Yele's to Larissa/Nalanda/Sankore
+# Gap exclusion zone: any node that is NEITHER apsaras_gap polity NOR a GAP_HOST has no
+# canon reason to sit near SWBTA. Without this push the force-layout drifts high-degree
+# hubs (notably Karnos — central rim hydra) onto SWBTA's label. EXCLUSION_RADIUS is set
+# inside the host ring (200) but outside the hull edge (~176 with pad=76) so non-hosts
+# settle clear of the Gap region without fighting the host pull-in.
+GAP_EXCLUSION_RADIUS = 190         # px from SWBTA — non-Gap non-host nodes pushed beyond this
+GAP_EXCLUSION_STRENGTH = 4.0       # outward force per unit-distance inside the exclusion; spring equilibria can still settle inside it, so a HARD CLAMP runs at the end of force_layout to snap any non-Gap non-host node back to the radius
 # Gap-polity ghost endpoints (severed-stub placeholders) are HARD-POSITIONED
 # each iteration on the SWBTA→host line at GHOST_RING_RADIUS from SWBTA. Multiple ghosts
 # sharing one host are angularly spread across GHOST_FAN_DEG.
@@ -129,6 +136,20 @@ GHOST_FAN_DEG = 35
 # region's eponym is a frontier system, not Chaonia's capital).
 REGION_LABEL_ANCHOR = {
     "hatti": "hatti",
+    "apsaras_gap": "she_who_bore_them_all",   # anchor the label to the conceptual centre; default offset would float it above SWBTA, off the hull crown — REGION_LABEL_OFFSET below pushes it back into the hull.
+}
+# Per-polity offset of the label from its anchor node. Default −52 (label 52 px ABOVE
+# the anchor). Positive = below the anchor, negative = above. Override per-polity when
+# the default doesn't land inside the hull crown.
+REGION_LABEL_OFFSET = {
+    "apsaras_gap": 0,    # at SWBTA's centre; hull-pad bump + ghost ring around SWBTA do the rest
+}
+# Per-polity hull-pad override (default 46). The Gap cluster is geometrically tight
+# (SWBTA + ghosts on a 100-px ring) so default pad leaves the hull crown well below the
+# label; +30 px gives a comfortable margin around SWBTA + label without ballooning into
+# Trinity/Mishirru territory.
+HULL_PAD = {
+    "apsaras_gap": 76,
 }
 # "contested" and "unknown" are per-system STATUSES, not regions — their systems are
 # scattered across the map (e.g. Eel Gulf sits by its only neighbour, Yele). These
@@ -138,15 +159,25 @@ REGION_LABEL_ANCHOR = {
 NON_REGION = {"contested", "unknown"}
 ids = [s["id"] for s in systems]
 EDGES = [(e["from"], e["to"]) for e in edges]
-# HARD links (confirmed beacon/knnu) must stay crossing-free; SOFT links (inferred, or any
-# route/route_seg — all tentative) may be crossed freely, so the layout doesn't distort to
-# route around a guess. Only hard×hard crossings (and hard edges for node clearance) count.
+# HARD links (confirmed beacon/knnu) must stay crossing-free. SOFT links — inferred edges
+# and any route/route_seg — are mostly free to be crossed, so the layout doesn't distort
+# to route around a guess. ONE exception: an inferred *knnu* (named endpoints, just an
+# unconfirmed link, e.g. Oracle→Gyre, FH ch.69) is "real enough" that letting a confirmed
+# beacon slice through it is wasteful when a non-crossing placement exists. Inferred
+# *routes* (whose intermediate path is genuinely tentative) keep the "may be crossed
+# freely" treatment — see _counts_x rule 5 below.
 def _is_soft(e):
     return (e.get("status") in ("inferred", "severed") or bool(e.get("inferred"))
             or e.get("type") in ("route", "route_seg"))
 HARD_PAIRS = {frozenset((e["from"], e["to"])) for e in edges if not _is_soft(e)}
 def _hard(a, b):
     return frozenset((a, b)) in HARD_PAIRS
+# Inferred-knnu links: named both ends, just status=inferred. Counts as a real-enough
+# crossing target for hard links (rule 5 in _counts_x).
+INFERRED_KNNU_PAIRS = {frozenset((e["from"], e["to"])) for e in edges
+                       if e.get("type") == "knnu" and e.get("status") == "inferred"}
+def _is_inferred_knnu(a, b):
+    return frozenset((a, b)) in INFERRED_KNNU_PAIRS
 ADJ = {}                                   # adjacency, for sibling/spoke spreading
 for (_a, _b) in EDGES:
     ADJ.setdefault(_a, set()).add(_b); ADJ.setdefault(_b, set()).add(_a)
@@ -221,6 +252,21 @@ def force_layout(seed):
             delta = d_h - HOST_TARGET_DISTANCE
             disp[h][0] -= (dx_h / d_h) * delta * HOST_RADIAL_STRENGTH
             disp[h][1] -= (dy_h / d_h) * delta * HOST_RADIAL_STRENGTH
+        # Gap exclusion: push out anything else that drifts inside the region. Skips
+        # apsaras_gap-polity members (they BELONG inside) and GAP_HOSTS (the rim-pull
+        # above handles them).
+        for i in ids:
+            s_i = sid.get(i)
+            if not s_i:
+                continue
+            if s_i.get("polity") == "apsaras_gap" or i in GAP_HOSTS or i == "she_who_bore_them_all":
+                continue
+            dx_e, dy_e = p[i][0] - SWBTA_X, p[i][1] - SWBTA_Y
+            d_e = math.hypot(dx_e, dy_e) or 1
+            if d_e < GAP_EXCLUSION_RADIUS:
+                push = (GAP_EXCLUSION_RADIUS - d_e) * GAP_EXCLUSION_STRENGTH
+                disp[i][0] += (dx_e / d_e) * push
+                disp[i][1] += (dy_e / d_e) * push
         for i in ids:
             dx, dy = disp[i]; d = math.hypot(dx, dy) or 0.01
             p[i][0] += dx / d * min(d, temp); p[i][1] += dy / d * min(d, temp)
@@ -282,9 +328,37 @@ def force_layout(seed):
             base = math.atan2(ny - cyg, nx - cxg)         # lone node: outward from the centroid
         nleaves = len(leaves); spread = math.radians(42)
         for j, i in enumerate(sorted(leaves)):
-            ang = base + spread * (j - (nleaves - 1) / 2.0)
+            # Stub ghosts (route="stub") carry a `region` polity meaning "this stub
+            # points toward that polity's cluster" — e.g. T-Harbor's Triple-A-bound
+            # stub has region=phene. Override the widest-gap base so the stub angle
+            # is parent → polity-anchor, i.e. actually inward toward where the
+            # polity sits in the layout. Falls back to widest-gap if no ANCHOR target.
+            stub_pol = (sid.get(i, {}).get("polity")
+                        if sid.get(i, {}).get("route") == "stub" else None)
+            if stub_pol in ANCHOR:
+                ax_pol, ay_pol = ANCHOR[stub_pol]
+                ang = math.atan2(ay_pol - ny, ax_pol - nx)
+            else:
+                ang = base + spread * (j - (nleaves - 1) / 2.0)
             p[i] = [min(max(nx + math.cos(ang) * 135, 60), W - 60),
                     min(max(ny + math.sin(ang) * 135, 90), H - 70)]
+    # Final Gap exclusion clamp: any non-Gap non-host node that equilibrated inside the
+    # zone (the per-iter soft push can't always overcome spring forces — e.g. high-degree
+    # hubs like Karnos whose neighbours surround SWBTA in many directions) is snapped to
+    # the radius along its current radial direction. Guarantees no inside-zone settlements.
+    SX, SY = HARD_PIN["she_who_bore_them_all"]
+    for i in ids:
+        s_i = sid.get(i)
+        if not s_i:
+            continue
+        if s_i.get("polity") == "apsaras_gap" or i in GAP_HOSTS or i == "she_who_bore_them_all":
+            continue
+        dx_e, dy_e = p[i][0] - SX, p[i][1] - SY
+        d_e = math.hypot(dx_e, dy_e) or 1
+        if d_e < GAP_EXCLUSION_RADIUS:
+            scale = GAP_EXCLUSION_RADIUS / d_e
+            p[i][0] = SX + dx_e * scale
+            p[i][1] = SY + dy_e * scale
     return p
 
 def _orient(p, q, r):
@@ -313,14 +387,20 @@ ROUTE_OF = {frozenset((e["from"], e["to"])): e["route_id"]
 
 def _counts_x(a, b, c, d):
     # A crossing is penalised if:
-    #  • both links are confirmed (hard×hard) — always avoid; or
-    #  • it bridges DIFFERENT regions — a soft link may be crossed only within its own
-    #    region, else the two regions' hulls overlap (e.g. a Phene beacon over a Mishirru
-    #    route); or
-    #  • a CONFIRMED named-system link is crossed by a GHOST route (one through unnamed
-    #    intermediates) — a real beacon like Scepter↔Alabaster shouldn't be cut by a
-    #    fuzzy Destiny→(unknown) segment. (A confirmed link MAY still cross an inferred
-    #    route between NAMED systems, e.g. Karnos→Hellion over Hatti↔Na Iri.)
+    #  1. both links are confirmed (hard×hard) — always avoid; or
+    #  2. it bridges DIFFERENT regions — a soft link may be crossed only within its own
+    #     region, else the two regions' hulls overlap (e.g. a Phene beacon over a Mishirru
+    #     route); or
+    #  3. route-segments of DIFFERENT parent routes cross within the same region; or
+    #  4. a CONFIRMED named-system link is crossed by a GHOST route (one through unnamed
+    #     intermediates) — a real beacon like Scepter↔Alabaster shouldn't be cut by a
+    #     fuzzy Destiny→(unknown) segment. (A confirmed link MAY still cross an inferred
+    #     ROUTE between NAMED systems, e.g. Karnos→Hellion over Hatti↔Na Iri — the path
+    #     is genuinely tentative, the layout shouldn't bend around it.)
+    #  5. a HARD link crosses an inferred *knnu* (named both ends, just unconfirmed) in
+    #     the same region — the knnu's existence is canon-certain even if status=inferred,
+    #     so leaf placements like Oracle→Gyre across Cataract↔Oasis should be penalised
+    #     when a non-crossing alternative is available.
     if _hard(a, b) and _hard(c, d):
         return True
     if _eregion(a, b).isdisjoint(_eregion(c, d)):   # statuses ('contested'/'unknown') don't count as shared
@@ -330,6 +410,9 @@ def _counts_x(a, b, c, d):
     if ra and rc and ra != rc:
         return True
     if (_hard(a, b) and _has_ghost(c, d)) or (_hard(c, d) and _has_ghost(a, b)):
+        return True
+    # rule 5 — hard × inferred-knnu (same-region implicit: cross-region already returned at rule 2)
+    if (_hard(a, b) and _is_inferred_knnu(c, d)) or (_hard(c, d) and _is_inferred_knnu(a, b)):
         return True
     return False
 
@@ -401,6 +484,15 @@ def _is_hard_pinned(nid):
         return True
     return sid.get(nid, {}).get("polity") == "apsaras_gap"
 
+def _violates_gap_exclusion(nid, xy):
+    """True if placing nid at xy would land it inside the Gap exclusion zone when
+    it has no canon reason to be there. Used by reduce_crossings to reject
+    crossing-reducing candidates that would smuggle a non-Gap node onto SWBTA."""
+    if sid.get(nid, {}).get("polity") == "apsaras_gap" or nid in GAP_HOSTS or nid == "she_who_bore_them_all":
+        return False
+    sx, sy = HARD_PIN["she_who_bore_them_all"]
+    return math.hypot(xy[0] - sx, xy[1] - sy) < GAP_EXCLUSION_RADIUS
+
 def reduce_crossings():
     # greedy single-node relocation (smallest move on ties) …
     for _round in range(10):
@@ -416,6 +508,8 @@ def reduce_crossings():
                 for rad in (45, 90, 150, 230, 330, 450):
                     cand = [min(max(cur[0] + rad * math.cos(math.radians(ang)), 60), W - 60),
                             min(max(cur[1] + rad * math.sin(math.radians(ang)), 90), H - 70)]
+                    if _violates_gap_exclusion(nid, cand):    # don't relocate into the Gap region
+                        continue
                     pos[nid] = cand; cc = penalty(nid)
                     disp = math.hypot(cand[0] - cur[0], cand[1] - cur[1])
                     if cc < bestc or (cc == bestc and disp < bestd):
@@ -440,6 +534,9 @@ def reduce_crossings():
                 continue
             for y in cand:
                 if x == y or y in HINT or _is_hard_pinned(y):
+                    continue
+                # swap would place each at the other's spot — reject if either lands in the Gap zone
+                if _violates_gap_exclusion(x, pos[y]) or _violates_gap_exclusion(y, pos[x]):
                     continue
                 pos[x], pos[y] = pos[y][:], pos[x][:]
                 if total_crossings() < base:
@@ -561,13 +658,18 @@ for pol in pname:
         continue
     col = pcolor[pol]
     comps = _components(members)
-    # Shade per connected component, BUT fold disconnected fragments (size < 3) into the
-    # region's main cluster — a node with no real links (e.g. Maras Shantiya) or with only
-    # an unmapped-beacon-stub partner (e.g. Windworn, paired with its FH ch.69 stub ghost)
-    # belongs to its region's hull, not its own. Genuine multi-node sub-clusters of size ≥ 3
-    # (the Tranquility exclave) stay separate.
-    clusters = sorted((c for c in comps if len(c) >= 3), key=len, reverse=True)
-    fragments = [n for c in comps if len(c) < 3 for n in c]
+    # Shade per connected component, BUT fold disconnected sub-clusters (size < LONE_FOLD)
+    # into the region's main cluster — a node with no real links (e.g. Maras Shantiya), or
+    # one with only an unmapped-beacon-stub partner (e.g. Windworn, FH ch.69), or a small
+    # exclave whose connection to mainland is canonically inferred (e.g. the Tranquility
+    # chain — T-Harbor + Tranquility + Sogdia Limit + the Triple-A-bound stub ghost, 4
+    # nodes — connects via T-Harbor's "voyage to Anchor", FH ch.83) all belong to the
+    # region's hull rather than each forming its own. LONE_FOLD = 5 catches up to size-4
+    # exclaves; larger components stay separate (e.g. a hypothetical 5+ node Phene
+    # sub-region would still get its own hull).
+    LONE_FOLD = 5
+    clusters = sorted((c for c in comps if len(c) >= LONE_FOLD), key=len, reverse=True)
+    fragments = [n for c in comps if len(c) < LONE_FOLD for n in c]
     groups = ([clusters[0] + fragments] + clusters[1:]) if clusters else ([fragments] if fragments else [])
     for comp in groups:
         pts = [tuple(pos[i]) for i in comp]
@@ -578,7 +680,7 @@ for pol in pname:
         core = [p for p in pts if math.hypot(p[0] - cx, p[1] - cy) <= thr] or pts
         ccx = sum(p[0] for p in core) / len(core); ccy = sum(p[1] for p in core) / len(core)
         if len(core) >= 3:                         # only shade a real cluster (≥3 nodes)
-            poly = pad_hull(hull(core), ccx, ccy)
+            poly = pad_hull(hull(core), ccx, ccy, pad=HULL_PAD.get(pol, 46))
             d = "M " + " L ".join(f"{x:.0f},{y:.0f}" for x, y in poly) + " Z"
             zones.append(f'<path d="{d}" fill="{col}" opacity="0.05"/>')
         # 1–2-node components (e.g. a lone frontier system reachable only via enemy space)
@@ -587,10 +689,11 @@ for pol in pname:
     # a system whose note says "capital" → biggest-component centroid as a last resort.
     anchor_id = REGION_LABEL_ANCHOR.get(pol)
     caps = [i for i in members if "capital" in (sid[i].get("note") or "").lower()]
+    _lbl_off = REGION_LABEL_OFFSET.get(pol, -52)   # default -52 (above anchor); per-polity override can place the label below the anchor (positive value)
     if anchor_id and anchor_id in pos:
-        lx, ly = pos[anchor_id][0], pos[anchor_id][1] - 52
+        lx, ly = pos[anchor_id][0], pos[anchor_id][1] + _lbl_off
     elif caps:
-        lx, ly = pos[caps[0]][0], pos[caps[0]][1] - 52
+        lx, ly = pos[caps[0]][0], pos[caps[0]][1] + _lbl_off
     else:
         big = max(comps, key=len); bp = [pos[i] for i in big]
         lx = sum(p[0] for p in bp) / len(bp)

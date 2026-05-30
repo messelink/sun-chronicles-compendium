@@ -588,7 +588,7 @@
       "name": "Sogdia Limit",
       "class": "unknown",
       "polity": "phene",
-      "note": "far rim, beyond Tranquility",
+      "note": "far rim, beyond Tranquility; class unknown — name suggests terminus but never stated; the US ch.42 famous-Phene-landmarks list (horned lighthouse beside Anchor/Auger/Axiom landmarks) is a thematic/cultural grouping, not spatial proximity",
       "landmark": "the horned lighthouse",
       "location": "rim, beyond Tranquility (FH ch.77)",
       "control": "Phene"
@@ -608,7 +608,15 @@
       "role": "rim crossroads / \"gateway in three directions\" (→Anchor / →Tranquility+Sogdia / →Hatti+Chaonia)",
       "note": "station in Harbor System; rim crossroads",
       "in_system": "Harbor System",
-      "control": "Phene Empire"
+      "control": "Phene Empire",
+      "stubs": [
+        {
+          "toward": "Triple A / imperial core",
+          "region": "phene",
+          "status": "inferred",
+          "note": "INWARD direction of T-Harbor's 'three crucial directions' (FH ch.77 — the three are not enumerated in canon); Apama's 'voyage from T-Harbor to Anchor' (FH ch.83) confirms the connection but mode, hop count, and any intermediate hub (Axiom and Auger are both hydras with 6 unaccounted beacons each — either is a plausible inward gateway) are unnamed in canon. Modelled as an inferred stub to an unnamed Phene-side ghost — same convention as Windworn's Triple-A-bound stub (FH ch.69) rather than asserting a specific endpoint."
+        }
+      ]
     },
     {
       "id": "tarsa",
@@ -1131,7 +1139,7 @@
       "from": "t_harbor",
       "to": "tranquility",
       "type": "beacon",
-      "note": "beacon at Harbor System's gas-giant L-4"
+      "note": "beacon at Harbor System's gas-giant L-4 — the one beacon canon explicitly names (FH ch.77)"
     },
     {
       "from": "tranquility",
