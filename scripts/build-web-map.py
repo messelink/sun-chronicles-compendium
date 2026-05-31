@@ -722,12 +722,14 @@ def edge_style(e):
     if t == "beacon":
         if st == "severed":   # PHYSICAL state: the beacon link is dead (Apsaras-collapse casualty)
             return 'stroke:#b06a6a;stroke-width:1.6;stroke-dasharray:3 6;opacity:0.5'
-        # Polity-tinted: within-region beacons take the shared polity's colour (same
-        # convention as canon-hop route_seg edges); cross-region beacons fall back to
-        # neutral. Inferred has the same thickness/opacity as confirmed — only the dash
-        # pattern distinguishes them.
+        # Polity-tinted: same-polity edges take that polity's colour; any cross-polity
+        # edge (including one with a contested/unknown endpoint) falls back to neutral.
+        # Uses raw _epol so that "Hatti↔contested" reads as cross-region, not Hatti.
+        # (Crossing-penalty rules still use _eregion's NON_REGION stripping — different
+        # concern.) Inferred has the same thickness/opacity as confirmed — only the
+        # dash pattern distinguishes them.
         try:
-            _shared = _eregion(e["from"], e["to"])
+            _shared = _epol(e["from"], e["to"])
         except KeyError:
             _shared = set()
         _c = pcolor.get(next(iter(_shared))) if len(_shared) == 1 else None
@@ -739,14 +741,28 @@ def edge_style(e):
             return f'stroke:{_c};stroke-width:2;stroke-dasharray:6 4 2 4;opacity:0.9'
         return f'stroke:{_c};stroke-width:2;opacity:0.9'
     if t == "knnu":
-        if st == "severed":   # PHYSICAL state: the link is cut/destroyed (not mere disuse)
-            return 'stroke:#b06a6a;stroke-width:1.6;stroke-dasharray:6 5;opacity:0.5'
-        return 'stroke:#d6a85a;stroke-width:1.7;stroke-dasharray:6 5;opacity:0.8'  # type look (superseded folds in)
-    if t == "route":
-        # Polity-tint plain (unexpanded) routes the same way as beacons: shared region →
-        # polity colour, cross-region → neutral.
+        if st == "severed":   # PHYSICAL state override (overrides type style)
+            return 'stroke:#b06a6a;stroke-width:1.6;stroke-dasharray:3 6;opacity:0.5'
+        # Knnu = sublight 50–70-day hops, not instant. Pattern: pure round dots, very
+        # distinct from beacon-inferred dash-dot. Colour: polity-tinted same-polity,
+        # neutral fallback cross-polity (including contested/unknown endpoints). Uses
+        # raw _epol — see beacon block above for the rationale.
         try:
-            _shared = _eregion(e["from"], e["to"])
+            _shared = _epol(e["from"], e["to"])
+        except KeyError:
+            _shared = set()
+        _c = pcolor.get(next(iter(_shared))) if len(_shared) == 1 else None
+        if _c is None:
+            _c = "#cfd6ea"
+        _op = 0.55 if st == "inferred" or e.get("inferred") else 0.85
+        return (f'stroke:{_c};stroke-width:2.2;stroke-linecap:round;'
+                f'stroke-dasharray:0 7;opacity:{_op}')
+    if t == "route":
+        # Polity-tint plain (unexpanded) routes the same way as beacons: same-polity →
+        # that polity's colour, cross-polity (including a contested/unknown endpoint)
+        # → neutral. Uses raw _epol — see beacon block above for the rationale.
+        try:
+            _shared = _epol(e["from"], e["to"])
         except KeyError:
             _shared = set()
         _c = pcolor.get(next(iter(_shared))) if len(_shared) == 1 else None
@@ -1211,7 +1227,7 @@ LEGEND = f'''<section class="legend">
 <li><svg width="34" height="6"><line x1="0" y1="3" x2="34" y2="3" stroke="#cfd6ea" stroke-width="2"/></svg>Beacon (confirmed) <span class="note">solid · polity colour within region · neutral when cross-region</span></li>
 <li><svg width="34" height="6"><line x1="0" y1="3" x2="34" y2="3" stroke="#cfd6ea" stroke-width="2" stroke-dasharray="6 4 2 4"/></svg>Beacon (inferred) <span class="note">dash-dot · same width / opacity as confirmed</span></li>
 <li><svg width="34" height="6"><line x1="0" y1="3" x2="34" y2="3" stroke="#b06a6a" stroke-width="1.6" stroke-dasharray="3 6" opacity="0.7"/></svg>Beacon (severed) <span class="note">red-brown · Apsaras-collapse casualty · pair unreachable</span></li>
-<li><svg width="34" height="6"><line x1="0" y1="3" x2="34" y2="3" stroke="#d6a85a" stroke-width="1.8" stroke-dasharray="6 5"/></svg>Knnu <span class="note">short physical-gap hop (50–70 days, ≤ a few light-years) · not instantaneous</span></li>
+<li><svg width="34" height="6"><line x1="0" y1="3" x2="34" y2="3" stroke="#cfd6ea" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0 7"/></svg>Knnu <span class="note">dots · sublight 50–70-day hop (≤ a few light-years), not instantaneous · polity colour within region, neutral cross-region · faded when inferred</span></li>
 <li><svg width="34" height="10"><line x1="0" y1="5" x2="13" y2="5" stroke="#cfd6ea" stroke-width="1.5"/><circle cx="17" cy="5" r="3" fill="#0a0c16" stroke="#6b7088"/><line x1="21" y1="5" x2="34" y2="5" stroke="#cfd6ea" stroke-width="1.5"/></svg>Multi-hop route (canon hops) <span class="note">solid · ○ = unnamed intermediate</span></li>
 <li><svg width="34" height="6"><line x1="0" y1="3" x2="34" y2="3" stroke="#cfd6ea" stroke-width="1.7" stroke-dasharray="14 6" opacity="0.6"/></svg>Route, length unknown / inferred <span class="note">long-dash</span></li>
 </ul><p>Line style marks the link <em>type</em> (beacon · knnu · route) and the <em>tier</em> (confirmed solid · inferred dash-dot/long-dash · severed red-brown). Within a region, line colour matches the polity hull; cross-region links and ones where either endpoint is non-region (contested / unknown) fall back to neutral.</p></div>

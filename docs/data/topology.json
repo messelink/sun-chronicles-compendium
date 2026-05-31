@@ -332,6 +332,7 @@
       "note": "formerly Phene, taken ~20 yrs pre-FH; scylla degraded to 3 live beacons by the collapse (2 dead, endpoints unknown); indigenous parliament reopened by Eirene",
       "beacons_total": 5,
       "beacons_functional": 3,
+      "beacons_dead": 2,
       "capital_planet": "Kanesh Prime",
       "connects_toward": [
         "Hatti territories",
