@@ -51,8 +51,11 @@ for e in _edges:
         for k, (a, b) in enumerate(segs):
             seg = {"from": a, "to": b, "type": "route_seg", "region": rpol,
                    "inferred": inferred, "route_id": rid}
-            if inferred and k == len(segs) // 2:   # one "route" label per inferred chain, like a stub
-                seg["route_label"] = True
+            # Carry the canon hop count onto the middle segment so the label code can
+            # show "N hops" once per expanded chain. Inferred chains don't get a label
+            # (the long-dash visual already says "inferred"; user-requested clean-up).
+            if known_hops and k == len(segs) // 2:
+                seg["hops"] = h
             edges.append(seg)
     else:
         edges.append(e)
@@ -718,64 +721,53 @@ for pol in pname:
 
 # ── edges ────────────────────────────────────────────────────────────────
 def edge_style(e):
+    # Unified line grammar (4 patterns):
+    #   solid          → confirmed (any type)
+    #   long-dash      → inferred (any type) — replaces the old beacon dash-dot
+    #   short-dash     → (now unused; severed merged into long-dash, just red-brown)
+    #   round dots     → knnu (sublight, not instant)
+    # Plus the SEVERED state, which overrides type pattern with long-dash red-brown
+    # (Apsaras-collapse casualty colour). Colour rule for non-severed: polity-tint
+    # same-polity, neutral cross-polity (incl. contested/unknown endpoints — via _epol).
+    LONG_DASH = "14 6"
+    SEVERED_COLOUR = "#b06a6a"
     t, st = e.get("type"), e.get("status", "working")
+
+    # State override: severed (Apsaras-collapse casualty) — red-brown long-dash for any type.
+    if st == "severed":
+        return f'stroke:{SEVERED_COLOUR};stroke-width:1.8;stroke-dasharray:{LONG_DASH};opacity:0.55'
+
+    # Same-polity / cross-polity colour pick — shared by beacon, route, knnu.
+    try:
+        _shared = _epol(e["from"], e["to"])
+    except KeyError:
+        _shared = set()
+    _c = pcolor.get(next(iter(_shared))) if len(_shared) == 1 else None
+    if _c is None:
+        _c = "#cfd6ea"   # neutral fallback (cross-polity, or both endpoints NON_REGION)
+
     if t == "beacon":
-        if st == "severed":   # PHYSICAL state: the beacon link is dead (Apsaras-collapse casualty)
-            return 'stroke:#b06a6a;stroke-width:1.6;stroke-dasharray:3 6;opacity:0.5'
-        # Polity-tinted: same-polity edges take that polity's colour; any cross-polity
-        # edge (including one with a contested/unknown endpoint) falls back to neutral.
-        # Uses raw _epol so that "Hatti↔contested" reads as cross-region, not Hatti.
-        # (Crossing-penalty rules still use _eregion's NON_REGION stripping — different
-        # concern.) Inferred has the same thickness/opacity as confirmed — only the
-        # dash pattern distinguishes them.
-        try:
-            _shared = _epol(e["from"], e["to"])
-        except KeyError:
-            _shared = set()
-        _c = pcolor.get(next(iter(_shared))) if len(_shared) == 1 else None
-        if _c is None:
-            _c = "#cfd6ea"   # neutral fallback (cross-region, or both endpoints NON_REGION)
         if st == "inferred":
-            # dash-dot pattern — reads more deliberate than plain short-dash, matches the
-            # "we're nearly sure, just lacking the on-page witness" tier for inferred beacons.
-            return f'stroke:{_c};stroke-width:2;stroke-dasharray:6 4 2 4;opacity:0.9'
-        return f'stroke:{_c};stroke-width:2;opacity:0.9'
+            return f'stroke:{_c};stroke-width:2;stroke-dasharray:{LONG_DASH};opacity:0.9'
+        return f'stroke:{_c};stroke-width:2;opacity:0.9'                              # confirmed: solid
     if t == "knnu":
-        if st == "severed":   # PHYSICAL state override (overrides type style)
-            return 'stroke:#b06a6a;stroke-width:1.6;stroke-dasharray:3 6;opacity:0.5'
-        # Knnu = sublight 50–70-day hops, not instant. Pattern: pure round dots, very
-        # distinct from beacon-inferred dash-dot. Colour: polity-tinted same-polity,
-        # neutral fallback cross-polity (including contested/unknown endpoints). Uses
-        # raw _epol — see beacon block above for the rationale.
-        try:
-            _shared = _epol(e["from"], e["to"])
-        except KeyError:
-            _shared = set()
-        _c = pcolor.get(next(iter(_shared))) if len(_shared) == 1 else None
-        if _c is None:
-            _c = "#cfd6ea"
+        # Knnu = sublight 50–70-day hops, not instant. Pattern: pure round dots.
+        # Confirmed = full opacity; inferred = faded.
         _op = 0.55 if st == "inferred" or e.get("inferred") else 0.85
         return (f'stroke:{_c};stroke-width:2.2;stroke-linecap:round;'
                 f'stroke-dasharray:0 7;opacity:{_op}')
     if t == "route":
-        # Polity-tint plain (unexpanded) routes the same way as beacons: same-polity →
-        # that polity's colour, cross-polity (including a contested/unknown endpoint)
-        # → neutral. Uses raw _epol — see beacon block above for the rationale.
-        try:
-            _shared = _epol(e["from"], e["to"])
-        except KeyError:
-            _shared = set()
-        _c = pcolor.get(next(iter(_shared))) if len(_shared) == 1 else None
-        if _c is None:
-            _c = "#cfd6ea"
-        return f'stroke:{_c};stroke-width:1.7;stroke-dasharray:14 6;opacity:0.6'
-    if t == "route_seg":   # a hop of an expanded multi-hop route (through ghost nodes)
+        # Unexpanded route (length unknown). All such routes are inferred by definition →
+        # long-dash. Same pattern as inferred beacon for grammar unity.
+        return f'stroke:{_c};stroke-width:2;stroke-dasharray:{LONG_DASH};opacity:0.9'
+    if t == "route_seg":   # one hop of an expanded multi-hop route (through ghost nodes)
         rg = e.get("region")
-        # Polity tint when the route runs within a real region; neutral fallback otherwise.
         _c_seg = pcolor.get(rg) if rg and rg in pcolor and rg not in NON_REGION else "#cfd6ea"
-        if e.get("inferred"):   # length-unknown — long dash, polity-tint when within-region
-            return f'stroke:{_c_seg};stroke-width:1.7;stroke-dasharray:14 6;opacity:0.6'
-        return f'stroke:{_c_seg};stroke-width:1.5;opacity:0.7'   # canon hop count, names unknown
+        if e.get("inferred"):   # render_pad chain — length not canon → long-dash
+            return f'stroke:{_c_seg};stroke-width:2;stroke-dasharray:{LONG_DASH};opacity:0.9'
+        # canon-hop route_seg — promoted to confirmed-beacon visual (same solid style,
+        # since "hops: N" IS a canon fact, just the intermediates are unnamed)
+        return f'stroke:{_c_seg};stroke-width:2;opacity:0.9'
     return 'stroke:#6f7494;stroke-width:1;opacity:0.5'
 
 # Pre-compute severed-stub fan indices so the drag handler can replicate the layout's
@@ -799,16 +791,16 @@ for e in edges:
     x1, y1 = pos[e["from"]]; x2, y2 = pos[e["to"]]
     lab = ""
     extra = ""
-    if e.get("type") == "route" or e.get("route_label"):   # stubs + (mid-segment of) inferred chains
-        txt = f'{e["hops"]} hops' if e.get("hops") else "route"
+    # Route labels: only emit when the label carries canon-specific info — i.e. the
+    # `N hops` count from a canon-hop route. The generic "route" label on inferred
+    # chains is redundant (the long-dash pattern already says "inferred route") and
+    # was just visual noise. Drop it.
+    if e.get("hops"):
         mx, my = (x1 + x2) / 2, (y1 + y2) / 2
-        # Tag route labels with their parent edge endpoints (parallel to sevlabel) so
-        # the drag handler can find each label by its edge and reposition it to the
-        # new midpoint when either endpoint moves.
         lab = (f'<text class="elabel rlabel" data-edge-from="{e["from"]}" '
                f'data-edge-to="{e["to"]}" x="{mx:.0f}" y="{my-4:.0f}" '
                f'text-anchor="middle" font-family="IBM Plex Mono, monospace" '
-               f'font-size="10" fill="#9aa6c8" opacity="0.8">{txt}</text>')
+               f'font-size="10" fill="#9aa6c8" opacity="0.8">{e["hops"]} hops</text>')
     elif e.get("status") == "severed":   # physically cut — keep this state visible
         mx, my = (x1 + x2) / 2, (y1 + y2) / 2
         # Tag severed labels with the edge endpoints so the drag handler can find
@@ -1224,13 +1216,11 @@ region_li = "".join(
     for i, lbl in LEGEND_REGIONS)
 LEGEND = f'''<section class="legend">
 <div><h3>Connections</h3><ul>
-<li><svg width="34" height="6"><line x1="0" y1="3" x2="34" y2="3" stroke="#cfd6ea" stroke-width="2"/></svg>Beacon (confirmed) <span class="note">solid · polity colour within region · neutral when cross-region</span></li>
-<li><svg width="34" height="6"><line x1="0" y1="3" x2="34" y2="3" stroke="#cfd6ea" stroke-width="2" stroke-dasharray="6 4 2 4"/></svg>Beacon (inferred) <span class="note">dash-dot · same width / opacity as confirmed</span></li>
-<li><svg width="34" height="6"><line x1="0" y1="3" x2="34" y2="3" stroke="#b06a6a" stroke-width="1.6" stroke-dasharray="3 6" opacity="0.7"/></svg>Beacon (severed) <span class="note">red-brown · Apsaras-collapse casualty · pair unreachable</span></li>
-<li><svg width="34" height="6"><line x1="0" y1="3" x2="34" y2="3" stroke="#cfd6ea" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0 7"/></svg>Knnu <span class="note">dots · sublight 50–70-day hop (≤ a few light-years), not instantaneous · polity colour within region, neutral cross-region · faded when inferred</span></li>
-<li><svg width="34" height="10"><line x1="0" y1="5" x2="13" y2="5" stroke="#cfd6ea" stroke-width="1.5"/><circle cx="17" cy="5" r="3" fill="#0a0c16" stroke="#6b7088"/><line x1="21" y1="5" x2="34" y2="5" stroke="#cfd6ea" stroke-width="1.5"/></svg>Multi-hop route (canon hops) <span class="note">solid · ○ = unnamed intermediate</span></li>
-<li><svg width="34" height="6"><line x1="0" y1="3" x2="34" y2="3" stroke="#cfd6ea" stroke-width="1.7" stroke-dasharray="14 6" opacity="0.6"/></svg>Route, length unknown / inferred <span class="note">long-dash</span></li>
-</ul><p>Line style marks the link <em>type</em> (beacon · knnu · route) and the <em>tier</em> (confirmed solid · inferred dash-dot/long-dash · severed red-brown). Within a region, line colour matches the polity hull; cross-region links and ones where either endpoint is non-region (contested / unknown) fall back to neutral.</p></div>
+<li><svg width="34" height="6"><line x1="0" y1="3" x2="34" y2="3" stroke="#cfd6ea" stroke-width="2"/></svg>Confirmed beacon <span class="note">solid · multi-hop canon routes use the same line through ○ hollow-ring intermediates (canon-known hop count, unnamed systems)</span></li>
+<li><svg width="34" height="6"><line x1="0" y1="3" x2="34" y2="3" stroke="#cfd6ea" stroke-width="2" stroke-dasharray="14 6"/></svg>Inferred connection <span class="note">long-dash · direct beacon (e.g. Meli↔Kumbala), unexpanded route, or render_pad chain — all read the same</span></li>
+<li><svg width="34" height="6"><line x1="0" y1="3" x2="34" y2="3" stroke="#b06a6a" stroke-width="1.8" stroke-dasharray="14 6" opacity="0.7"/></svg>Severed <span class="note">red-brown long-dash · Apsaras-collapse casualty · pair-end unreachable</span></li>
+<li><svg width="34" height="6"><line x1="0" y1="3" x2="34" y2="3" stroke="#cfd6ea" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="0 7"/></svg>Knnu <span class="note">round dots · sublight 50–70-day hop (≤ a few light-years), not instantaneous · faded when inferred</span></li>
+</ul><p>Four line patterns × the colour rule: <strong>solid</strong> confirmed, <strong>long-dash</strong> inferred, <strong>red-brown long-dash</strong> severed, <strong>dots</strong> knnu. Colour follows strict polity: within a single real polity → polity colour; cross-polity (including any contested / unknown endpoint) → neutral.</p></div>
 <div><h3>Systems</h3><ul>
 <li><span class="sw" style="color:#cfd6ea;background:#cfd6ea"></span>Major hub / capital <span class="note">★ + ring · colour = polity</span></li>
 <li><span class="sw" style="color:#cfd6ea;background:#cfd6ea;width:7px;height:7px"></span>Standard system <span class="note">colour = polity</span></li>
